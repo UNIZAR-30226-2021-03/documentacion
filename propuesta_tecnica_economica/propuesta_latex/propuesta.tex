@@ -8,19 +8,18 @@
 
 \pagestyle{fancy}
 \fancyhf{}
-\lhead{Proyecto XX}
+\lhead{KeyPaX, Barbaro Software}
 \rhead{\thepage}
 \lfoot{Propuesta técnica y económica}
-\renewcommand{\footrulewidth}{0.4pt}% default is 0pt
-
+\renewcommand{\footrulewidth}{0.4pt}
 
 \setlength{\parindent}{2em}
 \setlength{\parskip}{1em}
 
 \title{
-\Huge{Proyecto XX} \\ 
+\Huge{KeyPaX, Barbaro Software} \\ 
 \begin{Large} 
-Propuesta técnica y económica del proyecto
+Propuesta técnica y económica    del proyecto
 \end{Large}}
 %\author{}
 \date{22 de febrero de 2021}
@@ -37,11 +36,70 @@ Propuesta técnica y económica del proyecto
 
 \section{Resumen Ejecutivo}
 
+% Resumen en una página
+% Resumen del sistema a desarrollar
+% Incluir precio, plazos y entregables
+
+\pagebreak
+
 \section{Objetivos del sistema}
+
+% Descripción breve de las necesidades que el sistema debe abordar y la funcionalidad que se desarrollará para para cubrir estas necesidades.
+
 
 \subsection{Análisis de requisitos preliminar}
 
+% - descripcion de elementos importantes del sistema
+% - utilizar requisitos concretos
+% - capacidades el sistema
+% - "funcionara en android" -> (en requisitos, que version?)
+% - no funcionales basicos (que sgbd)
+% - ante la duda ponerlo
+
+%Desgranar el punto anterior en forma de requisitos. No tiene que ser el análisis de requisitos totalmente completo y detallado, que se realizará una vez se haya confirmado que el proyecto se va a llevar a cabo, pero es un compromiso con el cliente y debe incluir todo lo importante y estar adecuadamente redactado (con precisión, sin ambigüedades obvias, etc.). Además de texto, se pueden incluir algunos bocetos de la GUI (suelen ser importantes para concretar mejor la funcionalidad de una aplicación).
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{| c | p{30em} |}
+        \hline
+        Código &  Descripción  \\ \hline
+        RF-1   & El sistema permite almacenar pares que constan de nombre de usuario y contraseña  \\ \hline
+        RF-2   & El sistema permite asociar a las contraseñas una URL del sitio web al que corresponden \\ \hline
+        RF-    & El sistema registra la fecha de creación y actualización de la contraseña \\ \hline
+        RF- & El  sistema permite organizar las contraseñas por categorías \\ \hline
+        RF- & El sistema permite realizar una búsqueda entre las contraseñas por categoría, fecha de creación y actualización  \\ \hline
+        RF- & El sistema permite generación de contraseñas pseudoaleatorias \\ \hline
+        RF- & El sistema permite seleccionar la longitud de la contraseña a generar\\ \hline
+        RF- & El sistema permite seleccionar el conjunto de caracteres que compone la contraseña a generar\\ \hline
+        RF- & El sistema permite al usuario acceder a sus contraseñas únicamente a través de la contraseña maestra \\ \hline
+        RF- & El sistema mostrará el grado de robustez de la contraseña al ser generada \\ \hline 
+        RF - & El sistema permite comprobar su identidad en el inicio de sesión mediante \textit{Two-Factor Authentication} (2FA) por correo electrónico \\ \hline
+        RF- & El sistema requiere 2FA para iniciar sesión desde un dispositivo nuevo a los utilizados con anterioridad \\ \hline
+        RF- & El sistema debe permitir acceder al registro de contraseñas desde una aplicación móvil  \\ \hline
+        RF - & El usuario se registra en el sistema mediante un correo electrónico y una contraseña maestra\\ \hline
+        RF - & El registro de sesión se deberá confirmar, para verificar la identidad, mediante un correo al usuario registrado \\ \hline
+    \end{tabular}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{| c | p{30em} |}
+        \hline
+        RNF-1 & El sistema funciona en Android en versión//TODO XXXXXX  \\ \hline
+        RNF-2 & El sistema hará uso de el sistema gestor de base de datos (SGDB) XXXXXXXXX //TODO \\ \hline
+    \end{tabular}
+\end{table}
+
+
+
+
+
+
+
 \section{Descripción técnica}
+
+% contraseñas de sistios web cifradas en la base con hash de la master password
+
 
 \section{Plan de trabajo}
 
