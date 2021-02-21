@@ -46,7 +46,7 @@ Propuesta técnica y económica    del proyecto
 
 % Descripción breve de las necesidades que el sistema debe abordar y la funcionalidad que se desarrollará para para cubrir estas necesidades.
 
-El sistema KeyPaX permite gestionar una colección de contraseñas de manera segura y remota. Permite almacenar los nombres de usuario y claves de acceso a distintos servicios, además de otra información adicional como URL y descripciones de texto. 
+El sistema KeyPaX permite gestionar una colección de contraseñas de manera segura y remota. Permite almacenar los nombres de usuario y claves de acceso a distintos servicios, además de otra información adicional como URL y descripciones de texto. Estas contraseñas se pueden organizar en categoría y realizar búsquedas según sus campos. El sistema puede generar contraseñas robustas y configurables por el usuario. El usuario accederá a su colección de contraseñas mediante una contraseña maestra y realizará 2FA en las ocasiones requeridas. Se accederá al sistema mediante una interfaz web o una aplicación móvil.
 
 \subsection{Análisis de requisitos preliminar}
 
@@ -62,7 +62,7 @@ El sistema KeyPaX permite gestionar una colección de contraseñas de manera seg
 \begin{table}[H]
     \centering
     \begin{tabular}{| c | p{30em} |}
-        \hline
+    \hline
         Código &  Descripción  \\ \hline
         RF-1 & El sistema permite almacenar contraseñas \\ \hline
         RF-1.1 & El sistema permite almacenar pares que constan de nombre de usuario y contraseña  \\ \hline
@@ -78,7 +78,8 @@ El sistema KeyPaX permite gestionar una colección de contraseñas de manera seg
         RF-6 & El sistema requiere \textit{Two-Factor Authentication} (2FA) para iniciar sesión desde un dispositivo nuevo, distinto a los utilizados con anterioridad \\ \hline
         RF-7 & El usuario se registra en el sistema mediante un correo electrónico y una contraseña maestra\\ \hline
         RF-7.1 & El registro de sesión se deberá confirmar, para verificar la identidad, mediante un correo al usuario registrado \\ \hline
-        RF-8 & El sistema debe permitir acceder al registro de contraseñas desde una aplicación móvil \\ \hline
+        RF-8 & Se accede al sistema mediante una aplicación móvil \\ \hline
+        RF-9 & Se accede al sistema mediante una interfaz web \\ \hline
     \end{tabular}
 \end{table}
 
@@ -95,31 +96,24 @@ A continuación se va a presentar un primer boceto de plan de trabajo con fechas
     \centering
     \begin{tabular}{| c | p{30em} |}
     \hline
-        Fecha &  Descripción  \\ 
-        \hline
-        22/02/2021 & Presentación de la propuesta técnica y económica.  \\ 
-        \hline
-        02/03/2021 & Reunión de feedback con los clientes para aprobación/negociación de la propuesta técnica y económica anteriormente presentada.Comienzo de la redacción del plan de gestión, análisis y diseño. \\ 
-        \hline
+        Fecha &  Descripción  \\ \hline
+        22/02/2021 & Presentación de la propuesta técnica y económica.  \\ \hline
+        02/03/2021 & Reunión de feedback con los clientes para aprobación/negociación de la propuesta técnica y económica anteriormente presentada. Comienzo de la redacción del plan de gestión, análisis y diseño. \\ \hline
         15/03/2021 & Presentación de la primera versión del plan de proyecto.\\ \hline
-        22/03/2021 & Reunión de seguimiento con los clientes. \\ 
-        \hline
+        22/03/2021 & Reunión de seguimiento con los clientes. \\ \hline
         14/04/2021 & Presentación de la segunda versión del plan de proyecto. \\ \hline
         15/04/2021 & Demostración a los clientes de la primera versión desplegada.
-        Entrega de documentación generada hasta el momento y transferencia del código de la versión primera del sistema.\\ 
-        \hline
-        03/05/2021 & Segunda reunión de seguimiento con los clientes. \\ 
-        \hline
+        Entrega de documentación generada hasta el momento y transferencia del código de la versión primera del sistema.\\ \hline
+        03/05/2021 & Segunda reunión de seguimiento con los clientes. \\ \hline
         21/05/2021 & Demostración a los clientes de la segunda versión desplegada.
-        Entrega de documentación generada hasta el momento y transferencia del código de la versión segunda del sistema.\\ 
-        \hline
+        Entrega de documentación generada hasta el momento y transferencia del código de la versión segunda del sistema.\\ \hline
         01/06/2021 & Entrega final del producto. Consistirá en la entrega del código fuente final, manuales de usuario en formato video y texto y delegación de control del producto ya instalado en servidores de acceso públicos.\\ \hline
     \end{tabular}
 \end{table}
 
 \section{Equipo técnico encargado del proyecto}
 
-Presentamos \textbf{Barbarians Software Inc}. Los tres años de permanencia en el mercado han proporcionado una amplia experiencia en el mundo empresarial y nos avala como una empresa referente en el sector. La empresa se caracteriza por tener una filosofía basada en el trabajo coordinado en grupo, con especialistas en distintos campos del sector que unificados forman un equipo de trabajo altamente sofisticado.
+\textbf{Barbarians Software Inc} cuenta con tres años de permanencia en el mercado, que han proporcionado una amplia experiencia en el mundo empresarial y nos avala como una empresa referente en el sector. La empresa se caracteriza por tener una filosofía basada en el trabajo coordinado en grupo, con especialistas en distintos campos del sector que unificados forman un equipo de trabajo altamente sofisticado.
 Los servicios y capacidades que nuestros clientes han podido destacar entre los más importantes son:
 \begin{itemize}
    \item Experiencia en desarrollo móvil en dispositivos Android.
