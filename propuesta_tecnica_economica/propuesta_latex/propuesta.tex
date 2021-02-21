@@ -5,17 +5,6 @@
 \usepackage{float}
 \usepackage{adjustbox}
 \usepackage{fancyhdr}
-\usepackage[compact]{titlesec}        
-\usepackage{geometry}
-
-\geometry{
-    a4paper,
-    total={170mm,257mm},
-    left=35mm,
-    right=35mm,
-    top=30mm,
-    bottom=30mm,
-}
 
 \pagestyle{fancy}
 \fancyhf{}
@@ -30,9 +19,9 @@
 \title{
 \Huge{KeyPaX, Barbaro Software} \\ 
 \begin{Large} 
-Propuesta técnica y económica del proyecto
+Propuesta técnica y económica    del proyecto
 \end{Large}}
-\author{}
+%\author{}
 \date{22 de febrero de 2021}
 
 \begin{document}
@@ -57,9 +46,18 @@ Propuesta técnica y económica del proyecto
 
 % Descripción breve de las necesidades que el sistema debe abordar y la funcionalidad que se desarrollará para para cubrir estas necesidades.
 
-KeyPaX permite gestionar una colección de contraseñas de manera segura y remota. Permite almacenar los nombres de usuario y claves de acceso a distintos servicios, además de otra información adicional como URL y descripciones de texto. Estas contraseñas se pueden organizar en categoría y realizar búsquedas según sus campos. El sistema puede generar contraseñas robustas y configurables por el usuario. El usuario accederá a su colección de contraseñas mediante una contraseña maestra y realizará 2FA en las ocasiones requeridas. Se accederá al sistema mediante una interfaz web o una aplicación móvil.
+El sistema KeyPaX permite gestionar una colección de contraseñas de manera segura y remota. Permite almacenar los nombres de usuario y claves de acceso a distintos servicios, además de otra información adicional como URL y descripciones de texto. Estas contraseñas se pueden organizar en categoría y realizar búsquedas según sus campos. El sistema puede generar contraseñas robustas y configurables por el usuario. El usuario accederá a su colección de contraseñas mediante una contraseña maestra y realizará 2FA en las ocasiones requeridas. Se accederá al sistema mediante una interfaz web o una aplicación móvil.
 
 \subsection{Análisis de requisitos preliminar}
+
+% - descripcion de elementos importantes del sistema
+% - utilizar requisitos concretos
+% - capacidades el sistema
+% - "funcionara en android" -> (en requisitos, que version?)
+% - no funcionales basicos (que sgbd)
+% - ante la duda ponerlo
+
+%Desgranar el punto anterior en forma de requisitos. No tiene que ser el análisis de requisitos totalmente completo y detallado, que se realizará una vez se haya confirmado que el proyecto se va a llevar a cabo, pero es un compromiso con el cliente y debe incluir todo lo importante y estar adecuadamente redactado (con precisión, sin ambigüedades obvias, etc.). Además de texto, se pueden incluir algunos bocetos de la GUI (suelen ser importantes para concretar mejor la funcionalidad de una aplicación).
 
 \begin{table}[H]
     \centering
@@ -77,7 +75,7 @@ KeyPaX permite gestionar una colección de contraseñas de manera segura y remot
         RF-4.2 & El sistema permite seleccionar el conjunto de caracteres que compone la contraseña a generar\\ \hline
         RF-4.3 & El sistema mostrará el grado de robustez de la contraseña al ser generada \\ \hline 
         RF-5 & El sistema permite al usuario acceder a sus contraseñas únicamente a través de la contraseña maestra \\ \hline
-        RF-6 & El sistema requiere 2FA para iniciar sesión desde un dispositivo nuevo, distinto a los utilizados con anterioridad \\ \hline
+        RF-6 & El sistema requiere \textit{Two-Factor Authentication} (2FA) para iniciar sesión desde un dispositivo nuevo, distinto a los utilizados con anterioridad \\ \hline
         RF-7 & El usuario se registra en el sistema mediante un correo electrónico y una contraseña maestra\\ \hline
         RF-7.1 & El registro de sesión se deberá confirmar, para verificar la identidad, mediante un correo al usuario registrado \\ \hline
         RF-8 & Se accede al sistema mediante una aplicación móvil \\ \hline
@@ -85,62 +83,11 @@ KeyPaX permite gestionar una colección de contraseñas de manera segura y remot
     \end{tabular}
 \end{table}
 
-\pagebreak
 
 \section{Descripción técnica}
 
 % contraseñas de sistios web cifradas en la base con hash de la master password
 
-\subsection{Aspectos técnicos de relevancia para los usuarios}
-
-El acceso al repositorio de contraseñas de KeyPaX requiere de conexión a internet. Las contraseñas no son guardadas en el dispositivo del usuario para evitar desajustes de versionado y limitar la posibilidad de pérdida/\textit{leaking} de las contraseñas.
-
-El sistema KeyPaX permite a los usuarios acceder al repositorio mediante dos interfaces:
-\begin{itemize}
-    \setlength\itemsep{0em}
-    \item Navegador web. El sistema funcionará al 100\% de sus capacidades en los siguientes navegadores web: Google Chrome, Firefox, Safari. En el resto de navegadores, el sistema puede no cargar ciertos componentes.
-    \item Aplicación Android. La versión del sistema debe ser al menos 6.0 "Marshmellow".
-\end{itemize}
-
-\subsection{Aspectos técnicos de relevancia para los clientes}
-
-El sistema está diseñado para ser desplegado en un entorno de contenedores Docker.
-Se ha escogido esta tecnología de despliegue por su alto aprovechamiento de los recursos de la máquina host y portabilidad a través de distintas máquinas.
-Dicho esto, a término del plazo de desarrollo del producto, el sistema quedará desplegado en un clúster remoto accesible vía internet por los usuarios. Dicho clúster remoto será de propiedad ajena a la empresa y los clientes deberán acarrear los costes de mantenimiento y alquiler de las máquinas que imponga el proveedor de cloud.
-Sin embargo, el código fuente completo del producto junto con manuales de despliegue serán entregados al cliente, por tanto, este puede decidir migrar el despliegue del sistema a máquinas propias que cumplan con los requisitos establecidos en los manuales.
-
-\pagebreak
-
-\subsubsection*{Despliegue}
-
-El producto será desplegado en distintos componentes dockerizados:
-
-\begin{itemize}
-    \setlength\itemsep{0em}
-    \item Front-end: Constituye la interfaz de usuario. Se separa en dos componentes, front-end para la aplicación móvil y front-end para la interfaz web.
-    \item Back-end: Constituye el "cerebro" del sistema, se encargará de atender todos los aspectos necesarios para que el sistema desarrolle el comportamiento diseñado.
-    \item Base de datos: Almacenará la información de los usuarios y aquella necesaria para el funcionamiento del sistema.
-\end{itemize}
-
-\begin{figure}[H]
-    \centering
-    \begin{adjustbox}{max size={\textwidth}{\textheight}}
-        \includegraphics{../images/desplieguev1.png}
-    \end{adjustbox}
-    \caption{Primera versión del diagrama de despliegue}
-    \label{despliegueV1}
-\end{figure}
-
-\subsubsection*{Análisis de riesgos y planes de contingencia}
-
-El mayor riego en el que incurre el sistema es la exposición de los datos de los usuarios a causa de una ataque a la base de datos. 
-Para reducir el impacto y ocurrencia de este posible evento se propone limitar el acceso al componente de base de datos mediante contraseñas robustas, autentificación del origen de las peticiones a la base de dato y cifrado de la información.
-
-Para prevenir ataques de tipo \textit{ransomware} o el borrado malicioso de la información, se replicará la información de la base de datos a lo largo de un conjunto de replicas, lo cual permite disponer de un \textit{back-up} de los datos para permitir el funcionamiento del sistema si ocurriese alguno de estos eventos.
-
-En cuanto ataques contra la disponibilidad del sistema, se implementarán los cortafuegos necesarios para asegurar la disponibilidad en todo momento.
-
-\pagebreak
 
 \section{Plan de trabajo}
 A continuación se va a presentar un primer boceto de plan de trabajo con fechas importantes para los clientes.
@@ -164,46 +111,27 @@ A continuación se va a presentar un primer boceto de plan de trabajo con fechas
     \end{tabular}
 \end{table}
 
-\pagebreak
-
 \section{Equipo técnico encargado del proyecto}
 
-\textbf{Barbaro Software Inc.} cuenta con tres años de permanencia en el mercado, que han proporcionado una amplia experiencia en el mundo empresarial y nos avala como una empresa referente en el sector. La empresa se caracteriza por tener una filosofía basada en el trabajo coordinado en grupo, con especialistas en distintos campos del sector que unificados forman un equipo de trabajo altamente sofisticado.
+\textbf{Barbarians Software Inc} cuenta con tres años de permanencia en el mercado, que han proporcionado una amplia experiencia en el mundo empresarial y nos avala como una empresa referente en el sector. La empresa se caracteriza por tener una filosofía basada en el trabajo coordinado en grupo, con especialistas en distintos campos del sector que unificados forman un equipo de trabajo altamente sofisticado.
 Los servicios y capacidades que nuestros clientes han podido destacar entre los más importantes son:
 \begin{itemize}
-    \setlength\itemsep{0em}
-    \item Experiencia en desarrollo móvil en dispositivos Android.
-    \item Veteranía en el \textit{framework} de JavaScript React para Web y Móvil.
-    \item Destreza en el entorno de ejecución NodeJS con el \textit{framework} Express.
-    \item Práctica en Bases de Datos relacionales (Oracle, Postgresql, MySql...).
-    \item Conocimiento en Base de Datos no relacionales (MongoDB).
-    \item Alta uso de diferentes lenguajes de programación (Java, JavaScript, C, C++, GoLang).
-    \item Estudio de metodología de despliegue de Proyectos con Docker y Kubernetes.
-    \item Maestría en el uso de \textit{IaaS} (Microsoft Azure, Amazon AWS).
-    \item Prácticas de \textit{testing} con PostMan.
-    \item Altos conocimientos en gestión de versiones a través del Software Git.
+   \item Experiencia en desarrollo móvil en dispositivos Android.
+   \item Veteranía en el FrameWork de JavaScript React para Web y Móvil.
+   \item Destreza en el entorno de ejecución NodeJS con el FrameWork Express.
+   \item Práctica en Bases de Datos relacionales (Oracle, Postgresql, MySql...).
+   \item Conocimiento en Base de Datos no relacionales (MongoDB).
+   \item Alta uso de diferentes lenguajes de programación (Java, JavaScript, C, C++, GoLang).
+   \item Estudio de metodología de despliegue de Proyectos con Docker y Kubernetes.
+   \item Maestría en el uso de IaaS (Microsoft Azure, Amazon AWS).
+   \item Prácticas de testing con PostMan.
+   \item Altos conocimientos en gestión de versiones a través del Software Git.
 \end{itemize}
-
-Nuestro nombre proviene de Barbara Liskov, científica de la computación estadounidense reconocida con la medalla John von Neumann (2004) y el premio Turing (2008).
-
-\pagebreak
 
 \section{Presupuesto}
 
-\pagebreak
-
 \section*{Anexo I. Glosario}
 \addcontentsline{toc}{section}{Anexo I. Glosario}
-
-\begin{description}
-    \setlength\itemsep{0em}
-    \item[2FA] \textit{Two-Factor Authentication}. Método de autentificación que requiere dos tipos de información del usuario. Normalmente una contraseña y un código enviado al correo electrónico o teléfono móvil.
-    \item[API] \textit{Application Programming Interface}. Conjunto de procedimientos que ofrece cierta biblioteca o sistema para ser utilizado por otro \textit{software} e interaccionar con él abstrayendo ciertos aspectos.
-    \item[Contraseña] Clave alfanumérica y que puedo contener además símbolos para identificarse en un servicio o cuenta de internet. 
-    \item[Framework] Plataforma para desarrollar aplicaciones software que ofrece una estructura inicial en la que los desarrolladores pueden construir para una plataforma específica. 
-    \item[IaaS] \textit{Infrastructure as a Service}. Servicios en línea, generalmente \textit{cloud}, que proporcionan APIs de alto nivel que permiten abstraer detalles de infrastructura.
-    \item[URL] \textit{Uniform Resource Identifier}. En este contexto, la dirección de la página web (www.example.com)  
-\end{description}
 
 \section*{Anexo II. Estimación de costes}
 \addcontentsline{toc}{section}{Anexo II. Estimación de costes}
@@ -211,4 +139,4 @@ Nuestro nombre proviene de Barbara Liskov, científica de la computación estado
 %\section*{Anexo III+. Otros anexos}
 %\addcontentsline{toc}{section}{Anexo III+. Otros anexos}
 
-\end{document}  
+\end{document}
