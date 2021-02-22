@@ -1,0 +1,349 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{adjustbox} 
+\usepackage{listings} % CODE LISTINGS
+\usepackage{xcolor} % CODE LISTINGS COLOR
+\usepackage{subcaption} 
+
+\usepackage[compact]{titlesec}        
+\usepackage{geometry}
+\geometry{
+    a4paper,
+    total={170mm,257mm},
+    left=20mm,
+    right=20mm,
+    top=30mm,
+    bottom=20mm,
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%% ENVIRONMENT FOR CHANGING PAGE MARGINS IN A CERTAIN PART OF DOC %%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newenvironment{changemargin}[2]{%
+\begin{list}{}{%
+\setlength{\topsep}{0pt}%
+\setlength{\leftmargin}{#1}%
+\setlength{\rightmargin}{#2}%
+\setlength{\listparindent}{\parindent}%
+\setlength{\itemindent}{\parindent}%
+\setlength{\parsep}{\parskip}%
+}%
+\item[]}{\end{list}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%% CHANGE COLOR CODE LISTINGS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+
+\lstset{style=mystyle}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%% CONFGURE TABLE OF CONTENTS DEPTH %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setcounter{tocdepth}{2}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%% CHANGE PAGE MARGIN%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[compact]{titlesec}        
+\usepackage{geometry}
+\geometry{
+    a4paper,
+    total={170mm,257mm},
+    left=20mm,
+    right=20mm,
+    top=30mm,
+    bottom=20mm,
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%% SET TITLE PAGE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{
+\Huge{Titulo} % TITLE %
+\linebreak
+\linebreak
+\Large{Subtítulo}} % SUBTITLE % (SEE LaTex styles for more sizes) % 
+
+\author{Javier Vela Tambo, 775593}
+\date{Fecha}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%% SET INDENTATION AND BETWEEN PARAGRAPHS LENGHT %%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setlength{\parindent}{2em}
+\setlength{\parskip}{1em}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document} % BEGIN DOCUMENT %
+
+\maketitle % INSERT TITLE PAGE %
+
+\pagebreak % PAGE BREAK %
+
+\tableofcontents % INSERT TABLE OF CONTENTS %
+
+\pagebreak 
+
+\section{Sección} % SECTION %
+
+\subsection{Subsección} % SUBSECTION %
+
+\subsubsection{Subsubsección} % SUBSUBSECTION %
+
+\subsubsection*{Subsección sin número} % UNNUMBERED SUBSUBSECTION %
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%% ITEMIZATION %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Cabecera itemization    
+\setlength{\parskip}{0em}
+\begin{itemize}
+    \setlength{\itemsep}{0em}
+    \item Item 1
+    \item Item 2
+    \item Item 3 
+\end{itemize}
+\setlength{\parskip}{1em}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{List and Tables}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%% ADD IN INDEX WITHOUT NUMBERING %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Anexo I. Glosario}
+\addcontentsline{toc}{subsection}{Anexo I. Glosario} 
+% (You should change sectioning, if needed) %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%% DESCRIPTION LIST %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{description}
+    \setlength\itemsep{0em}
+    \item[2FA] \textit{Two-Factor Authentication}. Método de autentificación que requiere dos tipos de información del usuario. Normalmente una contraseña y un código enviado al correo electrónico o teléfono móvil.
+    \item[API] \textit{Application Programming Interface}. Conjunto de procedimientos que ofrece cierta biblioteca o sistema para ser utilizado por otro \textit{software} e interaccionar con él abstrayendo ciertos aspectos.
+\end{description}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%% NESTED LISTINGS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{itemize} % UNORDERED LISTING %
+    \item Flujo de eventos Principal:
+    \begin{enumerate} % ORDERED LISTING %
+        \item El caso de uso se inicia cuando el usuario solicita crear una lista.
+        \item El usuario da un nombre a la lista.
+        \item El caso de uso finaliza cuando sistema guarda la lista.
+    \end{enumerate}
+\end{itemize}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%% TABLE (CENTERED ) %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{table}[H]
+    \centering
+    \begin{tabular}{| c | c | c |}
+        \hline
+        Cod.   &    Pri.   &  Descripción  \\ \hline
+        RF-1   &     1     & ola \\ \hline
+        RF-2   &     1     & ola \\ \hline
+        RF-3   &     1     & ola \\ \hline
+        RF-4   &     2     & ola \\ \hline
+        RF-5   &     3     & ola \\ \hline
+    \end{tabular}
+\end{table}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%% TABLE (PARAGRAPH STYLE) %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|p{10mm}|p{5mm}|p{100mm}|}
+        \hline
+        Cod.   &    Pri.   &  Descripción  \\ \hline
+        RF-1   &     1     &  El sistema permitirá visualizar información  de  ámbito general del COVID-19  \\ \hline
+        RF-2   &     1     &  El sistema permitirá visualizar información  de personal interés para el usuario  \\ \hline
+        RF-3   &     1     &  El sistema permitirá a un usuario registrarse  \\ \hline
+        RF-4   &     2     &  El sistema enviará a los usuarios que lo  soliciten un boletín informativo del COVID-19 con perioricidad a elegir por ellos \\ \hline
+        RF-5   &     3     &  El sistema generará una imagen con información  personalizada al usuario  \\ \hline
+    \end{tabular}
+\end{table}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%% PAGE BREAK %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\pagebreak
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Images}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%% IMAGE FIGURE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[H]
+    \centering
+    % IMAGE PATH + MODIFY SIZE%
+    % \includegraphics[width=\textwidth, angle=0]{../diagrams/notepadv3 Use Case diagram.png}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{changemargin}{+2cm}{+2cm} % CHANGE PAGE MARGIN %
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%% ADJUSTBOX IMAGE FIGURE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[H]
+    \centering
+    % MODIFY SIZE %
+    \begin{adjustbox}{max size={\textwidth}{\textheight-5em}}
+        % IMAGE PATH %
+        % \includegraphics[angle=90]{../images/propuesta_economica.png}
+    \end{adjustbox}
+    \caption{Caption}
+    \label{despliegueV1} % REFERENCE (\ref{despliegueV1} in document)
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%    
+\end{changemargin} % CLOSE CHANGE PAGE MARGIN %
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%% 4 IMAGES IN 1 PAGE (SUBFIGURE ENVIRONMENT) %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}{.5\textwidth}
+        \centering
+        % \includegraphics[width=\linewidth]{../images/analysis/sequence_diagrams/crearLista.png}
+        \captionsetup{labelformat=empty}
+        \caption{\textbf{Crear Lista}}
+    \end{subfigure}%
+    \begin{subfigure}{.5\textwidth}
+        \centering
+        % \includegraphics[width=\linewidth]{../images/analysis/sequence_diagrams/eliminarLista.png}
+        \captionsetup{labelformat=empty}
+        \caption{\textbf{Eliminar Lista}}
+    \end{subfigure}
+    
+    \begin{subfigure}{.5\textwidth}
+        \centering
+        % \includegraphics[width=\linewidth]{../images/analysis/sequence_diagrams/mostrarLista.png}
+        \captionsetup{labelformat=empty}
+        \caption{\textbf{Mostrar Lista}}
+    \end{subfigure}%
+    \begin{subfigure}{.5\textwidth}
+        \centering
+        % \includegraphics[width=\linewidth]{../images/analysis/sequence_diagrams/modificarLista.png}
+        \captionsetup{labelformat=empty}
+        \caption{\textbf{Modificar Lista}}
+    \end{subfigure}
+    \end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%% 3 IMAGES 1 ROW (2 ROW 1 PAGE) %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}{.33\textwidth}
+        \centering
+        % \includegraphics[width=.9\linewidth]{../images/prototype/Menu.png}
+        \captionsetup{labelformat=empty}
+        \caption{\textbf{Menú Principal}}
+    \end{subfigure}%
+    \begin{subfigure}{.33\textwidth}
+        \centering
+        % \includegraphics[width=.9\linewidth]{../images/prototype/Mis Productos.png}
+        \captionsetup{labelformat=empty}
+        \caption{\textbf{Pantalla Principal Productos}}
+    \end{subfigure}%
+    \begin{subfigure}{.33\textwidth}
+        \centering
+        % \includegraphics[width=.9\linewidth]{../images/prototype/Crear Producto.png}
+        \captionsetup{labelformat=empty}
+        \caption{\textbf{Crear Producto}}
+    \end{subfigure}    
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Math}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%% MATH (See LaTex Math) %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+$A = \frac{\infty}{\alpha}$
+
+$A = \Sigma_{h=0}^{N} \ (mat_h)$
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Text and Code}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%% MONOSPACED UNFORMATTED TEXT %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{verbatim}
+    TEXT AS IT IS % NO LATEX
+\end{verbatim}
+
+\begin{verbatim}
+NAME            READY   STATUS    RESTARTS   AGE
+pod/srvraft-0   1/1     Running   0          65s
+pod/srvraft-1   1/1     Running   0          59s
+pod/srvraft-2   1/1     Running   0          50s
+pod/tstnode     1/1     Running   0          19s
+ 
+NAME                 TYPE        CLUSTER-IP   EXTERNAL-IP   PORT(S)    AGE
+service/kubernetes   ClusterIP   10.96.0.1    <none>        443/TCP    13h
+service/srvraft      ClusterIP   None         <none>        6000/TCP   108s
+ 
+NAME                       READY   AGE
+statefulset.apps/srvraft   3/3     108s
+\end{verbatim}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%% CODE LISTING %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \lstinputlisting[language=Java]{../code/pruebas_delete_definition.java}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\end{document} % END DOC %
