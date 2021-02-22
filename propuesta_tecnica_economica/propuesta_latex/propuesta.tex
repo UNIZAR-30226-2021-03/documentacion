@@ -47,13 +47,13 @@ En el siguiente documento se presenta el sistema KeyPaX, va a ser desarrollado p
 
 Además, para mejorar la seguridad del sistema, se podrán generar automáticamente contraseñas robustas con longitud y caracteres variables. El usuario accederá al servicio mediante una contraseña maestra y deberá identificarse por primera vez para cada dispositivo con 2FA.
 
-Para acceder al sistema se utilizará la aplicación para móviles Android o en diferentes navegadores web. Se utilizará Java (Android SDK) y JavaScript (React.JS), respectivamente, para implementar las vistas del sistema. El \textit{backend} se desarrollará utilizando Node.JS y la librería Express. Por último, la base de datos utilizará el SGBD MongoDB. 
+Para acceder al sistema se utilizará la aplicación para móviles Android o en diferentes navegadores web. Se utilizará Java (Android SDK) y JavaScript (React.JS), respectivamente, para implementar las vistas del sistema. El \textit{backend} se desarrollará utilizando Node.JS y la \textit{framework} Express. Por último, la base de datos utilizará el SGBD MongoDB. 
 
-El despliegue del sistema se realizará en un entorno de contenedores Docker. Mediante Docker se puede aprovechar al máximo los recursos \textit{hardware} de la máquina, aumentando la portabilidad del sistema y ahorrando en fallos del desarrollo. 
+El despliegue del sistema se realizará en un entorno de contenedores Docker. Mediante Docker se puede aprovechar al máximo los recursos \textit{hardware} de la máquina, aumentando la portabilidad del sistema y ahorrando en fallos de desarrollo. 
 
 Se plantea un plan de trabajo, dónde se comprometen varias fechas para las entregas anteriores a la finalización del proyecto.  El día 15 de abril de 2021 se realizará una primera demostración del sistema \textit{software}. Tras las modificaciones y correcciones propuestas por el cliente, el 21 de mayo de 2021 se presentará una segunda versión. El 1 de junio de 2021, Bárbaros Software S.A. se compromete a entregar el sistema final al cliente.
 
-La experiencia de Bárbaros Software S.A. como empresa y la destreza de sus técnicos y desarrolladores es inigualable en el mercado. Además sus integrantes forman un fuerte grupo de trabajo, capaz de llevar hacia delante el proyecto.
+La experiencia de Bárbaros Software S.A. como empresa y la destreza de sus técnicos y desarrolladores es inigualable en el mercado. Además sus integrantes forman un fuerte grupo de trabajo, capaz de sacar adelante el proyecto.
 
 Por último, el presupuesto estipula los pagos a recibir por parte del cliente, distribuidos en cuatro pagos: el 2 de Marzo el 50\%, el 1 de Abril el 16,6\%, el 1 de Mayo el 16,6\%, y el 1 de Junio el 16,6\%. El total asciende a 24.127,4 euros.
 
@@ -68,7 +68,7 @@ Por último, el presupuesto estipula los pagos a recibir por parte del cliente, 
 
 % Descripción breve de las necesidades que el sistema debe abordar y la funcionalidad que se desarrollará para para cubrir estas necesidades.
 
-KeyPaX permite gestionar una colección de contraseñas de manera segura y remota. Permite almacenar los nombres de usuario y claves de acceso a distintos servicios, además de otra información adicional como URL y fechas de creación y actualización. Estas contraseñas se pueden organizar por categoría y realizar búsquedas según sus campos. El sistema puede generar contraseñas robustas y configurables por el usuario. El usuario accederá a su colección de contraseñas mediante una contraseña maestra y realizará 2FA en las ocasiones requeridas. Se accederá al sistema mediante una interfaz web o una aplicación móvil.
+KeyPaX permite gestionar una colección de contraseñas de manera segura y remota. Permite almacenar los nombres de usuario y claves de acceso a distintos servicios, además de otra información adicional como URLs y fechas de creación y actualización. Estas contraseñas se pueden organizar por categoría y realizar búsquedas según sus campos. El sistema puede generar contraseñas robustas y configurables por el usuario. El usuario accederá a su colección de contraseñas mediante una contraseña maestra y realizará 2FA en las ocasiones requeridas. Se accederá al sistema mediante una interfaz web o una aplicación móvil.
 
 \subsection{Análisis de requisitos preliminar}
 
@@ -77,24 +77,24 @@ KeyPaX permite gestionar una colección de contraseñas de manera segura y remot
     \begin{tabular}{| c | p{30em} |}
     \hline
         Código &  Descripción  \\ \hline
-        RF-1 & El sistema permite almacenar contraseñas \\ \hline
-        RF-1.1 & El sistema permite almacenar pares que constan de nombre de usuario y contraseña  \\ \hline
-        RF-1.2 & El sistema permite asociar a las contraseñas una URL del sitio web al que corresponden \\ \hline
-        RF-1.3 & El sistema registra la fecha de creación y actualización de la contraseña \\ \hline
+        RF-1 & El sistema permite almacenar contraseñas. \\ \hline
+        RF-1.1 & El sistema permite almacenar pares que constan de nombre de usuario y contraseña.  \\ \hline
+        RF-1.2 & El sistema permite asociar a las contraseñas una URL del sitio web al que corresponden. \\ \hline
+        RF-1.3 & El sistema registra la fecha de creación y actualización de la contraseña. \\ \hline
         RF-1.4 & El sistema permite almacenar una descripción de texto. \\ \hline
-        RF-2 & El  sistema permite organizar las contraseñas por categorías \\ \hline
-        RF-3 & El sistema permite realizar una búsqueda entre las contraseñas por categoría, fecha de creación y actualización  \\ \hline
-        RF-4 & El sistema permite generación de contraseñas pseudoaleatorias \\ \hline
-        RF-4.1 & El sistema permite seleccionar la longitud de la contraseña a generar\\ \hline
-        RF-4.2 & El sistema permite seleccionar el conjunto de caracteres que compone la contraseña a generar\\ \hline
-        RF-4.3 & El sistema mostrará el grado de robustez de la contraseña al ser generada \\ \hline
-        RF-5 & El sistema permite al usuario acceder a sus contraseñas únicamente a través de la contraseña maestra \\ \hline
-        RF-6 & El sistema requiere 2FA para iniciar sesión desde un dispositivo nuevo, distinto a los utilizados con anterioridad \\ \hline
-        RF-7 & El usuario se registra en el sistema mediante un correo electrónico y una contraseña maestra\\ \hline
-        RF-7.1 & El registro de sesión se deberá confirmar, para verificar la identidad, mediante un correo al usuario registrado \\ \hline
+        RF-2 & El sistema permite organizar las contraseñas por categorías. \\ \hline
+        RF-3 & El sistema permite realizar una búsqueda entre las contraseñas por categoría, fecha de creación y actualización.  \\ \hline
+        RF-4 & El sistema permite generación de contraseñas pseudoaleatorias. \\ \hline
+        RF-4.1 & El sistema permite seleccionar la longitud de la contraseña a generar.\\ \hline
+        RF-4.2 & El sistema permite seleccionar el conjunto de caracteres que compone la contraseña a generar.\\ \hline
+        RF-4.3 & El sistema mostrará el grado de robustez de la contraseña al ser generada. \\ \hline
+        RF-5 & El sistema permite al usuario acceder a sus contraseñas únicamente a través de la contraseña maestra. \\ \hline
+        RF-6 & El sistema requiere 2FA para iniciar sesión desde un dispositivo nuevo, distinto a los utilizados con anterioridad. \\ \hline
+        RF-7 & El usuario se registra en el sistema mediante un correo electrónico y una contraseña maestra.\\ \hline
+        RF-7.1 & El registro de sesión se deberá confirmar, para verificar la identidad, mediante un correo al usuario registrado. \\ \hline
         RF-8 & El sistema permite la actualización de las contraseñas. \\ \hline
-        RF-9 & Se accede al sistema mediante una aplicación móvil \\ \hline
-        RF-10 & Se accede al sistema mediante una interfaz web \\ \hline
+        RF-9 & Se accede al sistema mediante una aplicación móvil. \\ \hline
+        RF-10 & Se accede al sistema mediante una interfaz web. \\ \hline
     \end{tabular}
 \end{table}
 
@@ -103,8 +103,8 @@ KeyPaX permite gestionar una colección de contraseñas de manera segura y remot
 \section{Descripción técnica}
 
 \subsection{Aspectos técnicos de relevancia para los usuarios}
-
-El acceso al repositorio de contraseñas de KeyPaX requiere de conexión a internet. Las contraseñas no son guardadas en el dispositivo del usuario para evitar desajustes de versionado y limitar la posibilidad de pérdida/\textit{leaking} de las contraseñas.
+El acceso al repositorio de contraseñas de KeyPaX requiere de conexión a internet. 
+Las contraseñas no son guardadas en el dispositivo del usuario para evitar desajustes de versionado y limitar la posibilidad de pérdida/\textit{leaking} de las contraseñas.
 
 El sistema KeyPaX permite a los usuarios acceder al repositorio mediante dos interfaces:
 \begin{itemize}
@@ -156,12 +156,12 @@ El producto será desplegado en distintos componentes contenerizados:
 
 \subsubsection*{Análisis de riesgos y planes de contingencia}
 
-El mayor riego en el que incurre el sistema es la exposición de los datos de los usuarios a causa de una ataque a la base de datos. 
+El mayor riesgo en el que incurre el sistema es la exposición de los datos de los usuarios a causa de un ataque a la base de datos. 
 Para reducir el impacto y ocurrencia de este posible evento se propone limitar el acceso al componente de base de datos mediante contraseñas robustas, autentificación del origen de las peticiones a la base de dato y cifrado de la información.
 
-Para prevenir ataques de tipo \textit{ransomware} o el borrado malicioso de la información, se replicará la información de la base de datos a lo largo de un conjunto de replicas, lo cual permite disponer de un \textit{back-up} de los datos para permitir el funcionamiento del sistema si ocurriese alguno de estos eventos.
+Para prevenir ataques de tipo \textit{ransomware} o el borrado malicioso de la información, se replicará la información de la base de datos a lo largo de un conjunto de réplicas, lo cual permite disponer de un \textit{back-up} de los datos para permitir el funcionamiento del sistema si ocurriese alguno de estos eventos.
 
-En cuanto ataques contra la disponibilidad del sistema, se implementarán los cortafuegos necesarios para asegurar la disponibilidad en todo momento.
+En cuanto a los ataques contra la disponibilidad del sistema, se implementarán los cortafuegos necesarios para asegurar la disponibilidad en todo momento.
 
 
 \pagebreak
@@ -202,7 +202,7 @@ Los servicios y capacidades que nuestros clientes han podido destacar entre los 
     \item Destreza en el entorno de ejecución NodeJS con el \textit{framework} Express.
     \item Práctica en Bases de Datos relacionales (Oracle, Postgresql, MySql...).
     \item Conocimiento en Base de Datos no relacionales (MongoDB).
-    \item Alta uso de diferentes lenguajes de programación (Java, JavaScript, C, C++, GoLang).
+    \item Alto uso de diferentes lenguajes de programación (Java, JavaScript, C, C++, GoLang).
     \item Estudio de metodología de despliegue de Proyectos con Docker y Kubernetes.
     \item Maestría en el uso de \textit{IaaS} (Microsoft Azure, Amazon AWS).
     \item Prácticas de \textit{testing} con PostMan.
@@ -221,11 +221,11 @@ La empresa ha participado en projectos similares, realizando un sistema de gesti
 En cuanto a las características individuales de los 6 integrantes de la empresa:
 \begin{itemize}
    \item Arturo Calvera Tonin, actualmente colaborando con el departamento de investigación de la EINA y el I3a en el desarrollo de un sistema de control de acceso a aulas dentro de la universidad. Notable experiencia en sistemas distribuidos y en varios sistemas de información donde poder gestionar todos los datos de nuestro producto.
-   \item Jorge Bernal Romero, gran capacidad de polivalencia en los aspectos generales del proyecto. Altamente implicado en su comunidad local participando frecuentemente en programas de voluntariado. Destacar participación en relaciones internacionales y conocedor del comercio electrónico.
-   \item Andoni Salcedo Navarro, consta un amplio conocimiento y experiencia en la programación con distintos lenguajes en una amplia variedad de ámbitos. Domina un gran número de tecnologías de almacenamiento y gestión de datos así como los lenguajes con los que se gestionan.
+   \item Jorge Bernal Romero, gran capacidad de polivalencia en los aspectos generales del proyecto. Altamente implicado en el mundo empresarial, por lo que conoce profundamente el mercado. Destacar su participación en relaciones internacionales y conocedor del comercio electrónico.
+   \item Andoni Salcedo Navarro, consta un amplio conocimiento y experiencia en la programación con distintos lenguajes en una extensa variedad de ámbitos. Domina un gran número de tecnologías de almacenamiento y gestión de datos así como los lenguajes con los que se gestionan.
    \item Javier Vela Tambo, en vistas a trabajar el año que viene en el extranjero, concretamente en la universidad de Rhode Island, en busca de continuar con su formación y ampliar sus conocimientos.
    \item Jorge Borque Benedí, familiarizado con una gran variedad de medios y dispositivos gracias a las distintas experiencias que ha obtenido trabajando con estos a lo largo de su trayectoria. Gran profesional en medidas de seguridad.
-   \item Carlos Bellvis Irache, disfruta de una alta capacidad de liderazgo, motivación de grupo y resolución de conflictos. Todo ello debido a su trabajo actual como entrenador de un equipo de fútbol, dónde aprende a lidiar con derrotas prácticamente semanalmente.
+   \item Carlos Bellvis Irache, disfruta de una alta capacidad de liderazgo, motivación de grupo y resolución de conflictos. Alto control en la recogida de requisitos.
 \end{itemize}
 
 
@@ -293,7 +293,7 @@ Se aportará un cincuenta por ciento (50\%) del total bruto en el momento de la 
     \setlength\itemsep{0em}
     \item[2FA] \textit{Two-Factor Authentication}. Método de autentificación que requiere dos tipos de información del usuario. Normalmente una contraseña y un código enviado al correo electrónico o teléfono móvil.
     \item[API] \textit{Application Programming Interface}. Conjunto de procedimientos que ofrece cierta biblioteca o sistema para ser utilizado por otro \textit{software} e interaccionar con él abstrayendo ciertos aspectos.
-    \item[Contraseña] Clave alfanumérica y que puede contener símbolos, para identificarse en un servicio o cuenta de internet. En el documento, se refiere, además, a toda la información relativa a estas (URL, descripción, fechas, ...) que el sistema debe almacenar.
+    \item[Contraseña] Clave alfanumérica que puede contener símbolos, para identificarse en un servicio o cuenta de internet. En el documento, se refiere, además, a toda la información relativa a éstas (URL, descripción, fechas, ...) que el sistema debe almacenar.
     \item[Framework] Plataforma para desarrollar aplicaciones software que ofrece una estructura inicial en la que los desarrolladores pueden construir para una plataforma específica. 
     \item[IaaS] \textit{Infrastructure as a Service}. Servicios en línea, generalmente \textit{cloud}, que proporcionan APIs de alto nivel que permiten abstraer detalles de infraestructura.
     \item[SGBD] Sistema gestor de base de datos. Sistema cuya funcionalidad recoge el almacenamiento, modificación y extracción de información en una base de datos.
