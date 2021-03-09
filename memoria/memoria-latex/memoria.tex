@@ -7,7 +7,7 @@
 \usepackage{float}
 \usepackage[hidelinks]{hyperref}
 
-\usepackage[compact]{titlesec}        
+\usepackage[compact]{titlesec}
 \usepackage{geometry}
 \geometry{
     a4paper,
@@ -38,9 +38,9 @@
 
     \vspace*{0.5cm}
 
-    \Huge 
+    \Huge
     \textbf{Plan de gestión, análisis, diseño y memorial del proyecto KeyPaX}
-    
+
     \vspace*{0.5cm}
 
     \huge
@@ -63,7 +63,7 @@
     \href{https://github.com/UNIZAR-30226-2021-03}{Organización GitHub: https://github.com/UNIZAR-30226-2021-03}
 
     \vspace*{\fill}
-    
+
 \end{titlepage}
 
 \pagebreak
@@ -76,7 +76,7 @@
 
 \section{Organización del proyecto}
 
-El equipo del proyecto está formado por los 6 integrantes del grupo. Para dividir el trabajo y las responsabilidades se han formado 2 grupos iniciales, acorde con las capacidades y conocimientos individuales. Además, se ha designado como \textbf{director del proyecto} a \textbf{Arturo Calvera}, cuya responsabilidad abarca la gestión de los equipos de trabajo y sus responsabilidades. 
+El equipo del proyecto está formado por los 6 integrantes del grupo. Para dividir el trabajo y las responsabilidades se han formado 2 grupos iniciales, acorde con las capacidades y conocimientos individuales. Además, se ha designado como \textbf{director del proyecto} a \textbf{Arturo Calvera}, cuya responsabilidad abarca la gestión de los equipos de trabajo y sus responsabilidades.
 
 \begin{itemize}
     \item \textbf{Equipo \textit{Backend}}:
@@ -88,7 +88,7 @@ El equipo del proyecto está formado por los 6 integrantes del grupo. Para divid
     \item \textbf{Equipo \textit{Frontend}}:
     \begin{itemize}
         \item Responsable: Javier Vela.
-        \item Sub-equipos: El equipo dedicado a la vista del sistema se divide para el desarrollo de las dos interfaces. 
+        \item Sub-equipos: El equipo dedicado a la vista del sistema se divide para el desarrollo de las dos interfaces.
         \begin{itemize}
             \item \textbf{Equipo Web}:
             \begin{itemize}
@@ -112,15 +112,38 @@ El equipo del proyecto está formado por los 6 integrantes del grupo. Para divid
 
 \subsubsection{Procesos de inicio}
 
+Para asignar los recursos que vamos a utilizar, hemos puesto en común los que conocíamos cada componente del grupo, y a partir de ahí, cuál es el favorito de la mayoría del grupo y en el que nos encontramos más cómodos trabajando.
+
+Los servidores en cloud que más nos llamaron la atención son Amazon Web Services y MIcrosoft Azure. Después de informarnos sobre ambas y compararlas, decidimos crearnos una cuenta en AWS. De primeras, los hemos visto como las 2 plataformas con más impacto a nivel global y que más nos pueden servir para nuestro futuro, a partir de aquí, al no tener ninguno una experiencia previa en ellas, hemos cogido AWS por interés general de todos y por las posibilidades de trabajo que nos ofrece gratuitamente.
+Respecto a la base de datos, hemos decidido usar MongoDB ya que ha sido utilizada por la mayoría del grupo en asignaturas previas, y por su compatibilidad con AWS. Para su utilización, nos hemos registrado en Mongo Atlas.
+
+Sobre la formación inicial, hemos tenido un debate amplio a cerca de si es mejor que todos conozcamos todas las tecnologías que vamos a utilizar, o si después de haber organizado el trabajo y el rol de cada uno, se especialice y enfoque su formación en la tecnología que va a utilizar en su caso. Entonces, hemos decidido que todos emplearán tiempo antes de la fecha designada para empezar a realizar el despliegue, en autoformación con tutoriales que vamos poniendo en común sobre las APIs donde vamos a desarrollar nuestro proyecto. Y luego, una vez ya decidido el trabajo de cada uno, enfoque su formación en su tecnología correspondiente, para poder desarrollar sin problemas su tarea y poder ir todo el grupo a un ritmo semejante.
+
+
 \subsubsection{Procesos de ejecución y control}
 
 \subsubsection{Procesos técnicos}
-
+Para implementar las vistas del sistema se utilizará por una parte Java (Android SDK) para construir el frontend para móviles Android y por otra JavaScript (React.JS) que corresponderá con los distintos navegadores web.
+En cuanto al backend, se desarrollará utilizando Node.JS y la framework Express. La base de datos utilizará el SGBD MongoDB.
+El despliegue del sistema se realizará en un entorno de contenedores Docker.
+Finalmente se ejecutarán unos scripts que llevarán a cabo las pruebas necesarias de las distintas funcionalidades para la comprobación del funcionamiento correcto.
 \subsection{Planes}
 
 \subsubsection{Plan de gestión de configuraciones}
 
 \subsubsection{Plan de construcción y despliegue del software}
+
+El sistema se fundamenta en el desarrollo de cuatro subsistemas que trabajan aislados de los otros, siendo su comunicación entre los módulos expuesta a través de interfaces que los relacionan, de este modo tanto las pruebas, compilación y dependencias son independientes al resto de subsistemas. 
+
+Dos de los cuatro subsistemas, el frontend web y el backend, estarán empotrados en contenedores docker y desplegados en la nube utilizando los servicios de \textit{Amazon Web Services}, se utilizarán scripts de \textit{GitHub actions} para automatizar la compilación y testing y despliegue en AWS de los mismos, utilizando en el caso de entorno web librerías de testing como Jest y Postman en el caso de la \textit{API REST}. 
+
+Para el subsistema que concierne a la capa de datos, se despliega en un cluster de MongoDB situado en Bélgica siendo este proporcionado por el equipo de \textit{MongoDB Atlas}, donde se van a desarrollar una serie de diversos triggers que lleven un control de la consistencia de datos tanto tras el uso operaciones además se llevará un control periodico para evitar la replicación y la detección de anomalías a través del uso de scripts.
+
+La interfaz móvil llevará por su cuenta la compilación y testing para cada versión funcional de la aplicación, se integrarán test de unidad, funcionalidad y sobrecarga del sistema.
+
+El punto fuerte de utilizar el despliegue basado en contenedores es que el control de dependencias es indiferente al sistema operativo y al entorno de desarrollo de los programadores, de esta forma cada integrante del equipo podrá configurar y personalizar su entorno por cuenta propia. En el fronted móvil al ser independiente se fija una serie de requisitos para el equipo que trabaja en esta parte, se usará la versión Android 6.1 (\textit{Marshmallow}) y se usará Java como lenguaje de programación, el control de dependencias es llevado por el propio Gradel de Android.
+
+La configuración base de los subsistema será la siguiente, las interfaces del frontend web y el backend están expuestas en el puerto 80, el modelo de capa de datos proporciona una uri externa con la que acceder a la base de datos. las variables de usuarios y contraseñas serán almacenadas como variables de entorno para evitar ponerlas como texto plano en el código.
 
 \subsubsection{Plan de aseguramiento de calidad}
 
@@ -183,4 +206,3 @@ El equipo del proyecto está formado por los 6 integrantes del grupo. Para divid
 \section{Bibliografía}
 
 \end{document}
-
