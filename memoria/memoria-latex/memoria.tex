@@ -142,6 +142,8 @@ La interfaz móvil llevará por su cuenta la compilación y testing para cada ve
 
 El punto fuerte de utilizar el despliegue basado en contenedores es que el control de dependencias es indiferente al sistema operativo y al entorno de desarrollo de los programadores, de esta forma cada integrante del equipo podrá configurar y personalizar su entorno por cuenta propia. En el fronted móvil al ser independiente se fija una serie de requisitos para el equipo que trabaja en esta parte, se usará la versión Android 6.1 (\textit{Marshmallow}) y se usará Java como lenguaje de programación, el control de dependencias es llevado por el propio Gradel de Android.
 
+La configuración base de los subsistema será la siguiente, las interfaces del frontend web y el backend están expuestas en el puerto 80, el modelo de capa de datos proporciona una uri externa con la que acceder a la base de datos. las variables de usuarios y contraseñas serán almacenadas como variables de entorno para evitar ponerlas como texto plano en el código.
+
 \subsubsection{Plan de aseguramiento de calidad}
 
 \subsubsection{Calendario del proyecto y división del trabajo}
