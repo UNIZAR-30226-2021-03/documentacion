@@ -1,8 +1,13 @@
 # Reunion 1
 
-## Seminario A.22
+- Fecha: 16 de Febrero de 2021
+- Hora: 11:30
+- Lugar: Ada Byron, S22
+- Asistentes:
+  - Equipo
+  - Profesor Zarazaga
 
-## 16 Febrero 11:30
+## Se habla de 
 
 - Proyecto:
   - Gestor de contraseñas
