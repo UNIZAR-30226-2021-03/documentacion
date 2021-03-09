@@ -124,6 +124,16 @@ Finalmente se ejecutarán unos scripts que llevarán a cabo las pruebas necesari
 
 \subsubsection{Plan de construcción y despliegue del software}
 
+El sistema se fundamenta en el desarrollo de cuatro subsistemas que trabajan aislados de los otros, siendo su comunicación entre los módulos expuesta a través de interfaces que los relacionan, de este modo tanto las pruebas, compilación y dependencias son independientes al resto de subsistemas. 
+
+Dos de los cuatro subsistemas, el frontend web y el backend, estarán empotrados en contenedores docker y desplegados en la nube utilizando los servicios de \textit{Amazon Web Services}, se utilizarán scripts de \textit{GitHub actions} para automatizar la compilación y testing y despliegue en AWS de los mismos, utilizando en el caso de entorno web librerías de testing como Jest y Postman en el caso de la \textit{API REST}. 
+
+Para el subsistema que concierne a la capa de datos, se despliega en un cluster de MongoDB situado en Bélgica siendo este proporcionado por el equipo de \textit{MongoDB Atlas}, donde se van a desarrollar una serie de diversos triggers que lleven un control de la consistencia de datos tanto tras el uso operaciones además se llevará un control periodico para evitar la replicación y la detección de anomalías a través del uso de scripts.
+
+La interfaz móvil llevará por su cuenta la compilación y testing para cada versión funcional de la aplicación, se integrarán test de unidad, funcionalidad y sobrecarga del sistema.
+
+El punto fuerte de utilizar el despliegue basado en contenedores es que el control de dependencias es indiferente al sistema operativo y al entorno de desarrollo de los programadores, de esta forma cada integrante del equipo podrá configurar y personalizar su entorno por cuenta propia. En el fronted móvil al ser independiente se fija una serie de requisitos para el equipo que trabaja en esta parte, se usará la versión Android 6.1 (\textit{Marshmallow}) y se usará Java como lenguaje de programación, el control de dependencias es llevado por el propio Gradel de Android.
+
 \subsubsection{Plan de aseguramiento de calidad}
 
 \subsubsection{Calendario del proyecto y división del trabajo}
