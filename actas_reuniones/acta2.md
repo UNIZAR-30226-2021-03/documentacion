@@ -1,4 +1,4 @@
-# Acta 2
+# Reunión 2
 
 - Fecha: 2 de Marzo de 2021
 - Hora: 12:00
