@@ -5,4 +5,5 @@
 *.toc
 *.log
 *_temp*
-propuesta.pdf
+*-latex/*.pdf
+*.out
