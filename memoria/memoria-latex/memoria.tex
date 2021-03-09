@@ -130,6 +130,68 @@ Finalmente se ejecutarán unos scripts que llevarán a cabo las pruebas necesari
 \subsection{Planes}
 
 \subsubsection{Plan de gestión de configuraciones}
+A continuación se detallan los planes establecidos para la gestión continua de las configuraciones del proyecto.
+
+Para asegurar la correcta comprensión del código y la navegabilidad del mismo se establece una convención de nombrado de archivos, una estructura de directorios y guías de estilo a seguir a los largo de todos los módulos del proyecto.
+
+\underline{→Nombrado de archivos:}
+
+Todos los archivos del proyecto quedarán nombrados con el siguiente formato:
+
+$<A><B><C><D>$
+
+%cAMBIAR FORMATO
+A = Nombre identificativo principal del archivo, el más identificativo.
+B = Conjunto de nombres auxiliares opcionales para mejorar la identificación.
+C= “Subextensión” opcional para marcar el directorio padre y a su vez tipo de función.
+D = Extensión del archivo.
+
+En estos campos solo se permiten cadenas de texto que cumplan la siguiente ER para evitar el uso de caracteres especiales: [a-zA-z]+[0-9]*.
+Se intentará además el uso en la medida de lo posible de nombres anglosajones.
+Todos los nombres comenzarán por una letra mayúscula. (Campos A y B).
+
+Ejemplos: 
+
+Users.controller.js : Nombre de un archivo en subdirectorio controllers.
+
+FeedUsers.css :  Nombre de un archivo css para componente de feed de usuarios.
+\pagebreak
+
+\underline{→ Estructura de directorios:}
+
+Todos los módulos seguirán una estructura de directorios de agrupamiento por tipo de fichero. Es decir, los ficheros quedarán agrupados bajo un directorio padre que indique su uso dentro del módulo o funcionalidad.
+
+Ejemplo de estructura en back-end:
+
+src
+|	app.js	\#App entry point
+|-------- config 	\#Environment variables and configuration related stuff
+|----------> Db.config.js
+|-------- models \#Database models
+|----------> Users.model.js
+|----------> Admins.model.js
+| ...
+
+
+\underline{→ Guías de estilo:}
+
+%REVISAR!!!!
+
+-Estándares de código para desarrollo android: 
+AOSP Java Code Style for Contributors.
+-Estándares de código para desarrollo en React:
+React design principles
+
+Para el control del versionado y actualización del código se utilizarán distintos repositorios de github para los módulos del sistema, es decir, un repositorio de front-end web, de app móvil, de back-end y de documentación del proyecto. A continuación se enumeran los procedimientos a seguir para el uso de estos repositorios.
+
+Dichos repositorios serán privados sólo accesibles por el equipo de desarrollo.
+Se asociará a cada repositorio un conjunto de de “GitHub Actions” para administrar la compilación y puesta en marcha del código.
+Los commits a estos repositorios irán acompañados de un nombre descriptivo de la tarea asociada.
+Los commits podrán hacerse en cualquier momento siempre que se haya probado el código previamente de manera local y ateniéndose al estado de las máquinas de despliegue.
+Se seguirá una filosofía de entrega continua y despliegue continuo.
+Semanalmente se revisarán los commits realizados para evaluar el progreso de las tareas.
+
+%%INCIDENCIAS?????????????¿?¿¿?¿?¿??¿?¿?¿¿?¿¿?¿?¿?¿?¿¿?¿?¿?¿
 
 \subsubsection{Plan de construcción y despliegue del software}
 
