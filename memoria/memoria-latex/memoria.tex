@@ -74,6 +74,11 @@
 
 \section{Introducción}
 
+%%%%%% REVISAR coherencia entre términos como React, Node, AmazonAWS, base de datps/BD
+%% unificar forma de escirbirlo
+%% cursiva o no
+%% mayúsculas o no
+
 \section{Organización del proyecto}
 
 El equipo del proyecto está formado por los 6 integrantes del grupo. 
@@ -83,24 +88,30 @@ Además, se ha designado como \textbf{director del proyecto} a \textbf{Arturo Ca
 sobre el cual recae la gestión de los equipos de trabajo y las responsabilidades de los mismos.
 
 \begin{itemize}
+    \setlength{\itemsep}{0em}
     \item \textbf{Equipo \textit{Backend}}:
     \begin{itemize}
+        \setlength{\itemsep}{0em}
         \item Responsable: Arturo Calvera.
         \item Función: Desarrollo del \textit{backend} del sistema.
         \item Integrantes: Arturo Calvera, Andoni Salcedo.
     \end{itemize}
     \item \textbf{Equipo \textit{Frontend}}:
     \begin{itemize}
+        \setlength{\itemsep}{0em}
         \item Responsable: Javier Vela.
         \item Sub-equipos: El equipo dedicado a la vista del sistema se divide para el desarrollo de las dos interfaces.
         \begin{itemize}
+            \setlength{\itemsep}{0em}
             \item \textbf{Equipo Web}:
             \begin{itemize}
+                \setlength{\itemsep}{0em}
                 \item Función: Desarrollo del \textit{frontend} web del sistema.
                 \item Integrantes: Jorge Bernal, Javier Vela.
             \end{itemize}
         \item \textbf{Equipo Android}:
             \begin{itemize}
+                \setlength{\itemsep}{0em}
                 \item Función: Desarrollo de la aplicación cliente del sistema para dispositivos Android.
                 \item Integrantes: Carlos Bellvis, Jorge Borque.
             \end{itemize}
@@ -180,7 +191,7 @@ Los resultados finales, que contendrán los códigos fuente, \textit{scripts} de
 \subsubsection{Procesos técnicos}
 Para implementar las vistas del sistema se utilizará por una parte Java (Android SDK) para construir el cliente móvil para dispositivos Android 
 y por otra JavaScript (React.JS) para desarrollar el \textit{frontend} web.
-En cuanto al backend, se desarrollará utilizando Node.JS y la framework Express. La base de datos utilizará el SGBD MongoDB.
+En cuanto al backend, se desarrollará utilizando Node.JS y la \textit{framework} Express. La base de datos utilizará el SGBD MongoDB.
 El despliegue del sistema se realizará en un entorno de contenedores Docker desplegado sobre máquinas virtuales en \textit{cloud}.
 Se seguirá una filosofía de entrega y despielgue continuo utilizando \textit{scripts} y \textit{GitHub actions}.
 \subsection{Planes}
@@ -199,7 +210,8 @@ Todos los archivos del proyecto quedarán nombrados con el siguiente formato:
 
 $<A><B><C><D>$
 
-\begin{itemize} % UNORDERED LISTING %
+\begin{itemize}
+    \setlength{\itemsep}{0em} % UNORDERED LISTING %
     \item A = Nombre identificativo principal del archivo, el más identificativo.
     \item B = Conjunto de nombres auxiliares opcionales para mejorar la identificación.
     \item C= “Subextensión” opcional para marcar el directorio padre y a su vez tipo de función.
@@ -241,6 +253,7 @@ src
 Los desarrolladores de código se apoyarán en las siguientes guías de estilo:
 
 \begin{itemize}
+    \setlength{\itemsep}{0em}
     \item Estándares de código para desarrollo android: AOSP Java Code Style for Contributors.
     \item Estándares de código para desarrollo en React: React design principles.
     \item Estándares de código para desarrollo en JavaScript: JavaScript Standard Style.
@@ -300,7 +313,8 @@ del equipo de desarrollo:
 Los desarrolladores del proyecto están alentados a utilizar las siguientes guías en el proceso de diseño, 
 documentación y desarrollo del \textit{software}.
 
-\begin{itemize} % UNORDERED LISTING %
+\begin{itemize}
+    \setlength{\itemsep}{0em} % UNORDERED LISTING %
     \item Principios de diseño de las aplicaciones para dispositivos móviles de Google
     \item \textit{User Interface \& Navigation guide} de Android.
     \item \textit{Google's web fundamentals.}
@@ -434,11 +448,42 @@ pruebas, en el punto 3.2.3 se explica en detalle este aspecto.
 
 \subsection{Diseño del sistema}
 
+
+
 \subsubsection*{Diagramas de módulos}
 
-% Explicar módulos y dependencias
+\begin{figure}[H]
+    \centering
+        \includegraphics[width=0.99\textwidth]{../images/modulos_v1.png}
+    \caption{Diagramas de componentes y conectores.}
+    \label{modulos}
+\end{figure}
+\pagebreak
 
-% Razón de módulos externos
+En el diagrama de módulos en la figura \ref{modulos} se describe las estructuras que el sistema implementa y sus relaciones. Los diferentes paquetes agrupan distintos módulos basándose en su función.
+
+\begin{itemize}
+    \setlength{\itemsep}{0em}
+    \item 'public': las rutas del modelo accesibles públicamente a través de la API.
+    \item 'private': las rutas del modelo que requieren permisos.
+    \item 'models': MongoDB \textit{schemes} que modelan la estructura de la información en la base de datos.
+    \item 'controllers': colección de módulos que interactúan con la base de datos.
+    \item 'middleware': módulos que otorgan funcionalidad variada al sistema.
+    \item 'node modules': módulos importados con NPM que ofrecen funcionalidad específica.
+    \item 'express': \textit{framework} de desarrollo de servidores web para Node.
+    \item 'mongoose': permite la interacción con bases de datos MongoDB.
+    \item 'bcrypt': ofrece funcionalidad de cifrado.
+    \item 'nodemail': ofrece funcionalidad de envío de correos electrónicos.
+    \item 'react-dom': interacción con la vista del navegador web.
+    \item 'axios': permite realizar peticiones HTTP al \textit{backend} de la aplicación.
+    \item 'screens': vistas del servidor web.
+    \item 'services': diferente funcionalidad para la vista de la aplicación.
+    \item 'Android': SDK de Android.
+    \item 'App': diferentes vistas de la aplicación móvil.
+\end{itemize}
+
+Los diferentes módulos externos importados del repositorio de Node o del SDK de Android, ofrecen distinta funcionalidad relativa a las conexiones entre componentes (\textit{e.g. frontend-backend}, \textit{backend}-MongoDB), componentes de vista básicos y seguridad.
+
 
 \subsubsection*{Diagramas de componentes y conectores}
 
@@ -449,14 +494,13 @@ pruebas, en el punto 3.2.3 se explica en detalle este aspecto.
     \label{cyc}
 \end{figure}
 
-En el diagrama de componentes y conectores \ref{cyc} se muestra una visión general del sistema, existen tres componentes principales en la aplicación que se relaciona cada uno con una capa del modelo, estos componentes muestran los elementos de presencia en tiempo de ejecución del sistema.
+En el diagrama de componentes y conectores en la figura \ref{cyc} se muestra una visión general del sistema, existen tres componentes principales en la aplicación que se relaciona cada uno con una capa del modelo, estos componentes muestran los elementos de presencia en tiempo de ejecución del sistema.
 
-El Frontend es el componente de la aplicación con el cual el usuario interactúa con el sistema, la aplicación al ser orientada a varias plataformas usa distintos subcomponentes para darle forma a la aplicación, en concreto ReactJs, se comunica con el resto de la aplicación mediante el conector React Rendering, De la misma forma lo hace la parte de android mediante \textit{Java Virtual Machine}, ambos interaccionan con el resto del sistema usando los puertos que proporcionan las librerías de \textit{Axios} o \textit{Volley}.
+El \textit{frontend} es el componente de la aplicación con el cual el usuario interactúa con el sistema, la aplicación al ser orientada a varias plataformas usa distintos subcomponentes para darle forma a la aplicación, en concreto ReactJs, se comunica con el resto de la aplicación mediante el conector React Rendering, De la misma forma lo hace la parte de Android mediante \textit{Java Virtual Machine}, ambos interaccionan con el resto del sistema usando los puertos que proporcionan las librerías de Axios o Volley.
 
-El conector que relaciona este componente con el componente del BackEnd es el protocolo https a una réplica del servidor.
+El conector que relaciona este componente con el componente del \textit{backend} es el protocolo HTPPS a una réplica del servidor.
 
-La interacción entre los componentes de BackEnd, es en este caso más compleja el puerto que atiende peticiones utiliza express, y se comunica con los otros componentes usando el motor V8 como conector, que compila en tiempo de ejecución todos los módulos de JavaScript de la parte del servidor. El sistema a su vez tiene un servidor mail que se comunica mediante el protocolo SMTP y que usa la librería nodemailer para conectar con gmail. Por último mantendrá una conexión, también usando el protocolo https, con la base de datos que se encontrará replicada en varios cluster y alojada en MongoDB Atlas, se usa mongoose para gestionar la conexión con la \textit{Database}.
-
+La interacción entre los componentes de BackEnd, es en este caso más compleja el puerto que atiende peticiones utiliza Express, y se comunica con los otros componentes usando el motor V8 como conector, que compila en tiempo de ejecución todos los módulos de JavaScript de la parte del servidor. El sistema a su vez tiene un servidor mail que se comunica mediante el protocolo SMTP y que usa la librería Nodemailer para conectar con Gmail. Por último mantendrá una conexión, también usando el protocolo HTTPS, con la base de datos que se encontrará replicada en varios clústers y alojada en MongoDB Atlas, se usa Mongoose para gestionar la conexión con la base de datos.
 % Explicar Interfaces de componentes
 
 % Protocolos de comunicación entre componentes
@@ -470,11 +514,11 @@ La interacción entre los componentes de BackEnd, es en este caso más compleja 
     \label{despliegue}
 \end{figure}
 
-En el diagrama de despliegue \ref{despliegue}, se muestra una vista general del sistema en funcionamiento y cómo está distribuido en la nube, en esta vista se asigna cada componente del sistema a un hardware específico.
+En el diagrama de despliegue de la figura \ref{despliegue}, se muestra una vista general del sistema en funcionamiento y cómo está distribuido en la nube, en esta vista se asigna cada componente del sistema a un hardware específico.
 
-Tanto el servidor web como el servidor restful, se sitúan alojados en los servicios de Amazon AWS y la base de datos se encuentra replicada utilizando MongoDB Atlas.
+Tanto el servidor web como el servidor API, se sitúan alojados en los servicios de Amazon AWS y la base de datos se encuentra replicada utilizando MongoDB Atlas.
 
-se diferencia dos tipos de cliente, el que accede desde un dispositivo móvil y el que accede mediante un protocolo web. El cliente móvil ya tiene compilado el sistema en un dispositivo android por lo que la capa de acceso a la aplicación este solo tendrá que realizar peticiones directamente a la API REST, a diferencia que el cliente que se conecta mediante un protocolo web, que tendrá en primer lugar que obtener el template desde un servidor web para poder realizar peticiones a la API REST.
+Se diferencia dos tipos de cliente, el que accede desde un dispositivo móvil y el que accede mediante un protocolo web. El cliente móvil ya tiene compilado el sistema en un dispositivo android por lo que la capa de acceso a la aplicación este solo tendrá que realizar peticiones directamente a la API REST, a diferencia que el cliente que se conecta mediante un protocolo web, que tendrá en primer lugar que obtener el template desde un servidor web para poder realizar peticiones a la API REST.
 
 El servidor cuando requiera realizar operaciones sobre datos persistentes, opera conectándose a un cluster con una réplica de la base de datos MongoDB.
 
@@ -482,9 +526,7 @@ El servidor cuando requiera realizar operaciones sobre datos persistentes, opera
 
 \subsubsection*{Patrones de diseño y estilos arquitecturales}
 
-
-
-A diferencia de la mayoría de frameworks que usan el patrón arquitectural modelo vista controlador para separar la lógica de la aplicación de la lógica de vistas, ReactJs al ser un framework moderno que ofrece server-side-rendering por lo que no se puede considerar una arquitectura MVC.
+A diferencia de la mayoría de \textit{frameworks} que usan el patrón arquitectural modelo vista controlador para separar la lógica de la aplicación de la lógica de vistas, ReactJs al ser un \textit{framework} moderno que ofrece server-side-rendering por lo que no se puede considerar una arquitectura MVC.
  
 La arquitectura usada \ref{patron} consiste en tres capas con interfaz web, capa de presentación, capa de negocio y capa datos.
 
@@ -504,24 +546,19 @@ La capa de datos es la encargada de almacenar los datos mediante en gestor de ba
 
 \subsubsection*{Tecnologías elegidas}
 
-% Lenguajes de programación
+Se hará uso de lenguajes de programación como JavaScript para la interfaz web (React) y para el modelo (Node). Es la tecnología requeridad por el \textit{stack} de lenguajes para aplicaciones web MERN. Es sencillo, debido a su conocimiento previo, y unifica la tecnología para el desarrollo \textit{backend} y \textit{frontend}.
 
-% NPM
+La aplicación móvil se desarrollará en Java (Android), que permite desarrollo nativo para teléfonos, es ampliamente utilizado y se conoce de proyectos anteriores. Se propuso el uso del entorno React Native, pero se descartó debido a su desconocimiento por parte del grupo.
 
-% componentes a integrar
+El componente la vista de la aplicación se conecta a la API de del modelo para realizar peticiones relativas a la acción del usuario. Esta segunda conecta con la base de datos MongoDB en los servidores Atlas de Mongo. Se prefiere el uso de Atlas frente al despliegue de la base de datos en una máquina virtual debido a su facilidad de administración y la disponibilidad ofrecida. 
 
-% APIs web con las que se conecta
+La base de datos MongoDb es NoSQL y, frente a una base de datos SQL como Oracle, permite más flexibilidad para recoger y persistir información. Además, MongoDB junto a Mongoose, ofrecen facilidad de interacción con JavaScript mediante ficheros JSON.
 
-% Base datos noSQL
+Para la creación de la API web ofrecida por servidor del modelo, se ha optado por seguir la estructura API REST, que es ampliamente utilizada y fácil de implementar con las tecnologías utilizadas. 
 
-% API REST[ful]
+La tecnología Node hace uso de un bucle de eventos el cual permiten la realización de operaciones asíncronas para realizar peticiones en el \textit{backgroun} y recibir respuestas sin necesidad de interrumpir la operativa esperando a esta.
 
-% Operaciones asíncronas 
-
-% Aplicación de móvil nativa frente a tecnologías web
-
-% Seguridad o prestaciones
-
+Se ha optado en utilizar el módulo Bcrypt para cifrar los datos de la aplicación y utilizar el protocolo HTTPS para asegurar las comunicaciones. 
 
 
 \section{Memoria del proyecto}
