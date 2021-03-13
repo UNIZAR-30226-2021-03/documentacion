@@ -4,7 +4,7 @@
 
 - Rutas privadas --> Vali
 - Rutas públicas --> Auth
-- Autentificación ()
+- Autentificación `()
 - Validación (middleware)
 - Email ()
 - Encriptación ()
@@ -34,3 +34,4 @@
 - Login (screens)
 - Perfil de usuario (screens)
 - React-dom
+- services
