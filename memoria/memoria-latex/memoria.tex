@@ -442,15 +442,69 @@ pruebas, en el punto 3.2.3 se explica en detalle este aspecto.
 
 \subsubsection*{Diagramas de componentes y conectores}
 
+\begin{figure}[H]
+    \centering
+        \includegraphics[width=0.99\textwidth]{../images/cyc.png}
+    \caption{Diagramas de componentes y conectores.}
+    \label{cyc}
+\end{figure}
+
+En el diagrama de componentes y conectores \ref{cyc} se muestra una visión general del sistema, existen tres componentes principales en la aplicación que se relaciona cada uno con una capa del modelo, estos componentes muestran los elementos de presencia en tiempo de ejecución del sistema.
+
+El Frontend es el componente de la aplicación con el cual el usuario interactúa con el sistema, la aplicación al ser orientada a varias plataformas usa distintos subcomponentes para darle forma a la aplicación, en concreto ReactJs, se comunica con el resto de la aplicación mediante el conector React Rendering, De la misma forma lo hace la parte de android mediante \textit{Java Virtual Machine}, ambos interaccionan con el resto del sistema usando los puertos que proporcionan las librerías de \textit{Axios} o \textit{Volley}.
+
+El conector que relaciona este componente con el componente del BackEnd es el protocolo https a una réplica del servidor.
+
+La interacción entre los componentes de BackEnd, es en este caso más compleja el puerto que atiende peticiones utiliza express, y se comunica con los otros componentes usando el motor V8 como conector, que compila en tiempo de ejecución todos los módulos de JavaScript de la parte del servidor. El sistema a su vez tiene un servidor mail que se comunica mediante el protocolo SMTP y que usa la librería nodemailer para conectar con gmail. Por último mantendrá una conexión, también usando el protocolo https, con la base de datos que se encontrará replicada en varios cluster y alojada en MongoDB Atlas, se usa mongoose para gestionar la conexión con la \textit{Database}.
+
 % Explicar Interfaces de componentes
 
 % Protocolos de comunicación entre componentes
 
 \subsubsection*{Diagrama de distribución}
 
+\begin{figure}[H]
+    \centering
+        \includegraphics[width=0.99\textwidth]{../images/despliegue.png}
+    \caption{Diagrama de distribución.}
+    \label{despliegue}
+\end{figure}
+
+En el diagrama de despliegue \ref{despliegue}, se muestra una vista general del sistema en funcionamiento y cómo está distribuido en la nube, en esta vista se asigna cada componente del sistema a un hardware específico.
+
+Tanto el servidor web como el servidor restful, se sitúan alojados en los servicios de Amazon AWS y la base de datos se encuentra replicada utilizando MongoDB Atlas.
+
+se diferencia dos tipos de cliente, el que accede desde un dispositivo móvil y el que accede mediante un protocolo web. El cliente móvil ya tiene compilado el sistema en un dispositivo android por lo que la capa de acceso a la aplicación este solo tendrá que realizar peticiones directamente a la API REST, a diferencia que el cliente que se conecta mediante un protocolo web, que tendrá en primer lugar que obtener el template desde un servidor web para poder realizar peticiones a la API REST.
+
+El servidor cuando requiera realizar operaciones sobre datos persistentes, opera conectándose a un cluster con una réplica de la base de datos MongoDB.
+
+\pagebreak
+
 \subsubsection*{Patrones de diseño y estilos arquitecturales}
 
 % Capas de la aplicación
+
+A diferencia de la mayoría de frameworks que usan el patrón arquitectural modelo vista controlador para separar la lógica de la aplicación de la lógica de vistas, ReactJs al ser un framework moderno que ofrece server-side-rendering por lo que no se puede considerar una arquitectura MVC.
+ 
+La arquitectura usada \ref{patron} consiste en tres capas con interfaz web, capa de presentación, capa de negocio y capa datos.
+
+\begin{figure}[H]
+    \centering
+        \includegraphics[width=0.99\textwidth]{../images/patron.jpg}
+    \caption{Diagrama de distribución.}
+    \label{patron}
+\end{figure}
+
+Como se viene diciendo la capa de presentación o capa de usuario es la que muestra el sistema, le comunica y captura información a la capa de negocio, en esta capa se presentan dos tecnologías Android y ReactJs.
+ 
+La capa de negocio es donde se ejecutan las peticiones del usuario y se envían las respuestas de la ejecución, esta capa se comunica con la capa de presentación para atender a las peticiones y con la capa de datos para almacenar o recuperar datos. Para esta capa se utilizará el entorno de ejecución Node.
+ 
+La capa de datos es la encargada de almacenar los datos mediante en gestor de base de datos, en el caso de la aplicación se utiliza la base de datos no relacional MongoDB.
+
+
+
+
+
 
 \subsubsection*{Tecnologías elegidas}
 
