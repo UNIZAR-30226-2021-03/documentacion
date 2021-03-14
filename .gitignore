@@ -5,5 +5,5 @@
 *.toc
 *.log
 *_temp*
-*-latex/*.pdf
+*memoria.pdf
 *.out
