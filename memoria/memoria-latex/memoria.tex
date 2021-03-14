@@ -6,6 +6,7 @@
 \usepackage{graphicx}
 \usepackage{float}
 \usepackage[hidelinks]{hyperref}
+\usepackage{dirtree}
 
 \usepackage[compact]{titlesec}
 \usepackage{geometry}
@@ -46,7 +47,7 @@
     \huge
     Bárbaros Software S.A. (Grupo 3)
 
-    \includegraphics[height=5cm]{../images/logo.jpg}
+    \includegraphics[height=5cm,angle=-45]{../images/llave.png}
 
     \begin{Large}
         Carlos Bellvis, 755452\\
@@ -162,7 +163,7 @@ Destacar que pese a la división de trabajo previa, se intenta trabajar de maner
 de manera que se puedan poner en común y resolver problemas en la medida en que surjan.
 
 En cuanto al registro de las decisiones tomadas en las reuniones, se plasmarán en actas gestionadas 
-por Javier Vela. Respecto al almacenamiento de estas actas se realizará en un directorio remoto en \textit{GitHub}.
+por Javier Vela. El almacenamiento de estas actas se realizará en un directorio remoto en \textit{GitHub}.
 
 Partiendo de la división inicial del grupo en equipos de trabajo detallada en el punto 2, los responsables
 de cada equipo de trabajo se encargarán de monitorizar el avance de sus respectivos módulos, determinar 
@@ -191,9 +192,9 @@ Los resultados finales, que contendrán los códigos fuente, \textit{scripts} de
 \subsubsection{Procesos técnicos}
 Para implementar las vistas del sistema se utilizará por una parte Java (Android SDK) para construir el cliente móvil para dispositivos Android 
 y por otra JavaScript (React.JS) para desarrollar el \textit{frontend} web.
-En cuanto al backend, se desarrollará utilizando Node.JS y la \textit{framework} Express. La base de datos utilizará el SGBD MongoDB.
+En cuanto al \textit{backend}, se desarrollará utilizando Node.JS y la \textit{framework} Express. La base de datos utilizará el SGBD MongoDB.
 El despliegue del sistema se realizará en un entorno de contenedores Docker desplegado sobre máquinas virtuales en \textit{cloud}.
-Se seguirá una filosofía de entrega y despielgue continuo utilizando \textit{scripts} y \textit{GitHub actions}.
+Se seguirá una filosofía de entrega y despliegue continuo utilizando \textit{scripts} y \textit{GitHub actions}.
 \subsection{Planes}
 
 \subsubsection{Plan de gestión de configuraciones}
@@ -201,7 +202,7 @@ A continuación se detallan los planes establecidos para la gestión continua de
 proyecto.
 
 Para asegurar la correcta comprensión del código y la navegabilidad del mismo se establece una convención 
-de nombrado de archivos, una estructura de directorios y guías de estilo a seguir a los largo de todos los 
+de nombrado de archivos, una estructura de directorios y guías de estilo a seguir a lo largo de todos los 
 módulos del proyecto.
 
 \textbf{Nombrado de archivos}
@@ -237,16 +238,17 @@ Es decir, los ficheros quedarán agrupados bajo un directorio padre que indique 
 
 Ejemplo de estructura de directorios en back-end:
 
-%%Alguien puede hacerme esto para que salga bien en latex ?? hahha
-src
-|	app.js	\#App entry point
-|-------- config 	\#Environment variables and configuration related stuff
-|----------> Db.config.js
-|-------- models \#Database models
-|----------> Users.model.js
-|----------> Admins.model.js
-| ...
 
+
+\dirtree{%
+.1 src.
+.2 app.js.
+.2 config.
+.3 Db.config.js.
+.2 models.
+.3 Users.model.js.
+.3 Admins.model.js.
+}
 
 \textbf{Guías de estilo}
 
@@ -259,7 +261,7 @@ Los desarrolladores de código se apoyarán en las siguientes guías de estilo:
     \item Estándares de código para desarrollo en JavaScript: JavaScript Standard Style.
 \end{itemize}
 
-Para el control del versionado y actualización del código se utilizarán distintos repositorios de github 
+Para el control del versionado y actualización del código se utilizarán distintos repositorios de \textit{GitHub} 
 para los componentes del sistema, es decir, un repositorio de \textit{frontend} web, de app móvil, de \textit{backend} 
 y de documentación del proyecto. A continuación se enumeran los procedimientos a seguir para el uso de estos repositorios.
 
@@ -278,29 +280,30 @@ El sistema se fundamenta en el desarrollo de cuatro subsistemas que trabajan ais
 siendo su comunicación entre los módulos expuesta a través de interfaces que los relacionan, de este modo 
 tanto las pruebas, compilación y dependencias son independientes al resto de subsistemas. 
 
-Dos de los cuatro subsistemas, el frontend web y el backend, estarán empotrados en contenedores docker y 
-desplegados en la nube utilizando los servicios de \textit{Amazon Web Services}, se utilizarán scripts de 
-\textit{GitHub actions} para automatizar la compilación y testing y despliegue en AWS de los mismos, 
+Dos de los cuatro subsistemas, el \textit{frontend web} y el \textit{backend}, estarán empotrados en contenedores docker y 
+desplegados en la nube utilizando los servicios de \textit{Amazon Web Services}, se utilizarán \textit{scripts} de 
+\textit{GitHub actions} para automatizar la compilación y \textit{testing} y despliegue en AWS de los mismos, 
 utilizando en el caso de entorno web librerías de testing como \textit{Jest} y \textit{Postman} en el caso de la \textit{API REST}. 
+
 
 Para el subsistema que concierne a la capa de datos, se despliega en un cluster de MongoDB situado en 
 Bélgica siendo este proporcionado por el equipo de \textit{MongoDB Atlas}, donde se van a desarrollar una 
 serie de diversos triggers que lleven un control de la consistencia de datos tanto tras el uso operaciones 
-además se llevará un control periodico para evitar la replicación y la detección de anomalías a través del uso de scripts.
+además se llevará un control periódico para evitar la replicación y la detección de anomalías a través del uso de \textit{scripts}.
 
-La interfaz móvil llevará por su cuenta la compilación y testing para cada versión funcional de la aplicación, 
+La interfaz móvil llevará por su cuenta la compilación y \textit{testing} para cada versión funcional de la aplicación, 
 se integrarán test de unidad, funcionalidad y sobrecarga del sistema.
 
 El punto fuerte de utilizar el despliegue basado en contenedores es que el control de dependencias es 
 indiferente al sistema operativo y al entorno de desarrollo de los programadores, de esta forma cada integrante del 
 equipo podrá configurar y personalizar su entorno por cuenta propia. 
-En el fronted móvil al ser independiente se fija una serie de requisitos para el equipo que trabaja en esta parte, 
+En el \textit{frontend} móvil al ser independiente se fija una serie de requisitos para el equipo que trabaja en esta parte, 
 se usará la versión Android 6.1 (\textit{Marshmallow}) y se usará Java como lenguaje de programación, el control de 
 dependencias es llevado por el propio \textit{Gradel} de Android.
 
-La configuración base de los subsistema será la siguiente, las interfaces del frontend web y el backend están 
+La configuración base de los subsistemas será la siguiente, las interfaces del \textit{frontend web} y el \textit{backend} están 
 expuestas en el puerto 80, el modelo de capa de datos proporciona una uri externa con la que acceder a la base de 
-datos. las variables de usuarios y contraseñas serán almacenadas como variables de entorno para evitar ponerlas como 
+datos. Las variables de usuarios y contraseñas serán almacenadas como variables de entorno para evitar ponerlas como 
 texto plano en el código.
 
 \subsubsection{Plan de aseguramiento de calidad}
@@ -425,24 +428,24 @@ pruebas, en el punto 3.2.3 se explica en detalle este aspecto.
         RF-1.4 & El sistema registra la fecha de creación y actualización de la contraseña. \\ \hline
         RF-1.5 & El sistema permite almacenar una descripción de texto asociada a la contraseña. \\ \hline
         RF-1.6 & El sistema permite almacenar ficheros de imagen (jpeg, png, ...) y ficheros PDF, asociados a la contraseña. \\ \hline
-        RF - & El sistema asocia cada contraseña a una categoría del usuario\\ \hline
-        RF - & El usuario puede crear, renombrar y eliminar categorías \\ \hline
+        RF-1.7 & El sistema asocia cada contraseña a una categoría del usuario\\ \hline
+        RF-1.8 & El usuario puede crear, renombrar y eliminar categorías \\ \hline
         RF-2 & El sistema permite ordenar las contraseñas por categorías, fecha de creación y actualización. \\ \hline
-        RF- & El sistema permite la visualización de las entradas de contraseña y todos sus datos y ficheros asociados.\\ \hline
+        RF-2.1 & El sistema permite la visualización de las entradas de contraseña y todos sus datos y ficheros asociados.\\ \hline
         RF-3 & El sistema permite realizar una búsqueda entre las contraseñas por categoría, nombre de usuario.  \\ \hline
         RF-4 & El sistema permite generación de contraseñas pseudoaleatorias. \\ \hline
         RF-4.1 & El sistema permite seleccionar la longitud de la contraseña a generar.\\ \hline
         RF-4.2 & El sistema permite seleccionar el conjunto de caracteres que compone la contraseña a generar.\\ \hline
         RF-4.3 & El sistema mostrará el grado de robustez de la contraseña al ser generada. \\ \hline
-        RF- & El usuario inicia sesión al sistema mediante su correo electrónico y la contraseña maestra. Únicamente podrá acceder con esta contraseña, que no se puede recuperar.\\ \hline
+        RF-5 & El usuario inicia sesión al sistema mediante su correo electrónico y la contraseña maestra. Únicamente podrá acceder con esta contraseña, que no se puede recuperar.\\ \hline
         RF-6 & El sistema requiere 2FA para iniciar sesión desde un dispositivo nuevo, distinto a los utilizados con anterioridad. \\ \hline
-        RF- & El sistema permite el registro de un usuario con: correo electrónico, contraseña maestra, nombre, apellidos,... \textbf{MAS??}\\ \hline %% // TODO más??
-        RF-7.1 & El registro de sesión se deberá confirmar, para verificar la identidad, mediante un correo al usuario registrado. \\ \hline
-        RF- & La interfaz web permite copiar al cortapapeles del dispositivo la contraseña de una entrada. \textbf{sólo Web??}\\ \hline %% // TODO solo al web??
+        RF-6.1 & El sistema permite el registro de un usuario con: correo electrónico, contraseña maestra, nombre, apellidos.\\ \hline 
+        RF-6.2 & El registro de sesión se deberá confirmar, para verificar la identidad, mediante un correo al usuario registrado. \\ \hline
+        RF-7 & La interfaz de usuario permite copiar al cortapapeles del dispositivo la contraseña de una entrada. \\ \hline 
         RF-8 & El sistema permite la modificación de todos los campos de las contraseñas. \\ \hline
         RF-9 & Se accede al sistema mediante una aplicación móvil. \\ \hline
         RF-10 & Se accede al sistema mediante una interfaz web. \\ \hline
-        RF-10 & El sistema ofrece un \textit{plug-in} para navegador web. \\ \hline
+        RF-11 & El sistema ofrece un \textit{plug-in} para navegador web. \\ \hline
     \end{tabular}
 \end{table}
 
@@ -489,7 +492,7 @@ Los diferentes módulos externos importados del repositorio de Node o del SDK de
 
 \begin{figure}[H]
     \centering
-        \includegraphics[width=0.99\textwidth]{../images/cyc.png}
+        \includegraphics[width=0.90\textwidth]{../images/cyc.png}
     \caption{Diagramas de componentes y conectores.}
     \label{cyc}
 \end{figure}
@@ -498,9 +501,9 @@ En el diagrama de componentes y conectores en la figura \ref{cyc} se muestra una
 
 El \textit{frontend} es el componente de la aplicación con el cual el usuario interactúa con el sistema, la aplicación al ser orientada a varias plataformas usa distintos subcomponentes para darle forma a la aplicación, en concreto ReactJs, se comunica con el resto de la aplicación mediante el conector React Rendering, De la misma forma lo hace la parte de Android mediante \textit{Java Virtual Machine}, ambos interaccionan con el resto del sistema usando los puertos que proporcionan las librerías de Axios o Volley.
 
-El conector que relaciona este componente con el componente del \textit{backend} es el protocolo HTPPS a una réplica del servidor.
+El conector que relaciona este componente con el componente del \textit{backend} es el protocolo HTTPS a una réplica del servidor.
 
-La interacción entre los componentes de BackEnd, es en este caso más compleja el puerto que atiende peticiones utiliza Express, y se comunica con los otros componentes usando el motor V8 como conector, que compila en tiempo de ejecución todos los módulos de JavaScript de la parte del servidor. El sistema a su vez tiene un servidor mail que se comunica mediante el protocolo SMTP y que usa la librería Nodemailer para conectar con Gmail. Por último mantendrá una conexión, también usando el protocolo HTTPS, con la base de datos que se encontrará replicada en varios clústers y alojada en MongoDB Atlas, se usa Mongoose para gestionar la conexión con la base de datos.
+La interacción entre los componentes de \textit{backend}, es en este caso más compleja el puerto que atiende peticiones utiliza Express, y se comunica con los otros componentes usando el motor V8 como conector, que compila en tiempo de ejecución todos los módulos de JavaScript de la parte del servidor. El sistema a su vez tiene un servidor mail que se comunica mediante el protocolo SMTP y que usa la librería Nodemailer para conectar con Gmail. Por último mantendrá una conexión, también usando el protocolo HTTPS, con la base de datos que se encontrará replicada en varios clústers y alojada en \textit{MongoDB Atlas}, se usa Mongoose para gestionar la conexión con la base de datos.
 % Explicar Interfaces de componentes
 
 % Protocolos de comunicación entre componentes
@@ -552,11 +555,13 @@ La aplicación móvil se desarrollará en Java (Android), que permite desarrollo
 
 El componente la vista de la aplicación se conecta a la API de del modelo para realizar peticiones relativas a la acción del usuario. Esta segunda conecta con la base de datos MongoDB en los servidores Atlas de Mongo. Se prefiere el uso de Atlas frente al despliegue de la base de datos en una máquina virtual debido a su facilidad de administración y la disponibilidad ofrecida. 
 
+\pagebreak
+
 La base de datos MongoDb es NoSQL y, frente a una base de datos SQL como Oracle, permite más flexibilidad para recoger y persistir información. Además, MongoDB junto a Mongoose, ofrecen facilidad de interacción con JavaScript mediante ficheros JSON.
 
 Para la creación de la API web ofrecida por servidor del modelo, se ha optado por seguir la estructura API REST, que es ampliamente utilizada y fácil de implementar con las tecnologías utilizadas. 
 
-La tecnología Node hace uso de un bucle de eventos el cual permiten la realización de operaciones asíncronas para realizar peticiones en el \textit{backgroun} y recibir respuestas sin necesidad de interrumpir la operativa esperando a esta.
+La tecnología Node hace uso de un bucle de eventos el cual permiten la realización de operaciones asíncronas para realizar peticiones en el \textit{background} y recibir respuestas sin necesidad de interrumpir la operativa esperando a esta.
 
 Se ha optado en utilizar el módulo Bcrypt para cifrar los datos de la aplicación y utilizar el protocolo HTTPS para asegurar las comunicaciones. 
 
