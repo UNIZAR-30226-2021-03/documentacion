@@ -45,6 +45,7 @@
   - Profundidad de especificación de las tareas:
     - Si son las mismas personas, no hace falta dividirlo
     - Tiene que corresponder a la organización
+    - Asignar responsables a las tareas (El equipo de desarrollo encargado)
 - **Requisitos**:
   - Comentarios
   - Terminología
