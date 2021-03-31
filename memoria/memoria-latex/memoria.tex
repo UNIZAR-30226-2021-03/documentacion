@@ -127,22 +127,23 @@ El equipo del proyecto está formado por los 6 integrantes del grupo.  Para divi
 
 \textbf{Pi.4} Formación y documentación inicial.
 
+\pagebreak
+
 \subsubsection{Procesos de ejecución y control}
 
-Las comunicaciones entre los miembros del grupo de trabajo se realizarán principalmente a través de la herramienta de comunicación Whatsapp, mediante la cual se concretan los horarios de trabajo y se informa acerca de actualizaciones puntuales en las tareas asignadas a cada miembro para que todo el equipo quede informado de cómo avanzan los distintos componentes del trabajo. Además, las reuniones semanales de puesta en común del trabajo se realizarán utilizando la herramienta de videoconferencia Google Meet. Esta última será el principal medio de comunicación del grupo. Destacar que pese a la división de trabajo previa, se intenta trabajar de manera conjunta por videoconferencia, de manera que se puedan poner en común y resolver problemas en la medida en que surjan.
+\textbf{Pi.1} Comunicación y concreción de los horarios de trabajo via \textit{Whatsapp}.
 
-En cuanto al registro de las decisiones tomadas en las reuniones, se plasmarán en actas gestionadas por Javier Vela. El almacenamiento de estas actas se realizará en un directorio remoto en GitHub.
+\textbf{Pi.2} Reunión semanal de puesta en común via \textit{Google Meet} en la cual estarán presentes todos los miembros del grupo.
 
-Partiendo de la división inicial del grupo en equipos de trabajo detallada en el punto 2, los responsables de cada equipo de trabajo se encargarán de monitorizar el avance de sus respectivos módulos, determinar las tareas a realizar, asignar dichas tareas a los desarrolladores y marcar límites temporales y prioridades para cada tarea. En cuanto al trabajo de documentación de los avances sobre el código, todos los desarrolladores serán responsables de registrar los mismos en las \textit{wikis} de GitHub habilitadas para ello en cada repositorio de código. Así mismo, los desarrolladores tendrán que rellenar una tabla de control de esfuerzos para registrar su trabajo y cumplir con el resto de planes especificados más adelante.
+\textbf{Pi.3} Registro de las decisiones tomadas en las reuniones semanales por Javier Vela en actas almacenadas en \textit{GitHub}.
 
-De la resolución de disputas se encargará el miembro Jorge Bernal, quien actuará como mediador cuando surjan conflictos en cualquier ámbito del desarrollo del proyecto, pudiendo acudir a este en cualquier momento si se necesitase de su ayuda.
-%% IGUAL SOBRA ?? relativas a la implementación de las diferentes partes del trabajo, ya bien sean de código o completar documentación. Resaltar que puesto que somos un grupo muy compenetrado, la labor de gestionar el equipo no es realmente complicada. El éxito de nuestro proyecto se basa en la paciencia, el respeto por los compañeros de equipo y la alta implicación por querer aprender acerca de aspectos que no dominamos.
+\textbf{Pi.4} Semanalmente monitorización del avance de módulos, determinación de tareas a realizar, asignación de tareas a desarrolladores y marcaje de límites temporales y prioridades de cada tarea.
 
-Respecto a la monitorización y control del progreso del proyecto, todas las semanas se realizará una reunión conjunta de control en una hora y día fijadas a la cual asistirán todos los miembros del grupo para exponer los avances realizados durante la semana y poder determinarse el estado del proyecto y las siguientes tareas a desarrollar. Así mismo, tal y como se detalla en el punto \ref{sec:calidad}, existen mecanismos para asegurar la calidad del producto y detectar posibles de rendimiento en el completado de las tareas.
+\textbf{Pi.5} Registrar código en las \textit{Wikis} de \textit{GitHub}.
 
-%%Centrándonos más en la parte de monitorización y estado del proyecto, la gestión de estos aspectos se podría decir que es semanal, puesto que va sincronizada con las reuniones semanales que, decidiendo por mayoría, quedamos en que tuviesen lugar todos los martes de 12:00 a 14:00. De este modo, estas dos horas nos sirven para poner encima de la mesa todo el trabajo realizado durante la semana, de tal manera que todos los miembros del grupo nos enteramos de como van avanzando las diferentes partes del proyecto y, en función del plan de trabajo a completar establecido la semana anterior, se toman decisiones del tiempo a invertir para terminar el trabajo atrasado. Por otra parte, fijándonos en la carga de trabajo propuesta para la semana anterior y el porcentaje del mismo que hemos completado, proponemos un plan de trabajo a completar para el martes de la semana siguiente. Estimamos el poder completar cada semana un 10\% del trabajo total.
+\textbf{Pi.6} Desarrolladores rellenarán una tabla de control de esfuerzos para registrar su trabajo.
 
-La entrega de resultados se hará de manera continua de tal forma que el cliente pueda ir viendo el progreso del proyecto. El equipo se compromete a entregar los resultados del mismo en los plazos preestablecidos. Los resultados finales, que contendrán los códigos fuente, \textit{scripts} de compilación y despliegue, etc. también serán entregados al cliente.
+\textbf{Pi.7} La entrega de resultados se realizará de manera continua.
 
 \subsubsection{Procesos técnicos}
 Para implementar las vistas del sistema se utilizará por una parte Java (Android SDK) para construir el cliente móvil para dispositivos Android y por otra JavaScript (React.JS) para desarrollar el \textit{frontend} web. En cuanto al \textit{backend}, se desarrollará utilizando Node.JS y la \textit{framework} Express. La base de datos utilizará el SGBD MongoDB. El despliegue del sistema se realizará en un entorno de contenedores Docker desplegado sobre máquinas virtuales en \textit{cloud}. Se seguirá una filosofía de entrega y despliegue continuo utilizando \textit{scripts} y GitHub Actions.
@@ -459,22 +460,36 @@ La tecnología Node hace uso de un bucle de eventos el cual permiten la realizac
 
 Se ha optado en utilizar el módulo Bcrypt para cifrar los datos de la aplicación y utilizar el protocolo HTTPS para asegurar las comunicaciones. 
 
+\pagebreak
 
 \section{Memoria del proyecto}
 
 \subsection{Inicio del proyecto}
 
-En la identificación y asignación de recursos a utilizar, se ha decidido en base a los conocimientos tecnológicos de cada integrante del grupo y el grado de familiarización con las tecnologías . 
+En la identificación y asignación de recursos a utilizar, se ha decidido en base a los conocimientos tecnológicos de cada integrante del grupo y el grado de familiarización con las tecnologías. 
 
 Respecto a los servidores en \textit{cloud} a utilizar para el despliegue del sistema. El criterio de elección se ha basado en el estudio del impacto a nivel global de la empresa, es decir, grado de utilización en el mundo empresarial y la cantidad de servicios ofrecidos gratuitamente. Finalmente, se decide crear una cuenta en AWS, siendo así Amazon el proveedor de \textit{cloud} para el proyecto.
 
-\pagebreak
 En relación con la base de datos, se ha decidido usar una base no relacional debido al grado de flexibilidad de modelo de datos que ofrece frente al modelo típico relacional. Como SGBD se ha escogido MongoDB. Se ha creado una cuenta en MongoDB Atlas el cual permite crear una base de datos remota accesible
 por el sistema.
 
 En cuanto a la formación inicial de los integrantes, se han tenido en cuenta en el reparto de responsabilidades los conocimientos de los desarrolladores, sin embargo, todos los desarrolladores dedicarán tiempo de manera individual en autoformación y documentación sobre las tecnologías a usar en el desarrollo del sistema. Además, todos los integrantes del grupo se han comprometido a formar a sus compañeros en las áreas que conozcan a medida que surjan dudas durante el desarrollo del sistema.
 
 \subsection{Ejecución y control del proyecto}
+
+Las comunicaciones entre los miembros del grupo de trabajo se realizarán principalmente a través de la herramienta de comunicación Whatsapp, mediante la cual se concretan los horarios de trabajo y se informa acerca de actualizaciones puntuales en las tareas asignadas a cada miembro para que todo el equipo quede informado de cómo avanzan los distintos componentes del trabajo. Además, las reuniones semanales de puesta en común del trabajo se realizarán utilizando la herramienta de videoconferencia Google Meet. Esta última será el principal medio de comunicación del grupo. Destacar que pese a la división de trabajo previo, se intenta trabajar de manera conjunta por videoconferencia, de manera que se puedan poner en común y resolver problemas en la medida en que surjan.
+
+En cuanto al registro de las decisiones tomadas en las reuniones, se plasmarán en actas gestionadas por Javier Vela. El almacenamiento de estas actas se realizará en un directorio remoto en GitHub.
+
+Partiendo de la división inicial del grupo en equipos de trabajo detallada en el punto 2, los responsables de cada equipo de trabajo se encargarán de monitorizar el avance de sus respectivos módulos, determinar las tareas a realizar, asignar dichas tareas a los desarrolladores y marcar límites temporales y prioridades para cada tarea. En cuanto al trabajo de documentación de los avances sobre el código, todos los desarrolladores serán responsables de registrar los mismos en las \textit{wikis} de GitHub habilitadas para ello en cada repositorio de código. Así mismo, los desarrolladores tendrán que rellenar una tabla de control de esfuerzos para registrar su trabajo y cumplir con el resto de planes especificados más adelante.
+
+De la resolución de disputas se encargará el miembro Jorge Bernal, quien actuará como mediador cuando surjan conflictos en cualquier ámbito del desarrollo del proyecto, pudiendo acudir a este en cualquier momento si se necesitase de su ayuda.
+
+\pagebreak
+
+Respecto a la monitorización y control del progreso del proyecto, todas las semanas se realizará una reunión conjunta de control en una hora y día fijadas a la cual asistirán todos los miembros del grupo para exponer los avances realizados durante la semana y poder determinarse el estado del proyecto y las siguientes tareas a desarrollar. Así mismo, tal y como se detalla en el punto \ref{sec:calidad}, existen mecanismos para asegurar la calidad del producto y detectar posibles de rendimiento en el completado de las tareas.
+
+La entrega de resultados se hará de manera continua de forma que el cliente pueda ir viendo el progreso del proyecto. El equipo se compromete a entregar los resultados del mismo en los plazos preestablecidos. Los resultados finales, que contendrán los códigos fuente, \textit{scripts} de compilación y despliegue, etc. también serán entregados al cliente.
 
 \subsection{Cierre del proyecto}
 
