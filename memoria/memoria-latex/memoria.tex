@@ -16,7 +16,7 @@
     left=30mm, % entre 25-35
     right=30mm, % entre 25-35
     top=30mm, % no más de 30
-    bottom=30mm, % no más de 30
+    bottom=25mm, % no más de 30
 }
 
 \usepackage{fancyhdr}
@@ -82,6 +82,11 @@ El equipo del proyecto está formado por los 6 integrantes del grupo.  Para divi
 
 \begin{itemize}
     \setlength{\itemsep}{0em}
+    \item \textbf{Director del proyecto}: Arturo Calvera
+    \begin{itemize}
+        \setlength{\itemsep}{0em}
+        \item Función: Planificación y organización del equipo. Responsable de que se cumplan las tareas designadas.
+    \end{itemize}
     \item \textbf{Equipo \textit{Backend}}:
     \begin{itemize}
         \setlength{\itemsep}{0em}
@@ -102,7 +107,7 @@ El equipo del proyecto está formado por los 6 integrantes del grupo.  Para divi
                 \item Función: Desarrollo del \textit{frontend} web del sistema.
                 \item Integrantes: Jorge Bernal, Javier Vela.
             \end{itemize}
-        \item \textbf{Equipo Android}:
+            \item \textbf{Equipo Android}:
             \begin{itemize}
                 \setlength{\itemsep}{0em}
                 \item Función: Desarrollo de la aplicación cliente del sistema para dispositivos Android.
@@ -110,8 +115,25 @@ El equipo del proyecto está formado por los 6 integrantes del grupo.  Para divi
             \end{itemize}
         \end{itemize}
     \end{itemize}
+    \item \textbf{Aseguramiento de Calidad}: Andoni Salcedo
+    \begin{itemize}
+        \setlength{\itemsep}{0em}
+        \item Función: Llevar a cabo los procesos especificados en sección \ref{sec:calidad} para el aseguramiento de la calidad del producto final.
+    \end{itemize}
+    \item \textbf{Transcripción de reuniones}: Javier Vela
+    \begin{itemize}
+        \setlength{\itemsep}{0em}
+        \item Función: Registrar en actas (ficheros de texto) las decisiones y planteamientos propuestos en las reuniones del equipo. Se aplica para aquellas reuniones tanto con o sin el profesor asignado.
+    \end{itemize}
+    \item \textbf{Resolución de Conflictos}: Jorge Bernal
+    \begin{itemize}
+        \setlength{\itemsep}{0em}
+        \item Función: Resolución de disputas. Actuará como mediador si surgen conflictos en cualquier ámbito del desarrollo del proyecto, pudiendo acudir a él, si se necesitase de su ayuda.
+    \end{itemize}
     \item Se contempla la posibilidad de modificar dicha división en equipos para adaptarse a las necesidades que surjan durante el desarrollo del proyecto.
 \end{itemize}
+
+\pagebreak
 
 \section{Plan de gestión del proyecto}
 
@@ -127,15 +149,13 @@ El equipo del proyecto está formado por los 6 integrantes del grupo.  Para divi
 
 \textbf{Pi.4} Formación y documentación inicial.
 
-\pagebreak
-
 \subsubsection{Procesos de ejecución y control}
 
 \textbf{Pi.1} Comunicación y concreción de los horarios de trabajo via \textit{Whatsapp}.
 
 \textbf{Pi.2} Reunión semanal de puesta en común via \textit{Google Meet} en la cual estarán presentes todos los miembros del grupo.
 
-\textbf{Pi.3} Registro de las decisiones tomadas en las reuniones semanales por Javier Vela en actas almacenadas en \textit{GitHub}.
+\textbf{Pi.3} Registro de las decisiones tomadas en las reuniones semanales en actas almacenadas en \textit{GitHub}.
 
 \textbf{Pi.4} Semanalmente monitorización del avance de módulos, determinación de tareas a realizar, asignación de tareas a desarrolladores y marcaje de límites temporales y prioridades de cada tarea.
 
@@ -216,14 +236,13 @@ El sistema se fundamenta en el desarrollo de cuatro subsistemas que trabajan ais
  
 Dos de los cuatro subsistemas, el \textit{frontend web} y el \textit{backend}, estarán empotrados en contenedores Docker y desplegados en la nube utilizando los servicios de Amazon Web Services, se utilizarán \textit{scripts} de GitHub Actions para automatizar la compilación y \textit{testing} y despliegue en AWS de los mismos, utilizando en el caso de entorno web librerías de \textit{testing} como Jest y Postman en el caso de la API REST. 
 
-
 Para el subsistema que concierne a la capa de datos, se despliega en un clúster de MongoDB situado en Bélgica siendo este proporcionado por el equipo de \textit{MongoDB Atlas}, donde se van a desarrollar una serie de diversos \textit{triggers} que lleven un control de la consistencia de datos tanto tras el uso operaciones además se llevará un control periódico para evitar la replicación y la detección de anomalías a través del uso de \textit{scripts}.
 
 La interfaz móvil llevará por su cuenta la compilación y \textit{testing} para cada versión funcional de la aplicación, se integrarán test de unidad, funcionalidad y sobrecarga del sistema.
 
-El punto fuerte de utilizar el despliegue basado en contenedores es que el control de dependencias es indiferente al sistema operativo y al entorno de desarrollo de los programadores, de esta forma cada integrante del equipo podrá configurar y personalizar su entorno por cuenta propia. En el \textit{frontend} móvil al ser independiente se fija una serie de requisitos para el equipo que trabaja en esta parte, se usará la versión Android 6.1 (\textit{Marshmallow}) y se usará Java como lenguaje de programación, el control de dependencias es llevado por el propio Gradle de Android.
+El punto fuerte de utilizar el despliegue basado en contenedores es que el control de dependencias es indiferente al sistema operativo y al entorno de desarrollo de los programadores, de esta forma cada integrante del equipo podrá configurar y personalizar su entorno por cuenta propia. En el \textit{frontend} móvil al ser independiente se fija una serie de requisitos para el equipo que trabaja en esta parte, se usará la versión Android 6.1 (\textit{Marshmallow}) y se usará Java como lenguaje de programación, el control de dependencias aplicación para navegadores web Google Chrome (versión 89) y Firefox (versión 87) por el propio Gradle de Android.
 
-La configuración base de los subsistemas será la siguiente, las interfaces del \textit{frontend web} y el \textit{backend} están expuestas en el puerto 80, el modelo de capa de datos proporciona una URI externa con la que acceder a la base de datos. Las variables de usuarios y contraseñas serán almacenadas como variables de entorno para evitar ponerlas como texto plano en el código.
+el navegador Google Chrome  base de los subsistemas será la siguiente, las interfaces del \textit{frontend web} y el \textit{backend} están expuestas en el puerto 80, el modelo de capa de datos proporciona una URI externa con la que acceder a la base de datos. Las variables de usuarios y contraseñas serán almacenadas como variables de entorno para evitar ponerlas como texto plano en el código.
 
 \subsubsection{Plan de aseguramiento de calidad} \label{sec:calidad}
 
@@ -305,7 +324,6 @@ Módulo de gestión de \textit{sign-ups} de usuarios, módulo de gestión de log
         \includegraphics[height=0.18\textheight]{../images/diag-gantt-2.png}
     \label{gantt-2}
 \end{figure}
-\pagebreak
 
 \section{Análisis y diseño del sistema}
 
@@ -316,31 +334,33 @@ Módulo de gestión de \textit{sign-ups} de usuarios, módulo de gestión de log
     \begin{tabular}{| c | p{30em} |}
     \hline
         Código &  Descripción  \\ \hline
-        RF-1 & El sistema permite almacenar contraseñas. \\ \hline
+        RF-1 & El sistema permite almacenar y visualizar contraseñas. \\ \hline
         RF-1.1 & El sistema permite almacenar pares que constan de nombre de usuario y contraseña.  \\ \hline
         RF-1.2 & Las entradas de contraseñas tienen un nombre asociado. \\ \hline
         RF-1.3 & El sistema permite asociar a las contraseñas una URL del sitio web al que corresponden. \\ \hline
         RF-1.4 & El sistema registra la fecha de creación y actualización de la contraseña. \\ \hline
         RF-1.5 & El sistema permite almacenar una descripción de texto asociada a la contraseña. \\ \hline
-        RF-1.6 & El sistema permite almacenar ficheros de imagen (jpeg, png, ...) y ficheros PDF, asociados a la contraseña. \\ \hline
-        RF-1.7 & El sistema asocia cada contraseña a una categoría del usuario\\ \hline
-        RF-1.8 & El usuario puede crear, renombrar y eliminar categorías \\ \hline
-        RF-2 & El sistema permite ordenar las contraseñas por categorías, fecha de creación y actualización. \\ \hline
-        RF-2.1 & El sistema permite la visualización de las entradas de contraseña y todos sus datos y ficheros asociados.\\ \hline
-        RF-3 & El sistema permite realizar una búsqueda entre las contraseñas por categoría, nombre de usuario.  \\ \hline
+        RF-1.6 & El sistema permite almacenar ficheros de imagen (jpg, png) y ficheros PDF, asociados a la contraseña. \\ \hline
+        RF-1.7 & El sistema permite la creación de contraseñas y la modificación de todos los campos anteriores. \\ \hline
+        RF-2 & El sistema muestra las categorías gestionadas por el usuario. La categoría se define como un directorio donde el usuario almacena contraseñas. Cada contraseña pertenece a una única categoría.\\ \hline
+        RF-2.1 & El usuario puede crear, renombrar y eliminar categorías \\ \hline
+        RF-3 & El sistema permite visualizar las contraseñas almacenadas\\ \hline
+        RF-3.1 & El sistema muestra las contraseñas asociadas a la categoría seleccionada por el usuario. \\ \hline
+        RF-3.2 & El sistema muestra los datos y ficheros asociados a la contraseña seleccionada. \\ \hline
+        RF-3.3 & El sistema permite ordenar las contraseñas de una categoría por fecha de actualización, creación o nombre. \\ \hline
+        RF-3.4 & El sistema permite realizar una búsqueda entre las contraseñas por categoría, nombre de contraseña y nombre de usuario.  \\ \hline
         RF-4 & El sistema permite generación de contraseñas pseudoaleatorias. \\ \hline
         RF-4.1 & El sistema permite seleccionar la longitud de la contraseña a generar.\\ \hline
         RF-4.2 & El sistema permite seleccionar el conjunto de caracteres que compone la contraseña a generar.\\ \hline
-        RF-4.3 & El sistema mostrará el grado de robustez de la contraseña al ser generada. \\ \hline
+        RF-4.3 & El sistema muestra el grado de robustez (entropía) de la contraseña al ser generada. La entropía($E$) se calcula: $E=n\log_2m$. Donde $n$ es la longitud y $m$ el número de carácteres de la población usada.\\ \hline
         RF-5 & El usuario inicia sesión al sistema mediante su correo electrónico y la contraseña maestra. Únicamente podrá acceder con esta contraseña, que no se puede recuperar.\\ \hline
         RF-6 & El sistema requiere 2FA para iniciar sesión desde un dispositivo nuevo, distinto a los utilizados con anterioridad. \\ \hline
-        RF-6.1 & El sistema permite el registro de un usuario con: correo electrónico, contraseña maestra, nombre, apellidos.\\ \hline 
+        RF-6.1 & El sistema permite el registro de un usuario con: correo electrónico, contraseña maestra y un apodo.\\ \hline 
         RF-6.2 & El registro de sesión se deberá confirmar, para verificar la identidad, mediante un correo al usuario registrado. \\ \hline
-        RF-7 & La interfaz de usuario permite copiar al cortapapeles del dispositivo la contraseña de una entrada. \\ \hline 
-        RF-8 & El sistema permite la modificación de todos los campos de las contraseñas. \\ \hline
-        RF-9 & Se accede al sistema mediante una aplicación móvil. \\ \hline
-        RF-10 & Se accede al sistema mediante una interfaz web. \\ \hline
-        RF-11 & El sistema ofrece un \textit{plug-in} para navegador web. \\ \hline
+        RF-7 & La interfaz de usuario permite copiar al portapapeles del dispositivo la contraseña de una entrada. \\ \hline 
+        RF-9 & Se accede al sistema mediante una aplicación para dispositivos móviles Android con versión 6.1 (\textit{Marshmallow}). \\ \hline
+        RF-10 & Se accede al sistema mediante una aplicación para navegadores web Google Chrome (versión 89) y Firefox (versión 87). \\ \hline
+        RF-11 & El sistema ofrece un \textit{plug-in} para el navegador Google Chrome (versión 89). \\ \hline
     \end{tabular}
 \end{table}
 
@@ -479,11 +499,10 @@ En cuanto a la formación inicial de los integrantes, se han tenido en cuenta en
 
 Las comunicaciones entre los miembros del grupo de trabajo se realizarán principalmente a través de la herramienta de comunicación Whatsapp, mediante la cual se concretan los horarios de trabajo y se informa acerca de actualizaciones puntuales en las tareas asignadas a cada miembro para que todo el equipo quede informado de cómo avanzan los distintos componentes del trabajo. Además, las reuniones semanales de puesta en común del trabajo se realizarán utilizando la herramienta de videoconferencia Google Meet. Esta última será el principal medio de comunicación del grupo. Destacar que pese a la división de trabajo previo, se intenta trabajar de manera conjunta por videoconferencia, de manera que se puedan poner en común y resolver problemas en la medida en que surjan.
 
-En cuanto al registro de las decisiones tomadas en las reuniones, se plasmarán en actas gestionadas por Javier Vela. El almacenamiento de estas actas se realizará en un directorio remoto en GitHub.
+En cuanto al registro de las decisiones tomadas en las reuniones, se plasmarán en actas de cada una de ellas. El almacenamiento de estas actas se realizará en un directorio remoto en GitHub.
 
 Partiendo de la división inicial del grupo en equipos de trabajo detallada en el punto 2, los responsables de cada equipo de trabajo se encargarán de monitorizar el avance de sus respectivos módulos, determinar las tareas a realizar, asignar dichas tareas a los desarrolladores y marcar límites temporales y prioridades para cada tarea. En cuanto al trabajo de documentación de los avances sobre el código, todos los desarrolladores serán responsables de registrar los mismos en las \textit{wikis} de GitHub habilitadas para ello en cada repositorio de código. Así mismo, los desarrolladores tendrán que rellenar una tabla de control de esfuerzos para registrar su trabajo y cumplir con el resto de planes especificados más adelante.
 
-De la resolución de disputas se encargará el miembro Jorge Bernal, quien actuará como mediador cuando surjan conflictos en cualquier ámbito del desarrollo del proyecto, pudiendo acudir a este en cualquier momento si se necesitase de su ayuda.
 
 \pagebreak
 
