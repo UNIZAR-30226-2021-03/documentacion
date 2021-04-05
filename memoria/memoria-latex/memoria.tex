@@ -139,45 +139,53 @@ El equipo del proyecto está formado por los 6 integrantes del grupo.  Para divi
 
 \subsection{Procesos}
 
-\subsubsection{Procesos de inicio}
+\subsubsection{Procesos de inicio}.
 
-\textbf{Pi.1} Identificar y asignar recursos.
+\textbf{P.I.2} Proceso de identificación del servidor \textit{cloud} a utilizar para el despliegue.
 
-\textbf{Pi.2} Servidor \textit{cloud} para el despliegue.
+\textbf{P.I.3} Proceso de identificación de la base de datos a utilizar.
 
-\textbf{Pi.3} Base de datos a utilizar.
-
-\textbf{Pi.4} Formación y documentación inicial.
+\textbf{P.I.4} Proceso de formación inicial de los miembros de equipo.
 
 \subsubsection{Procesos de ejecución y control}
 
-\textbf{Pi.1} Comunicación y concreción de los horarios de trabajo via \textit{Whatsapp}.
+\textbf{P.EC.1} Proceso de comunicación y concreción de los horarios de trabajo via \textit{Whatsapp}.
 
-\textbf{Pi.2} Reunión semanal de puesta en común via \textit{Google Meet} en la cual estarán presentes todos los miembros del grupo.
+\textbf{P.EC.2} Proceso de puesta en común mediante una reunión semanal via \textit{Google Meet} en la cual estarán presentes todos los miembros del grupo.
 
-\textbf{Pi.3} Registro de las decisiones tomadas en las reuniones semanales en actas almacenadas en \textit{GitHub}.
+\textbf{P.EC.3} Proceso de registro de las decisiones tomadas en las reuniones semanales en actas almacenadas en \textit{GitHub}.
 
-\textbf{Pi.4} Semanalmente monitorización del avance de módulos, determinación de tareas a realizar, asignación de tareas a desarrolladores y marcaje de límites temporales y prioridades de cada tarea.
+\textbf{P.EC.4} Proceso semanal de monitorización del avance de módulos, determinación de tareas a realizar, asignación de tareas a desarrolladores y marcaje de límites temporales y prioridades de cada tarea.
 
-\textbf{Pi.5} Registrar código en las \textit{Wikis} de \textit{GitHub}.
+\textbf{P.EC.5} Proceso de documentación código en las \textit{Wikis} de \textit{GitHub}.
 
-\textbf{Pi.6} Desarrolladores rellenarán una tabla de control de esfuerzos para registrar su trabajo.
+\textbf{P.EC.6} Proceso de control de esfuerzos de los desarrolladores mediante una tabla de contol.
 
-\textbf{Pi.7} La entrega de resultados se realizará de manera continua.
+\textbf{P.EC.7} Proceso de entrega de resultados de forma continua.
 
 \subsubsection{Procesos técnicos}
-Para implementar las vistas del sistema se utilizará por una parte Java (Android SDK) para construir el cliente móvil para dispositivos Android y por otra JavaScript (React.JS) para desarrollar el \textit{frontend} web. En cuanto al \textit{backend}, se desarrollará utilizando Node.JS y la \textit{framework} Express. La base de datos utilizará el SGBD MongoDB. El despliegue del sistema se realizará en un entorno de contenedores Docker desplegado sobre máquinas virtuales en \textit{cloud}. Se seguirá una filosofía de entrega y despliegue continuo utilizando \textit{scripts} y GitHub Actions.
 
+\textbf{P.T.1} Proceso de desarrollo del cliente móvil para dispositivos android implementado en Java (Android SDK).
+
+\textbf{P.T.2} Proceso de desarrollo del \textit{frontend} web implementado en JavaScript (React.JS).
+
+\textbf{P.T.3} Proceso de desarrollo del \textit{backend} utilizando Node.JS y el \textit{framework} Express.
+
+\textbf{P.T.4} Proceso de configuración de una base de datos sobre el SGBD MongoDB.
+
+\textbf{P.T.5} Proceso de despliegue continuo del sistema en entorno de contenedores Docker desplegado sobre máquinas virtuales en \textit{cloud}.
+
+\pagebreak
 \subsection{Planes}
 
-\subsubsection{Plan de gestión de configuraciones}
+\subsubsection{Planes de gestión de configuraciones}
 A continuación se detallan los planes establecidos para la gestión continua de las configuraciones del 
 proyecto.
 
 Para asegurar la correcta comprensión del código y la navegabilidad del mismo se establece una convención de nombrado de archivos, una estructura de directorios y guías de estilo a seguir a lo largo de todos los 
 módulos del proyecto.
 
-\textbf{Nombrado de archivos}
+\textbf{PL.G.1: Nombrado de archivos}
 
 Todos los archivos del proyecto quedarán nombrados con el siguiente formato:
 
@@ -198,9 +206,9 @@ En estos campos solo se permiten cadenas de texto que cumplan la siguiente ER pa
 Users.controller.js : Nombre de un archivo en subdirectorio 'controllers'.
 
 FeedUsers.css :  Nombre de un archivo css para componente de \textit{feed} de usuarios.
-\pagebreak
 
-\textbf{Estructura de directorios}
+\pagebreak
+\textbf{PL.G.2: Estructurado de directorios}
 
 Todos los módulos seguirán una estructura de directorios de agrupamiento por tipo de fichero. Es decir, los ficheros quedarán agrupados bajo un directorio padre que indique su uso dentro del módulo o funcionalidad.
 
@@ -216,7 +224,7 @@ Ejemplo de estructura de directorios en \textit{backend}:
 .3 Admins.model.js.
 }
 
-\textbf{Guías de estilo}
+\textbf{PL.G.3: Uso de guías de estilo}
 
 Los desarrolladores de código se apoyarán en las siguientes guías de estilo:
 
@@ -224,14 +232,17 @@ Los desarrolladores de código se apoyarán en las siguientes guías de estilo:
     \setlength{\itemsep}{0em}
     \item Estándares de código para desarrollo Android: \textit{AOSP Java Code Style for Contributors}.
     \item Estándares de código para desarrollo en React: \textit{React design principles}.
-    \item Estándares de código para desarrollo en JavaScript:\textit{JavaScript Standard Style}.
+    \item Estándares de código para desarrollo en JavaScript: \textit{JavaScript Standard Style}.
 \end{itemize}
 
 Para el control del versionado y actualización del código se utilizarán distintos repositorios de GitHub para los componentes del sistema, es decir, un repositorio de \textit{frontend} web, de app móvil, de \textit{backend} y de documentación del proyecto. A continuación se enumeran los procedimientos a seguir para el uso de estos repositorios.
 
 Dichos repositorios serán privados solo accesibles por el equipo de desarrollo. Se asociará a cada repositorio un conjunto de GitHub Actions para administrar la compilación y puesta en marcha del sistema. Los \textit{commits} a estos repositorios irán acompañados de un nombre descriptivo de la tarea asociada. Los \textit{commits} podrán hacerse en cualquier momento siempre que se haya probado el código previamente de manera local y ateniéndose al estado de las máquinas de despliegue. Se seguirá una filosofía de entrega continua y despliegue continuo. Para comprobar el progreso de las tareas, se seguirá el plan de aseguramiento de la calidad presentado en el punto \ref{sec:calidad}.
 
+\pagebreak
 \subsubsection{Plan de construcción y despliegue del software}
+
+\textbf{PL.CD.1: }
 El sistema se fundamenta en el desarrollo de cuatro subsistemas que trabajan aislados de los otros, siendo su comunicación entre los módulos expuesta a través de interfaces que los relacionan, de este modo tanto las pruebas, compilación y dependencias son independientes al resto de subsistemas. 
  
 Dos de los cuatro subsistemas, el \textit{frontend web} y el \textit{backend}, estarán empotrados en contenedores Docker y desplegados en la nube utilizando los servicios de Amazon Web Services, se utilizarán \textit{scripts} de GitHub Actions para automatizar la compilación y \textit{testing} y despliegue en AWS de los mismos, utilizando en el caso de entorno web librerías de \textit{testing} como Jest y Postman en el caso de la API REST. 
@@ -242,13 +253,13 @@ La interfaz móvil llevará por su cuenta la compilación y \textit{testing} par
 
 El punto fuerte de utilizar el despliegue basado en contenedores es que el control de dependencias es indiferente al sistema operativo y al entorno de desarrollo de los programadores, de esta forma cada integrante del equipo podrá configurar y personalizar su entorno por cuenta propia. En el \textit{frontend} móvil al ser independiente se fija una serie de requisitos para el equipo que trabaja en esta parte, se usará la versión Android 6.1 (\textit{Marshmallow}) y se usará Java como lenguaje de programación, el control de dependencias aplicación para navegadores web Google Chrome (versión 89) y Firefox (versión 87) por el propio Gradle de Android.
 
-el navegador Google Chrome  base de los subsistemas será la siguiente, las interfaces del \textit{frontend web} y el \textit{backend} están expuestas en el puerto 80, el modelo de capa de datos proporciona una URI externa con la que acceder a la base de datos. Las variables de usuarios y contraseñas serán almacenadas como variables de entorno para evitar ponerlas como texto plano en el código.
+El navegador Google Chrome  base de los subsistemas será la siguiente, las interfaces del \textit{frontend web} y el \textit{backend} están expuestas en el puerto 80, el modelo de capa de datos proporciona una URI externa con la que acceder a la base de datos. Las variables de usuarios y contraseñas serán almacenadas como variables de entorno para evitar ponerlas como texto plano en el código.
 
-\subsubsection{Plan de aseguramiento de calidad} \label{sec:calidad}
+\subsubsection{Planes de aseguramiento de calidad} \label{sec:calidad}
 
 A continuación se presentan un conjunto de actividades de control de calidad del código a llevar a cabo por parte del equipo de desarrollo:
 
-\textbf{Uso de guías de documentación y de diseño gráfico}
+\textbf{PL.CA.1: Uso de guías de documentación y de diseño gráfico}
 
 Los desarrolladores del proyecto están alentados a utilizar las siguientes guías en el proceso de diseño, documentación y desarrollo del \textit{software}.
 
@@ -261,7 +272,7 @@ Los desarrolladores del proyecto están alentados a utilizar las siguientes guí
     \item Todas las guías anteriormente mencionadas en el punto 3.2.2
 \end{itemize}
 
-\textbf{Revisión del código por pares}
+\textbf{PL.CA.2: Revisión del código por pares}
 
 Esta actividad tiene por objetivo realizar revisiones periódicas del código generado por miembros del equipo que no lo han desarrollado, pero que tienen las capacidades técnicas para realizar críticas constructivas sobre este. Se realizarán revisiones por pares abiertas, es decir, revisor y desarrollador se conocen y pueden comunicarse durante el proceso de revisión. Como apoyo a estas revisiones del código, los desarrolladores rellenarán una tabla de versionado del código, la cual permitirá al revisor comprobar los avances realizados en la tarea. 
 
@@ -281,7 +292,7 @@ Se rellenará una tabla de versionado (figura \ref{tablaVersionado}) por cada m�
     \label{tablaConclusionesPares}
 \end{figure}
 
-\textbf{Revisión de los requisitos}
+\textbf{PL.CA.3: Revisión de los requisitos}
 
 Para comprobar el correcto cumplimiento de los requisitos del sistema se utilizará una tabla de cumplimiento de requisitos (figura \ref{tablaRequisitos}). En este tipo de revisión tanto el desarrollador como el revisor rellenarán dicha tabla y discutirán los resultados. Dichos resultados serán recogidos en una tabla de resumen (figura \ref{tablaConclusionesRequisitos}) que servirá como para futuras revisiones. Los módulos de software a desarrollar anteriormente van asociados a ciertos requisitos del sistema. Antes de comenzar el desarrollo de un módulo se concretarán los requisitos finales a los que hace referencia y se generará la plantilla de la tabla de adecuación de requisitos. Como en el modelo de revisión anterior, cuando el desarrollador del módulo termine una versión importante o realice un avance crítico solicitará una revisión al gestor del proyecto este le asignará un revisor adecuado para la tarea. 
 
@@ -301,7 +312,7 @@ Para comprobar el correcto cumplimiento de los requisitos del sistema se utiliza
 
 Todas estas tablas generadas por el proceso de aseguramiento de la calidad quedarán almacenadas en un directorio remoto accesible por todos los miembros del equipo de desarrollo agrupadas por el módulo al que hacen referencia de manera que sirvan como histórico de las revisiones realizadas y como mecanismo de monitorización del progreso de las tareas.
 
-\textbf{Test sobre el producto}
+\textbf{PL.CA.4: Test sobre el producto}
 
 Para asegurar el funcionamiento correcto del código desarrollado se realizarán pruebas de desarrollo sobre los módulos, las cuales consistirán en pruebas unitarias y pruebas de integración con el resto de componentes del sistema. Además, una vez el sistema sea funcional, se realizarán pruebas globales sobre el sistema, las cuales consistirán en pruebas funcionales, de comunicación, de rendimiento, de sobrecarga… etc. Por último, utilizando las herramientas de despliegue continuo mencionadas anteriormente, se implementarán tests básicos 
 sobre el sistema previos al despliegue.
@@ -509,6 +520,8 @@ Partiendo de la división inicial del grupo en equipos de trabajo detallada en e
 Respecto a la monitorización y control del progreso del proyecto, todas las semanas se realizará una reunión conjunta de control en una hora y día fijadas a la cual asistirán todos los miembros del grupo para exponer los avances realizados durante la semana y poder determinarse el estado del proyecto y las siguientes tareas a desarrollar. Así mismo, tal y como se detalla en el punto \ref{sec:calidad}, existen mecanismos para asegurar la calidad del producto y detectar posibles de rendimiento en el completado de las tareas.
 
 La entrega de resultados se hará de manera continua de forma que el cliente pueda ir viendo el progreso del proyecto. El equipo se compromete a entregar los resultados del mismo en los plazos preestablecidos. Los resultados finales, que contendrán los códigos fuente, \textit{scripts} de compilación y despliegue, etc. también serán entregados al cliente.
+
+Para implementar las vistas del sistema se utilizará por una parte Java (Android SDK) para construir el cliente móvil para dispositivos Android y por otra JavaScript (React.JS) para desarrollar el \textit{frontend} web. En cuanto al \textit{backend}, se desarrollará utilizando Node.JS y la \textit{framework} Express. La base de datos utilizará el SGBD MongoDB. El despliegue del sistema se realizará en un entorno de contenedores Docker desplegado sobre máquinas virtuales en \textit{cloud}. Se seguirá una filosofía de entrega y despliegue continuo utilizando \textit{scripts} y GitHub Actions.
 
 \subsection{Cierre del proyecto}
 
