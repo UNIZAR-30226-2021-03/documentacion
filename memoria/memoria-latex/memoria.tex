@@ -139,7 +139,7 @@ El equipo del proyecto está formado por los 6 integrantes del grupo.  Para divi
 
 \subsection{Procesos}
 
-\subsubsection{Procesos de inicio}.
+\subsubsection{Procesos de inicio}
 
 \textbf{P.I.2} Proceso de identificación del servidor \textit{cloud} a utilizar para el despliegue.
 
@@ -240,7 +240,7 @@ Para el control del versionado y actualización del código se utilizarán disti
 Dichos repositorios serán privados solo accesibles por el equipo de desarrollo. Se asociará a cada repositorio un conjunto de GitHub Actions para administrar la compilación y puesta en marcha del sistema. Los \textit{commits} a estos repositorios irán acompañados de un nombre descriptivo de la tarea asociada. Los \textit{commits} podrán hacerse en cualquier momento siempre que se haya probado el código previamente de manera local y ateniéndose al estado de las máquinas de despliegue. Se seguirá una filosofía de entrega continua y despliegue continuo. Para comprobar el progreso de las tareas, se seguirá el plan de aseguramiento de la calidad presentado en el punto \ref{sec:calidad}.
 
 \pagebreak
-\subsubsection{Plan de construcción y despliegue del software}
+\subsubsection{Plane de construcción y despliegue del software}
 
 \textbf{PL.CD.1: }
 El sistema se fundamenta en el desarrollo de cuatro subsistemas que trabajan aislados de los otros, siendo su comunicación entre los módulos expuesta a través de interfaces que los relacionan, de este modo tanto las pruebas, compilación y dependencias son independientes al resto de subsistemas. 
@@ -255,6 +255,7 @@ El punto fuerte de utilizar el despliegue basado en contenedores es que el contr
 
 El navegador Google Chrome  base de los subsistemas será la siguiente, las interfaces del \textit{frontend web} y el \textit{backend} están expuestas en el puerto 80, el modelo de capa de datos proporciona una URI externa con la que acceder a la base de datos. Las variables de usuarios y contraseñas serán almacenadas como variables de entorno para evitar ponerlas como texto plano en el código.
 
+\pagebreak
 \subsubsection{Planes de aseguramiento de calidad} \label{sec:calidad}
 
 A continuación se presentan un conjunto de actividades de control de calidad del código a llevar a cabo por parte del equipo de desarrollo:
@@ -316,6 +317,8 @@ Todas estas tablas generadas por el proceso de aseguramiento de la calidad queda
 
 Para asegurar el funcionamiento correcto del código desarrollado se realizarán pruebas de desarrollo sobre los módulos, las cuales consistirán en pruebas unitarias y pruebas de integración con el resto de componentes del sistema. Además, una vez el sistema sea funcional, se realizarán pruebas globales sobre el sistema, las cuales consistirán en pruebas funcionales, de comunicación, de rendimiento, de sobrecarga… etc. Por último, utilizando las herramientas de despliegue continuo mencionadas anteriormente, se implementarán tests básicos 
 sobre el sistema previos al despliegue.
+
+\pagebreak
 
 \subsubsection{Calendario del proyecto y división del trabajo}
 
