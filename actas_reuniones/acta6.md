@@ -107,7 +107,7 @@
 - GitHub actions + (SSH / Amazon AWS pipeline)
   - Hacer lo que queramos, sabiendo que estamos haciendo
 
-## Siguiente reunión
+## Siguiente reunión con tutor
 
 - Martes 20 de abril a las 12 de la mañana
 - Ada Byron, S.22
