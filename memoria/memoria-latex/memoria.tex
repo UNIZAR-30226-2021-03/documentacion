@@ -7,6 +7,7 @@
 \usepackage{float}
 \usepackage[hidelinks]{hyperref}
 \usepackage{dirtree}
+\usepackage{pdflscape}
 
 \usepackage[compact]{titlesec}
 \usepackage{geometry}
@@ -326,19 +327,25 @@ La división del trabajo se consiste en la partición del trabajo en los siguien
 
 Módulo de gestión de \textit{sign-ups} de usuarios, módulo de gestión de log-ins de usuarios, módulo de gestión del Two-Factor-Authentication, módulo de generación de contraseñas, módulo de ranking de robustez de contraseñas, módulo de almacenamiento de contraseñas e información por usuario, módulo de búsqueda y ordenación de contraseñas y módulo de gestión y actualización de contraseñas e información. La documentación será del proyecto será actualizada por cada grupo de trabajo usando las \textit{Wikis} de GitHub después de cada sesión de trabajo, del tal manera que los avances realizados en el desarrollo queden registrados haciendo posible el seguimiento del desarrollo al resto del equipo. El diseño gráfico será realizado por todos los miembros del equipo mediante la creación de un \textit{mockup} de la misma en una reunión conjunta. Las instalaciones y los despliegues serán automáticos y continuos mediante \textit{scripts} de GitHub Actions. Las pruebas (Pruebas de desarrollo sobre los módulos y pruebas globales sobre el sistema) se realizarán conforme los desarrolladores vayan terminando sus designaciones y serán los mismos desarrolladores los cuales pasarán las pruebas, en el punto \ref{sec:calidad} se explica en detalle este aspecto. 
 
+En la operativa diaria se mantendrá un registro del progreso utilizando la herramienta Trello. Se llevará control sobre las tareas pendientes, en curso y completadas.
 
-%\begin{figure}[H]
-%    \centering
-%        \includegraphics[height=0.18\textheight]{../images/diag-gantt-1.png}
-%    \label{gantt-1}
-%\end{figure}
+Se presenta en la figura \ref{gantt-2} un diagrama de Gantt con el desarrollo previsto del proyecto antes del comienzo de este.
 
-%\begin{figure}[H]
-%    \centering
-%        \includegraphics[height=0.18\textheight]{../images/diag-gantt-2.png}
-%    \label{gantt-2}
-%\end{figure}
-
+\begin{landscape}
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=1.4\textheight]{../images/diag-gantt-1.png}
+        \label{gantt-1}
+    \end{figure}
+    
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=1.4\textheight]{../images/diag-gantt-2.png}
+        \caption{Diagrama de Gantt}
+        \label{gantt-2}
+    \end{figure}
+\end{landscape}
+    
 \section{Análisis y diseño del sistema}
 
 \subsection{Análisis de requisitos}
@@ -348,29 +355,28 @@ Módulo de gestión de \textit{sign-ups} de usuarios, módulo de gestión de log
     \begin{tabular}{| c | p{30em} |}
     \hline
         Código &  Descripción  \\ \hline
-        RF-1 & El sistema permite almacenar y visualizar contraseñas. \\ \hline
+        RF-1 & El sistema permite almacenar contraseñas. \\ \hline
         RF-1.1 & El sistema permite almacenar pares que constan de nombre de usuario y contraseña.  \\ \hline
         RF-1.2 & Las entradas de contraseñas tienen un nombre asociado. \\ \hline
         RF-1.3 & El sistema permite asociar a las contraseñas una URL del sitio web al que corresponden. \\ \hline
-        RF-1.4 & El sistema registra la fecha de creación y actualización de la contraseña. \\ \hline
+        RF-1.4 & El sistema registra la fecha de creación o actualización de la contraseña. \\ \hline
         RF-1.5 & El sistema permite almacenar una descripción de texto asociada a la contraseña. \\ \hline
-        RF-1.6 & El sistema permite almacenar ficheros de imagen (jpg, png) y ficheros PDF, asociados a la contraseña. \\ \hline
-        RF-1.7 & El sistema permite la creación de contraseñas y la modificación de todos los campos anteriores. \\ \hline
+        RF-1.6 & El sistema permite almacenar un único fichero con cualquier extensión asociado a la entrada contraseña. \\ \hline
+        RF-1.7 & El sistema permite la creación de contraseñas y la modificación de todos los campos anteriores (nombre, nombre de usuario, contraseña, URL, descripción y fichero). \\ \hline
         RF-2 & El sistema muestra las categorías gestionadas por el usuario. La categoría se define como un directorio donde el usuario almacena contraseñas. Cada contraseña pertenece a una única categoría.\\ \hline
         RF-2.1 & El usuario puede crear, renombrar y eliminar categorías \\ \hline
         RF-3 & El sistema permite visualizar las contraseñas almacenadas\\ \hline
         RF-3.1 & El sistema muestra las contraseñas asociadas a la categoría seleccionada por el usuario. \\ \hline
-        RF-3.2 & El sistema muestra los datos y ficheros asociados a la contraseña seleccionada. \\ \hline
-        RF-3.3 & El sistema permite ordenar las contraseñas de una categoría por fecha de actualización, creación o nombre. \\ \hline
-        RF-3.4 & El sistema permite realizar una búsqueda entre las contraseñas por categoría, nombre de contraseña y nombre de usuario.  \\ \hline
+        RF-3.2 & El sistema muestra los datos y fichero asociados a la contraseña seleccionada. \\ \hline
+        RF-3.3 & El sistema permite ordenar las contraseñas de una categoría por fecha de actualización o nombre. \\ \hline
         RF-4 & El sistema permite generación de contraseñas pseudoaleatorias. \\ \hline
         RF-4.1 & El sistema permite seleccionar la longitud de la contraseña a generar.\\ \hline
         RF-4.2 & El sistema permite seleccionar el conjunto de caracteres que compone la contraseña a generar.\\ \hline
         RF-4.3 & El sistema muestra el grado de robustez (entropía) de la contraseña al ser generada. La entropía($E$) se calcula: $E=n\log_2m$. Donde $n$ es la longitud y $m$ el número de caracteres de la población usada.\\ \hline
         RF-5 & El usuario inicia sesión al sistema mediante su correo electrónico y la contraseña maestra. Únicamente podrá acceder con esta contraseña, que no se puede recuperar.\\ \hline
-        RF-6 & El sistema requiere 2FA para iniciar sesión desde un dispositivo nuevo, distinto a los utilizados con anterioridad. \\ \hline
+        RF-6 & El sistema requiere 2FA para iniciar sesión. \\ \hline
         RF-6.1 & El sistema permite el registro de un usuario con: correo electrónico, contraseña maestra y un apodo.\\ \hline 
-        RF-6.2 & El registro de sesión se deberá confirmar, para verificar la identidad, mediante un correo al usuario registrado. \\ \hline
+        RF-6.2 & El registro de sesión se deberá confirmar, para verificar la identidad, mediante un correo electrónico a la dirección especificada por el usuario registrado. \\ \hline
         RF-7 & La interfaz de usuario permite copiar al portapapeles del dispositivo la contraseña de una entrada. \\ \hline 
         RF-8 & Se accede al sistema mediante una aplicación para dispositivos móviles Android con versión 6.1 (\textit{Marshmallow}). \\ \hline
         RF-9 & Se accede al sistema mediante una aplicación para navegadores web Google Chrome (versión 89) y Firefox (versión 87). \\ \hline
@@ -379,8 +385,6 @@ Módulo de gestión de \textit{sign-ups} de usuarios, módulo de gestión de log
 \end{table}
 
 \subsection{Diseño del sistema}
-
-
 
 \subsubsection*{Diagramas de módulos}
 
@@ -520,7 +524,7 @@ Partiendo de la división inicial del grupo en equipos de trabajo detallada en e
 
 \pagebreak
 
-Respecto a la monitorización y control del progreso del proyecto, todas las semanas se realizará una reunión conjunta de control en una hora y día fijadas a la cual asistirán todos los miembros del grupo para exponer los avances realizados durante la semana y poder determinarse el estado del proyecto y las siguientes tareas a desarrollar. Así mismo, tal y como se detalla en el punto \ref{sec:calidad}, existen mecanismos para asegurar la calidad del producto y detectar posibles de rendimiento en el completado de las tareas.
+Respecto a la monitorización y control del progreso del proyecto, todas las semanas se realizará una reunión conjunta de control en una hora y día fija a la cual asistirán todos los miembros del grupo para exponer los avances realizados durante la semana y poder determinarse el estado del proyecto y las siguientes tareas a desarrollar. Así mismo, tal y como se detalla en el punto \ref{sec:calidad}, existen mecanismos para asegurar la calidad del producto y detectar posibles de rendimiento en el completado de las tareas.
 
 La entrega de resultados se hará de manera continua de forma que el cliente pueda ir viendo el progreso del proyecto. El equipo se compromete a entregar los resultados del mismo en los plazos preestablecidos. Los resultados finales, que contendrán los códigos fuente, \textit{scripts} de compilación y despliegue, etc. también serán entregados al cliente.
 
