@@ -543,9 +543,7 @@ En cuanto al registro de las decisiones tomadas en las reuniones, se plasmarán 
 
 Partiendo de la división inicial del grupo en equipos de trabajo detallada en el punto 2, los responsables de cada equipo de trabajo se encargarán de monitorizar el avance de sus respectivos módulos, determinar las tareas a realizar, asignar dichas tareas a los desarrolladores y marcar límites temporales y prioridades para cada tarea. En cuanto al trabajo de documentación de los avances sobre el código, todos los desarrolladores serán responsables de registrar los mismos en las \textit{wikis} de GitHub habilitadas para ello en cada repositorio de código. Así mismo, los desarrolladores tendrán que rellenar una tabla de control de esfuerzos para registrar su trabajo y cumplir con el resto de planes especificados más adelante.
 
-\subsubsection*{Planes de ejecución y control llevados a cabo}
 
-Con lo que respecta al backend, el sistema se encuentra desplegado en su totalidad sobre una maquina del servicio de \textit{Amazon Web Services} y se puede acceder a las rutas de la Rest API solo a través del puerto 443 (puerto https) redirigiendo las peticiones del puerto 80 al 443 para mantener la conficencialidad. Estas peticiones serán reexpedidas usando el \textit{reverse proxy} Nginx, para asegurarse una conexión segura el proxy obtiene el certificado digital mediante la entidad certificadora Let's Encrypt, que proporciona cerfiticados de forma gratuita, Además se ha usado un servicio que proporciona
 
 
 \pagebreak
@@ -556,9 +554,9 @@ La entrega de resultados se hará de manera continua de forma que el cliente pue
 
 Para implementar las vistas del sistema se utilizará por una parte Java (Android SDK) para construir el cliente móvil para dispositivos Android y por otra JavaScript (React.JS) para desarrollar el \textit{frontend} web. En cuanto al \textit{backend}, se desarrollará utilizando Node.JS y la \textit{framework} Express. La base de datos utilizará el SGBD MongoDB. El despliegue del sistema se realizará en un entorno de contenedores Docker desplegado sobre máquinas virtuales en \textit{cloud}. Se seguirá una filosofía de entrega y despliegue continuo utilizando \textit{scripts} y GitHub Actions.
 
+\subsubsection*{Ejecución de los planes:}
 
 
-\textbf{Ejecución de los planes:}
 
 \textbf{PL.G.1:} 
 EL plan de nombrado de archivos ha probado ser útil para comprender la disposición del código y asegura la navegabilidad del mismo cumpliendo por tanto su objetivo. Ha sido respetado por todos los desarrolladores, resultando ser intuitivo a la hora de ser utilizado mientras se desarrolla. Como problema podría destacarse que en el entorno de Express ha sido menos intuitivo utilizar la convención de nombrado ya que generalmente los archivos se nombran comenzando por minúscula.
@@ -573,6 +571,11 @@ Los desarrolladores del proyecto se han valido de las guías de estilo recomenda
 El plan de control de versionado y actualización del código ha resultado ser muy útil para mantener el cógido accesible por todos desarrolladores. Se destaca que la herramiente GitHub ha permitido a los desarrolladores ver el código del resto de los integrantes del código, asegurar que el código no se pierda, acceder a versiones de código anteriores para comprobar configuraciones anteriores y mantener un régimen de despliegue y entrega continuos. La herramienta y el uso de esta ha sido adoptada por todos los integrantes del proyecto sin ningún problema, destacando todos ellos su facilidad y comodidad de uso.
 
 \textbf{PL.CD.1:}
+El sistema se encuentra desplegado en su totalidad sobre dos maquina del servicio de \textit{Amazon Web Services}, y se puede acceder a las rutas de la Rest API solo a través del puerto 443 (puerto https) redirigiendo las peticiones del puerto 80 al 443 para mantener la confidencialidad. Estas peticiones son reexpedidas usando el \textit{reverse proxy} Nginx, para asegurarse una conexión segura el proxy obtiene el certificado digital mediante la entidad certificadora Let 's Encrypt, que proporciona certificados de forma gratuita.
+ 
+Entre las principales desventajas que conlleva usar el servicio gratuito de \textit{Amazon Web Services} es que no ofrece una IP estática para la máquina, por ello se ha tenido que utilizar el servicio gratuito no-ip que proporciona dominios a Ip's de forma dinámica, lo que provee a las máquinas cliente y servidor, de dos nombres DNS por las que se les puede identificar. La máquina servidor(backend) está bajo el nombre del dominio \textit{https://keypax-api.sytes.net} y la maquina cliente(frontend) está bajo el nombre \textit{https://keypax.sytes.net}.
+
+\pagebreak
 
 \textbf{PL.CA.1:}
 En el ámbito de planes de aseguramiento de la calidad, el plan de uso de guías de documentacióny de diseño gráfico ha resultado más díficil de aplicar que el resto de planes. En cuando al uso de guía de documentación, los desarrolladores han consultado los estándares del mercado para basarse en ellos a la hora de completar la documentación. Sin embargo se ha escogido documentar el código sin seguir estrictamente dichos estándares y buscando un estilo comprensible por todos los integrantes del proyecto. Respecto a las guías de diseño gráfico, los desarrolladores de los componentes de \textit{Frontend} se han asegurado de diseñar las vistas de usuario de forma que sean claras, simples y fáciles de usar por los usuarios futuros.
