@@ -84,7 +84,7 @@ Además, para mejorar la seguridad del sistema, se podrán generar automáticame
  
 Para acceder al sistema se utilizará la aplicación para móviles Android o en navegador web. Se utilizará Java (Android SDK) y JavaScript (React.JS), respectivamente, para implementar las vistas del sistema. El \textit{backend} se desarrollará utilizando Node.JS y la \textit{framework} Express. Por último, la base de datos utilizará el SGBD MongoDB.
  
-El despliegue del sistema se realizará en un entorno de contenedores Docker. Mediante Docker se puede aprovechar al máximo los recursos \textit{hardware} de la máquina, aumentando la portabilidad del sistema y ahorrando en fallos de desarrollo.
+El despliegue del sistema se realizará en un entorno de contenedores Docker. Mediante Docker se puede aprovechar al máximo los recursos \textit{hardware} de la máquina, aumentando la portabilidad del sistema.
  
 Se plantea un plan de trabajo, dónde se comprometen varias fechas para las entregas anteriores a la finalización del proyecto.  El día 15 de abril de 2021 se entregará una primera versión del sistema \textit{software}. Tras las modificaciones y correcciones propuestas por el cliente, el 21 de mayo de 2021 se presentará una segunda versión. El 1 de junio de 2021, Bárbaros Software S.A. se compromete a entregar el sistema final al cliente.
  
@@ -97,7 +97,7 @@ Por último, se realiza una memoria del trabajo, comentando el desarrollo del pr
 \pagebreak
  
  
-\section{Organización del proyecto}
+\section{Organización del proyecto} \label{sec:organizacion}
  
 El equipo del proyecto está formado por los 6 integrantes del grupo.  Para dividir el trabajo y las responsabilidades se han formado 2 grupos iniciales,  de acuerdo con las capacidades y conocimientos individuales.  Además, se ha designado como director del proyecto a Arturo Calvera, sobre el cual recae la gestión de los equipos de trabajo y de las responsabilidades de los mismos.
  
@@ -139,7 +139,7 @@ El equipo del proyecto está formado por los 6 integrantes del grupo.  Para divi
    \item \textbf{Aseguramiento de Calidad}: Andoni Salcedo
    \begin{itemize}
        \setlength{\itemsep}{0em}
-       \item Función: Llevar a cabo los procesos especificados en sección \ref{sec:calidad} para el aseguramiento de la calidad del producto final.
+       \item Función: Controlar el desarrollo de los planes especificados en sección \ref{sec:calidad} para el aseguramiento de la calidad del producto final.
    \end{itemize}
    \item \textbf{Transcripción de reuniones}: Javier Vela
    \begin{itemize}
@@ -273,9 +273,9 @@ Para el subsistema que concierne a la capa de datos, se despliega en un clúster
  
 La interfaz móvil llevará por su cuenta la compilación y \textit{testing} para cada versión funcional de la aplicación, se integrarán test de unidad, funcionalidad y sobrecarga del sistema.
  
-El punto fuerte de utilizar el despliegue basado en contenedores es que el control de dependencias es indiferente al sistema operativo y al entorno de desarrollo de los programadores, de esta forma cada integrante del equipo podrá configurar y personalizar su entorno por cuenta propia. En el \textit{frontend} móvil al ser independiente se fija una serie de requisitos para el equipo que trabaja en esta parte, se usará la versión Android 6.1 (\textit{Marshmallow}) y se usará Java como lenguaje de programación, el control de dependencias aplicación para navegadores web Google Chrome (versión 89) y Firefox (versión 87) por el propio Gradle de Android.
+El punto fuerte de utilizar el despliegue basado en contenedores es que el control de dependencias es indiferente al sistema operativo y al entorno de desarrollo de los programadores, de esta forma cada integrante del equipo podrá configurar y personalizar su entorno por cuenta propia. En el \textit{frontend} móvil al ser independiente se fija una serie de requisitos para el equipo que trabaja en esta parte, se usará la versión Android 6.1 (\textit{Marshmallow}) y se usará Java como lenguaje de programación, el control de dependencias será desarollado por el propio Gradle de Android.
  
-El navegador Google Chrome  base de los subsistemas será la siguiente, las interfaces del \textit{frontend web} y el \textit{backend} están expuestas en el puerto 80, el modelo de capa de datos proporciona una URI externa con la que acceder a la base de datos. Las variables de usuarios y contraseñas serán almacenadas como variables de entorno para evitar ponerlas como texto plano en el código.
+El \textit{frontend web} será accesible desde los navegadores web Google Chrome (versión 89) y Firefox (versión 87), las interfaces del \textit{frontend web} y el \textit{backend} están expuestas en el puerto 443, el modelo de capa de datos proporciona una URI externa con la que acceder a la base de datos. Las variables de usuarios y contraseñas serán almacenadas como variables de entorno para evitar ponerlas como texto plano en el código.
  
 \pagebreak
 \subsubsection{Planes de aseguramiento de calidad} \label{sec:calidad}
@@ -315,6 +315,7 @@ Se rellenará una tabla de versionado (figura \ref{tablaVersionado}) por cada m�
    \label{tablaConclusionesPares}
 \end{figure}
  
+\pagebreak
 \textbf{PL.CA.3: Revisión de los requisitos}
  
 Para comprobar el correcto cumplimiento de los requisitos del sistema se utilizará una tabla de cumplimiento de requisitos (figura \ref{tablaRequisitos}). En este tipo de revisión tanto el desarrollador como el revisor rellenarán dicha tabla y discutirán los resultados. Dichos resultados serán recogidos en una tabla de resumen (figura \ref{tablaConclusionesRequisitos}) que servirá como para futuras revisiones. Los módulos de software a desarrollar anteriormente van asociados a ciertos requisitos del sistema. Antes de comenzar el desarrollo de un módulo se concretarán los requisitos finales a los que hace referencia y se generará la plantilla de la tabla de adecuación de requisitos. Como en el modelo de revisión anterior, cuando el desarrollador del módulo termine una versión importante o realice un avance crítico solicitará una revisión al gestor del proyecto este le asignará un revisor adecuado para la tarea.
@@ -333,11 +334,11 @@ Para comprobar el correcto cumplimiento de los requisitos del sistema se utiliza
    \label{tablaConclusionesRequisitos}
 \end{figure}
  
-Todas estas tablas generadas por el proceso de aseguramiento de la calidad quedarán almacenadas en un directorio remoto accesible por todos los miembros del equipo de desarrollo agrupadas por el módulo al que hacen referencia de manera que sirvan como histórico de las revisiones realizadas y como mecanismo de monitorización del progreso de las tareas.
+Todas estas tablas generadas por el proceso de aseguramiento de la calidad quedarán almacenadas en un directorio remoto accesible por todos los miembros del equipo de desarrollo, agrupadas por el módulo al que hacen referencia de manera que sirvan como histórico de las revisiones realizadas y como mecanismo de monitorización del progreso de las tareas.
  
 \textbf{PL.CA.4: Test sobre el producto}
  
-Para asegurar el funcionamiento correcto del código desarrollado se realizarán pruebas de desarrollo sobre los módulos, las cuales consistirán en pruebas unitarias y pruebas de integración con el resto de componentes del sistema. Además, una vez el sistema sea funcional, se realizarán pruebas globales sobre el sistema, las cuales consistirán en pruebas funcionales, de comunicación, de rendimiento, de sobrecarga… etc. Por último, utilizando las herramientas de despliegue continuo mencionadas anteriormente, se implementarán tests básicos
+Para asegurar el funcionamiento correcto del código desarrollado se realizarán pruebas de desarrollo sobre los módulos, las cuales consistirán en pruebas unitarias y pruebas de integración con el resto de componentes del sistema. Además, una vez el sistema sea funcional, se realizarán pruebas globales sobre el sistema, las cuales consistirán en pruebas funcionales, de comunicación, de rendimiento y de sobrecarga. Por último, utilizando las herramientas de despliegue continuo mencionadas anteriormente, se implementarán tests básicos
 sobre el sistema previos al despliegue.
  
 \pagebreak
@@ -395,7 +396,7 @@ Se presenta en la figura \ref{gantt-2} un diagrama de Gantt con el desarrollo pr
        RF-4.2 & El sistema permite seleccionar el conjunto de caracteres que compone la contraseña a generar.\\ \hline
        RF-4.3 & El sistema muestra el grado de robustez (entropía) de la contraseña al ser generada. La entropía($E$) se calcula: $E=n\log_2m$. Donde $n$ es la longitud y $m$ el número de caracteres de la población usada.\\ \hline
        RF-5 & El usuario inicia sesión al sistema mediante su correo electrónico y la contraseña maestra. Únicamente podrá acceder con esta contraseña, que no se puede recuperar.\\ \hline
-       RF-6 & El sistema requiere 2FA para iniciar sesión. \\ \hline
+       RF-6 & El sistema requiere autenticación mediante 2FA para iniciar sesión. \\ \hline
        RF-6.1 & El sistema permite el registro de un usuario con: correo electrónico, contraseña maestra y un apodo.\\ \hline
        RF-6.2 & El registro de sesión se deberá confirmar, para verificar la identidad, mediante un correo electrónico a la dirección especificada por el usuario registrado. \\ \hline
        RF-7 & La interfaz de usuario permite copiar al portapapeles del dispositivo la contraseña de una entrada. \\ \hline
@@ -536,7 +537,7 @@ Las comunicaciones entre los miembros del grupo de trabajo se han realizado prin
  
 El registro de las decisiones tomadas en las reuniones, se ha realizado mediante actas de cada una de ellas. El almacenamiento de estas actas se realiza en un directorio remoto en GitHub.
  
-Partiendo de la división inicial del grupo en equipos de trabajo detallada en el punto 2, los responsables de cada equipo de trabajo se han encargado de monitorizar el avance de sus respectivos módulos, determinar las tareas a realizar, asignar dichas tareas a los desarrolladores y marcar límites temporales y prioridades para cada tarea. En cuanto al trabajo de documentación de los avances sobre el código, todos los desarrolladores han sido los responsables de registrar los mismos en las \textit{wikis} de GitHub habilitadas para ello en cada repositorio de código. Así mismo, los desarrolladores han rellenado una tabla de control de esfuerzos para registrar su trabajo y cumplir con el resto de planes especificados más adelante.
+Partiendo de la división inicial del grupo en equipos de trabajo detallada en el punto \ref{sec:organizacion}, los responsables de cada equipo de trabajo se han encargado de monitorizar el avance de sus respectivos módulos, determinar las tareas a realizar, asignar dichas tareas a los desarrolladores y marcar límites temporales y prioridades para cada tarea. En cuanto al trabajo de documentación de los avances sobre el código, todos los desarrolladores han sido los responsables de registrar los mismos en las \textit{wikis} de GitHub habilitadas para ello en cada repositorio de código. Así mismo, los desarrolladores han rellenado una tabla de control de esfuerzos para registrar su trabajo y cumplir con el resto de planes especificados más adelante.
  
 \pagebreak
  
