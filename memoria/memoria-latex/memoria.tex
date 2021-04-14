@@ -8,6 +8,8 @@
 \usepackage[hidelinks]{hyperref}
 \usepackage{dirtree}
 \usepackage{pdflscape}
+\usepackage{pdfpages}
+
 
 \usepackage[compact]{titlesec}
 \usepackage{geometry}
@@ -75,6 +77,24 @@
 \pagebreak
 
 \section{Introducción}
+
+En el siguiente documento se presenta el sistema KeyPaX, va a ser desarrollado por Bárbaros Software S.A. y permite gestionar contraseñas almacenadas remotamente en los servidores del sistema. Permite almacenar junto con las contraseñas el nombre de usuario, URL y una descripción textual, entre otros. Las contraseñas se pueden organizar por categorías para subdividir las contraseñas por temática.
+
+Además, para mejorar la seguridad del sistema, se podrán generar automáticamente contraseñas robustas con longitud y caracteres variables. El usuario accederá al servicio mediante una contraseña maestra y deberá identificarse en el inicio de sesión mediante el 2FA.
+
+Para acceder al sistema se utilizará la aplicación para móviles Android o en navegador web. Se utilizará Java (Android SDK) y JavaScript (React.JS), respectivamente, para implementar las vistas del sistema. El \textit{backend} se desarrollará utilizando Node.JS y la \textit{framework} Express. Por último, la base de datos utilizará el SGBD MongoDB. 
+
+El despliegue del sistema se realizará en un entorno de contenedores Docker. Mediante Docker se puede aprovechar al máximo los recursos \textit{hardware} de la máquina, aumentando la portabilidad del sistema y ahorrando en fallos de desarrollo. 
+
+Se plantea un plan de trabajo, dónde se comprometen varias fechas para las entregas anteriores a la finalización del proyecto.  El día 15 de abril de 2021 se entregará una primera versión del sistema \textit{software}. Tras las modificaciones y correcciones propuestas por el cliente, el 21 de mayo de 2021 se presentará una segunda versión. El 1 de junio de 2021, Bárbaros Software S.A. se compromete a entregar el sistema final al cliente.
+
+En el documento se estipulan los procesos y planes a llevar por los integrantes del proyecto al desarrollar el producto. Estos planes son precisos para llevar un análisis de calidad adecuado y para la organización de directorios del proyecto, entre otros.
+
+Se presentan los requisitos de manera precisa y sin ambigüedades, especificando exactamente la funcionalidad del sistema. Además, se presentan varias vistas del sistema en forma de diagramas de despliegue, componentes y módulos.
+
+Por último, se realiza una memoria del trabajo, comentando el desarrollo del proyecto y del producto. En la memoria se profundiza en la ejecución de los planes, procesos y organización propuesta, sus problemas y su resultado. 
+
+\pagebreak
 
 
 \section{Organización del proyecto}
@@ -241,7 +261,7 @@ Para el control del versionado y actualización del código se utilizarán disti
 Dichos repositorios serán privados solo accesibles por el equipo de desarrollo. Se asociará a cada repositorio un conjunto de GitHub Actions para administrar la compilación y puesta en marcha del sistema. Los \textit{commits} a estos repositorios irán acompañados de un nombre descriptivo de la tarea asociada. Los \textit{commits} podrán hacerse en cualquier momento siempre que se haya probado el código previamente de manera local y ateniéndose al estado de las máquinas de despliegue. Se seguirá una filosofía de entrega continua y despliegue continuo. Para comprobar el progreso de las tareas, se seguirá el plan de aseguramiento de la calidad presentado en el punto \ref{sec:calidad}.
 
 \pagebreak
-\subsubsection{Plane de construcción y despliegue del software}
+\subsubsection{Plan de construcción y despliegue del software}
 
 \textbf{PL.CD.1: }
 El sistema se fundamenta en el desarrollo de cuatro subsistemas que trabajan aislados de los otros, siendo su comunicación entre los módulos expuesta a través de interfaces que los relacionan, de este modo tanto las pruebas, compilación y dependencias son independientes al resto de subsistemas. 
@@ -540,6 +560,38 @@ Para implementar las vistas del sistema se utilizará por una parte Java (Androi
 
 \section*{Anexo I. Actas de todas las reuniones realizadas}
 \addcontentsline{toc}{section}{Anexo I. Actas de todas las reuniones realizadas}
+\begin{figure}
+    \includegraphics[width=.8\textwidth]{../../actas_reuniones/acta1.pdf}
+    \caption{Acta 1}
+\end{figure}
+\begin{figure}
+    \includegraphics[width=.8\textwidth]{../../actas_reuniones/acta2.pdf}
+    \caption{Acta 2}
+\end{figure}
+\begin{figure}
+    \includegraphics[width=.8\textwidth]{../../actas_reuniones/acta3.pdf}
+    \caption{Acta 3}
+\end{figure}
+\begin{figure}
+    \includegraphics[width=.8\textwidth]{../../actas_reuniones/acta4.pdf}
+    \caption{Acta 4}
+\end{figure}
+\begin{figure}
+    \includegraphics[width=.8\textwidth]{../../actas_reuniones/acta5.pdf}
+    \caption{Acta 5}
+\end{figure}
+\begin{figure}
+    \includegraphics[width=.8\textwidth]{../../actas_reuniones/acta6.pdf}
+    \caption{Acta 6}
+\end{figure}
+\begin{figure}
+    \includegraphics[width=.8\textwidth]{../../actas_reuniones/acta7.pdf}
+    \caption{Acta 7}
+\end{figure}
+\begin{figure}
+    \includegraphics[width=.8\textwidth]{../../actas_reuniones/acta8.pdf}
+    \caption{Acta 8}
+\end{figure}
 
 \section*{Bibliografía}
 \addcontentsline{toc}{section}{Bibliografía}

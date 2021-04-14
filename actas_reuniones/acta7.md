@@ -2,7 +2,7 @@
 
 - Fecha: 6 de Abril de 2021
 - Hora: 12:30
-- Lugar: Ada Byron, S22
+- Lugar: Google Meet
 - Asistentes:
   - Equipo
 
@@ -30,6 +30,4 @@ Se han explicado las rutas al equipo de frontend
 ### Trello
 
 Se han especificado todas las tareas del Trello
-
-## Siguiente reunión con tutor
 

@@ -18,7 +18,3 @@
 - Si da tiempo:
   - Realizar prototipo de la interfaz de usuario de la web y/o aplicación móvil
   - Realizar primer diseño de el modelo lógico de BBDD
-
-## Se habla
-
-...
