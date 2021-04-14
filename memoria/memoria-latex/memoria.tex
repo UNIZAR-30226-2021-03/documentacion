@@ -256,6 +256,8 @@ Los desarrolladores de código se apoyarán en las siguientes guías de estilo:
     \item Estándares de código para desarrollo en JavaScript: \textit{JavaScript Standard Style}.
 \end{itemize}
 
+\textbf{PL.G.4: Control de versionado y actualización del código}
+
 Para el control del versionado y actualización del código se utilizarán distintos repositorios de GitHub para los componentes del sistema, es decir, un repositorio de \textit{frontend} web, de app móvil, de \textit{backend} y de documentación del proyecto. A continuación se enumeran los procedimientos a seguir para el uso de estos repositorios.
 
 Dichos repositorios serán privados solo accesibles por el equipo de desarrollo. Se asociará a cada repositorio un conjunto de GitHub Actions para administrar la compilación y puesta en marcha del sistema. Los \textit{commits} a estos repositorios irán acompañados de un nombre descriptivo de la tarea asociada. Los \textit{commits} podrán hacerse en cualquier momento siempre que se haya probado el código previamente de manera local y ateniéndose al estado de las máquinas de despliegue. Se seguirá una filosofía de entrega continua y despliegue continuo. Para comprobar el progreso de las tareas, se seguirá el plan de aseguramiento de la calidad presentado en el punto \ref{sec:calidad}.
@@ -549,6 +551,38 @@ Respecto a la monitorización y control del progreso del proyecto, todas las sem
 La entrega de resultados se hará de manera continua de forma que el cliente pueda ir viendo el progreso del proyecto. El equipo se compromete a entregar los resultados del mismo en los plazos preestablecidos. Los resultados finales, que contendrán los códigos fuente, \textit{scripts} de compilación y despliegue, etc. también serán entregados al cliente.
 
 Para implementar las vistas del sistema se utilizará por una parte Java (Android SDK) para construir el cliente móvil para dispositivos Android y por otra JavaScript (React.JS) para desarrollar el \textit{frontend} web. En cuanto al \textit{backend}, se desarrollará utilizando Node.JS y la \textit{framework} Express. La base de datos utilizará el SGBD MongoDB. El despliegue del sistema se realizará en un entorno de contenedores Docker desplegado sobre máquinas virtuales en \textit{cloud}. Se seguirá una filosofía de entrega y despliegue continuo utilizando \textit{scripts} y GitHub Actions.
+
+
+
+\textbf{Ejecución de los planes:}
+
+\textbf{PL.G.1:} 
+EL plan de nombrado de archivos ha probado ser útil para comprender la disposición del código y asegura la navegabilidad del mismo cumpliendo por tanto su objetivo. Ha sido respetado por todos los desarrolladores, resultando ser intuitivo a la hora de ser utilizado mientras se desarrolla. Como problema podría destacarse que en el entorno de Express ha sido menos intuitivo utilizar la convención de nombrado ya que generalmente los archivos se nombran comenzando por minúscula.
+
+\textbf{PL.G.2:} 
+El plan de estructurado de directorios cumplido su objetivo habiendo ayudado a los desarrolladores a mantener una correcta estructura de código en los distintos subproyectos y ayudando a su vez la navegabilidad y comprensión del código.
+
+\textbf{PL.G.3:}
+Los desarrolladores del proyecto se han valido de las guías de estilo recomendadas por el plan de uso de guía de estilo, acudiendo a ellas a la hora de implementar código.
+
+\textbf{PL.G.4:}
+El plan de control de versionado y actualización del código ha resultado ser muy útil para mantener el cógido accesible por todos desarrolladores. Se destaca que la herramiente GitHub ha permitido a los desarrolladores ver el código del resto de los integrantes del código, asegurar que el código no se pierda, acceder a versiones de código anteriores para comprobar configuraciones anteriores y mantener un régimen de despliegue y entrega continuos. La herramienta y el uso de esta ha sido adoptada por todos los integrantes del proyecto sin ningún problema, destacando todos ellos su facilidad y comodidad de uso.
+
+\textbf{PL.CD.1:}
+
+\textbf{PL.CA.1:}
+En el ámbito de planes de aseguramiento de la calidad, el plan de uso de guías de documentacióny de diseño gráfico ha resultado más díficil de aplicar que el resto de planes. En cuando al uso de guía de documentación, los desarrolladores han consultado los estándares del mercado para basarse en ellos a la hora de completar la documentación. Sin embargo se ha escogido documentar el código sin seguir estrictamente dichos estándares y buscando un estilo comprensible por todos los integrantes del proyecto. Respecto a las guías de diseño gráfico, los desarrolladores de los componentes de \textit{Frontend} se han asegurado de diseñar las vistas de usuario de forma que sean claras, simples y fáciles de usar por los usuarios futuros.
+
+\textbf{PL.CA.2:}
+El plan de revisión de código por pares ha sido llevado a cabo por los desarrolladores tal y como se había estipulado. Ha resultado ser útil para mantener un control del avance y la calidad del código. Sin embargo, se prevee que su utilidad crezca en la segunda iteración del proyecto a medida que vayan creciendo los registros de las revisiones.
+
+\textbf{PL.CA.3:}
+EL plan de revisión de requisitos ha sido llevado a cabo por los desarrolladores tal y como se había estipulado.
+Se ha comprobado su utilidad a la hora de mantener el control sobre el avance de los requisitos, asegurando que ningún requisito queda sin implementarse. Sin embargo, se prevee que su utilidad crezca en la segunda iteración del proyecto a medida que vayan creciendo los registros de las revisiones pudiendo comprobarse el avance real del proyecto.
+
+\textbf{PL.CA.4:}
+El plan de test sobre el producto ha permitido asegurar la correción de los distintos módulos a la vez que se desarrollaban permitiendo detectar bugs antes de integrarlos con el resto de componentes del systema. En la segunda iteración se desarrollarán las pruebas generales previstas sobre el producto completo.
+
 
 \subsection{Cierre del proyecto}
 
