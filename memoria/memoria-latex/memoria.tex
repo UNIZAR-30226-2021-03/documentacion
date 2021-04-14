@@ -541,6 +541,10 @@ En cuanto al registro de las decisiones tomadas en las reuniones, se plasmarán 
 
 Partiendo de la división inicial del grupo en equipos de trabajo detallada en el punto 2, los responsables de cada equipo de trabajo se encargarán de monitorizar el avance de sus respectivos módulos, determinar las tareas a realizar, asignar dichas tareas a los desarrolladores y marcar límites temporales y prioridades para cada tarea. En cuanto al trabajo de documentación de los avances sobre el código, todos los desarrolladores serán responsables de registrar los mismos en las \textit{wikis} de GitHub habilitadas para ello en cada repositorio de código. Así mismo, los desarrolladores tendrán que rellenar una tabla de control de esfuerzos para registrar su trabajo y cumplir con el resto de planes especificados más adelante.
 
+\subsubsection*{Planes de ejecución y control llevados a cabo}
+
+Con lo que respecta al backend, el sistema se encuentra desplegado en su totalidad sobre una maquina del servicio de \textit{Amazon Web Services} y se puede acceder a las rutas de la Rest API solo a través del puerto 443 (puerto https) redirigiendo las peticiones del puerto 80 al 443 para mantener la conficencialidad. Estas peticiones serán reexpedidas usando el \textit{reverse proxy} Nginx, para asegurarse una conexión segura el proxy obtiene el certificado digital mediante la entidad certificadora Let's Encrypt, que proporciona cerfiticados de forma gratuita, Además se ha usado un servicio que proporciona
+
 
 \pagebreak
 
