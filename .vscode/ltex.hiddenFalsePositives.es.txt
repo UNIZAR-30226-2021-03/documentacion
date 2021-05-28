@@ -1,0 +1,1 @@
+{"rule":"CONTINUA","sentence":"^\\QLas principales diferencias radican en que, mientras que en la planificación inicial se previó un desarrollo por versiones cada vez más complejas; en realidad, se produjo un avance módulo por módulo y una integración continua permitiendo validar el funcionamiento de cada uno de ellos tras su finalización.\\E$"}
