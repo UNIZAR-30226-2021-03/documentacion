@@ -343,7 +343,7 @@ sobre el sistema previos al despliegue.
  
 \pagebreak
  
-\subsubsection{Calendario del proyecto y división del trabajo}
+\subsubsection{Calendario del proyecto y división del trabajo} \label{GANTT}
  
 La división del trabajo se consiste en la partición del trabajo en los siguientes módulos:
  
@@ -352,7 +352,9 @@ Módulo de gestión de \textit{sign-ups} de usuarios, módulo de gestión de log
 En la operativa diaria se mantendrá un registro del progreso utilizando la herramienta Trello. Se llevará control sobre las tareas pendientes, en curso y completadas.
  
 Se presenta en la figura \ref{gantt-2} un diagrama de Gantt con el desarrollo previsto del proyecto antes del comienzo de este.
- 
+
+\pagebreak
+
 \begin{landscape}
    \begin{figure}[H]
        \centering
@@ -363,11 +365,13 @@ Se presenta en la figura \ref{gantt-2} un diagrama de Gantt con el desarrollo pr
    \begin{figure}[H]
        \centering
        \includegraphics[width=1.4\textheight]{../images/diag-gantt-2.png}
-       \caption{Diagrama de Gantt}
+       \caption{Diagrama de Gantt de planificación}
        \label{gantt-2}
    \end{figure}
 \end{landscape}
-  
+
+\pagebreak
+
 \section{Análisis y diseño del sistema}
  
 \subsection{Análisis de requisitos}
@@ -467,8 +471,8 @@ La interacción entre los componentes de \textit{backend}, es en este caso más 
  
 \begin{figure}[H]
    \centering
-       \includegraphics[width=0.99\textwidth]{../images/despliegue.png}
-   \caption{Diagrama de distribución.}
+       \includegraphics[width=0.99\textwidth]{../images/despliegue2.png}
+   \caption{Diagrama de distribución}
    \label{despliegue}
 \end{figure}
  
@@ -579,53 +583,107 @@ Se ha comprobado su utilidad a la hora de mantener el control sobre el avance de
  
 \textbf{PL.CA.4:}
 El plan de test sobre el producto ha permitido asegurar la corrección de los distintos módulos a la vez que se desarrollaban permitiendo detectar bugs antes de integrarlos con el resto de componentes del sistema. En la segunda iteración se desarrollarán las pruebas generales previstas sobre el producto completo.
- 
- 
+
+
 \subsection{Cierre del proyecto}
- 
+
+\subsubsection*{Análisis del seguimiento del calendario del proyecto}
+
+En la Figura \ref{gantt-3-n} se compara el desarrollo del proyecto planificado en la sección \ref{GANTT} frente al desarrollo real. Las principales diferencias radican en que, mientras que en la planificación inicial se previó un desarrollo por versiones cada vez más complejas; en realidad, se produjo un avance módulo por módulo y una integración continua permitiendo validar el funcionamiento de cada uno de ellos tras su finalización.
+
+El desarrollo conjunto entre todos los equipos de los módulos correspondientes no ha podido ser posible, ya que ciertas tareas necesitaban más tiempo que otras para algunos equipos. Se ha seguido una implementación independiente entre los equipos para no impedir el avance de algún otro equipo a la espera de la terminación de otro.
+
+En la imagen comparativa se puede observar (en naranja claro) el desarrollo previsto para la primera versión, el cual solo el equipo de \textit{backend} pudo llevar al día. Los otros equipos, tras asentar las tecnologías a utilizar, comenzó el trabajo con un desfase inesperado. Pese a que el avance del proyecto en la parte final de este ha sido más rápido de lo esperado y se ha completado en menos tiempo del planificado, el desajuste con el horario planificado ha creado incertidumbre en el equipo sobre el cumplimiento o no de la temporización.
+
+Las pruebas del sistema fueron planificadas al terminar cada una de las tres versiones del proyecto. En realidad, las pruebas de cada uno de los módulos, de la integración entre estos y la validación en el entorno de producción fueron realizadas con continuidad al terminar distintas fases.
+
+\begin{landscape}
+   \begin{figure}[H]
+       \centering
+       \includegraphics[width=1.2\textheight]{../images/diag-gantt-1-nuevo.png}
+       \label{gantt-1-n}
+   \end{figure}
+  
+   \begin{figure}[H]
+       \centering
+       \includegraphics[width=1\textheight]{../images/diag-gantt-2-nuevo.png}
+       \label{gantt-2-n}
+      \end{figure}
+      
+      \begin{figure}[H]
+         \centering
+         \includegraphics[width=0.2\textheight]{../images/diag-gantt-3-nuevo.png}
+         \caption{Diagrama de Gantt de la realización del proyecto}
+         \label{gantt-3-n}
+  \end{figure}
+\end{landscape}
+\pagebreak
+
+\subsubsection*{Recopilación de esfuerzos}
+
+Horas trabajadas y actividades realizadas por cada uno
+
+\subsubsection*{Análisis de rentabilidad del tiempo invertido}
+
+??? Arturo?
+
+\subsubsection*{Conocimientos sobre herramientas y tecnologías adquiridos}
+
+``Mochila'' de tecnologías
+
+\pagebreak
+
 \section*{Conclusiones}
 \addcontentsline{toc}{section}{Conclusiones}
- 
+
+Se concluye el proyecto obteniendo un producto robusto y fiable. Es un sistema fácil y cómodo de usar en el día a día para la gestión de contraseñas. Cumple todo lo acordado con el cliente en la propuesta inicial y satisface todos los requisitos. Se ha reforzado la idea de la complejidad involucrada en un proyecto de mayor tamaño y, por ello, la necesidad de planificación. Se ha reforzado el trabajo en grupo entre los compañeros y se ha destacado la necesidad de comunicación entre todos los equipos involucrados en el desarrollo de un mismo producto. El equipo se encuentra satisfecho con el producto final, el desarrollo y el resultado del proyecto.
+
+\subsection*{Posibles mejoras observadas}
+
+Se han detectado posibles mejoras que, en un futuro proyecto, con el mismo equipo u otro diferente, para el desarrollo de un producto similar; permitiesen elaborarlo con más funcionalidad, menos problemas y en un tiempo menor.
+
+\begin{itemize}
+   \setlength\itemsep{0em}
+   \item Los procesos y planes especificados para este proyecto pueden ser reutilizados sin necesidad de una nueva definición, ya que son generales y se pueden aplicar a cualquier proyecto inicial.
+   \item El uso de las tecnologías de este proyecto permite reducir el tiempo de descubrimiento y aprendizaje.
+   \item Planificar un despliegue continuo desde el principio, facilitando la integración y pruebas del sistema. Se puede utilizar el mismo sistema de GitHub Actions.
+   \item Hacer equipos más equilibrados, ahora que todos tenemos un conocimiento de la tecnología más general, para permitir un avance más controlado.
+   \item 
+\end{itemize}
+
+\pagebreak
+
 \section*{Glosario}
 \addcontentsline{toc}{section}{Glosario}
- 
-\section*{Anexo I. Actas de todas las reuniones realizadas}
-\addcontentsline{toc}{section}{Anexo I. Actas de todas las reuniones realizadas}
-\begin{figure}
-   \includegraphics[width=.8\textwidth]{../../actas_reuniones/acta1.pdf}
-   \caption{Acta 1}
-\end{figure}
-\begin{figure}
-   \includegraphics[width=.8\textwidth]{../../actas_reuniones/acta2.pdf}
-   \caption{Acta 2}
-\end{figure}
-\begin{figure}
-   \includegraphics[width=.8\textwidth]{../../actas_reuniones/acta3.pdf}
-   \caption{Acta 3}
-\end{figure}
-\begin{figure}
-   \includegraphics[width=.8\textwidth]{../../actas_reuniones/acta4.pdf}
-   \caption{Acta 4}
-\end{figure}
-\begin{figure}
-   \includegraphics[width=.8\textwidth]{../../actas_reuniones/acta5.pdf}
-   \caption{Acta 5}
-\end{figure}
-\begin{figure}
-   \includegraphics[width=.8\textwidth]{../../actas_reuniones/acta6.pdf}
-   \caption{Acta 6}
-\end{figure}
-\begin{figure}
-   \includegraphics[width=.8\textwidth]{../../actas_reuniones/acta7.pdf}
-   \caption{Acta 7}
-\end{figure}
-\begin{figure}
-   \includegraphics[width=.8\textwidth]{../../actas_reuniones/acta8.pdf}
-   \caption{Acta 8}
-\end{figure}
- 
+
 \section*{Bibliografía}
 \addcontentsline{toc}{section}{Bibliografía}
-\end{document}
  
+\section*{Anexo I. Actas de reuniones realizadas con el tutor}
+\addcontentsline{toc}{section}{Anexo I. Actas de reuniones realizadas con el tutor}
+\begin{figure}[H]
+   \includegraphics[width=.8\textwidth]{../../actas_reuniones/2021.02.16_1_Actas.pdf}
+   \caption{Acta 1 16/02/2021}
+\end{figure}
+\begin{figure}[H]
+   \includegraphics[width=.8\textwidth]{../../actas_reuniones/2021.03.02_2_Actas.pdf}
+   \caption{Acta 2 02/03/2021}
+\end{figure}
+\begin{figure}[H]
+   \includegraphics[width=.8\textwidth]{../../actas_reuniones/2021.03.24_3_Actas.pdf}
+   \caption{Acta 3 24/03/2021}
+\end{figure}
+\begin{figure}[H]
+   \includegraphics[width=.8\textwidth]{../../actas_reuniones/2021.04.20_4_Actas.pdf}
+   \caption{Acta 4 20/04/2021}
+\end{figure}
+\begin{figure}[H]
+   \includegraphics[width=.8\textwidth]{../../actas_reuniones/2021.05.05_5_Actas.pdf}
+   \caption{Acta 5 05/05/2021}
+\end{figure}
+\begin{figure}[H]
+   \includegraphics[width=.8\textwidth]{../../actas_reuniones/2021.25.05_6_Actas.pdf}
+   \caption{Acta 6 25/05/2021}
+\end{figure}
 
+\end{document}
