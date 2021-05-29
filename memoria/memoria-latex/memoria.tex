@@ -159,7 +159,8 @@ El equipo del proyecto está formado por los 6 integrantes del grupo.  Para divi
 \section{Plan de gestión del proyecto}
  
 \subsection{Procesos}
- 
+
+%//////////////////////////////////////////////////////CHARLY////////////////////////////////////////////////////////
 \subsubsection{Procesos de inicio}
  
 \textbf{P.I.2} Proceso de identificación del servidor \textit{cloud} a utilizar para el despliegue.
@@ -168,48 +169,87 @@ El equipo del proyecto está formado por los 6 integrantes del grupo.  Para divi
  
 \textbf{P.I.4} Proceso de formación inicial de cada desarrollador del equipo.
  
+%//////////////////////////////////////////////////////BERNAL////////////////////////////////////////////////////////
 \subsubsection{Procesos de ejecución y control}
  
-\textbf{P.EC.1} Proceso de comunicación y concreción de los horarios de trabajo vía \textit{Whatsapp}.
+\textbf{P.EC.1} Proceso de comunicación y concreción de los horarios de trabajo.
  
 \textbf{P.EC.2} Proceso de puesta en común mediante una reunión semanal vía \textit{Google Meet} en la cual estarán presentes todos los miembros del grupo.
  
 \textbf{P.EC.3} Proceso de registro de las decisiones tomadas en las reuniones semanales en actas almacenadas en \textit{GitHub}.
  
-\textbf{P.EC.4} Proceso semanal de monitorización del avance de módulos, determinación de tareas a realizar, asignación de tareas a desarrolladores y marcaje de límites temporales y prioridades de cada tarea.
+\textbf{P.EC.4} Proceso semanal de monitorización del avance de módulos, determinación de tareas a realizar, asignación de tareas a desarrolladores y marcaje de límites temporales y prioridades de cada tarea. 
+%Juntar el 2, 3 y 4 en un plan común% 
  
 \textbf{P.EC.5} Proceso de documentación código en las \textit{Wikis} de \textit{GitHub}.
  
 \textbf{P.EC.6} Proceso de control de esfuerzos de los desarrolladores mediante una tabla de control.
  
 \textbf{P.EC.7} Proceso de entrega de resultados de forma continua.
- 
+
+\textbf{P.EC.8} Proceso de nombrado de archivos. Consiste en asegurar que todos los archivos del proyecto sigan la convención de nombrado establecida en el plan asociado.
+
+%//////////////////////////////////////////////////////BORQUE////////////////////////////////////////////////////////
+\textbf{P.EC.9} Proceso de estructurado de directorios.
+
+\textbf{P.EC.10} Proceso de uso de guías de estilo.
+
+\textbf{P.EC.11} Proceso de control de versionado y actualización del código.
+
+\textbf{P.EC.12} Proceso de revisión del código por pares.
+
+\textbf{P.EC.13} Proceso de revisión de los requisitos.
+
+\textbf{P.EC.13} Proceso de ejecución de pruebas sobre el sistema.
+
+%//////////////////////////////////////////////////////BERNAL////////////////////////////////////////////////////////
 \subsubsection{Procesos técnicos}
  
 \textbf{P.T.1} Proceso de desarrollo del cliente móvil para dispositivos android implementado en Java (Android SDK).
  
 \textbf{P.T.2} Proceso de desarrollo del \textit{frontend} web implementado en JavaScript (React.JS).
+
+\textbf{P.T.3} Proceso de configuración de una base de datos sobre el SGBD escogido.
  
-\textbf{P.T.3} Proceso de desarrollo del \textit{backend} utilizando Node.JS y el \textit{framework} Express.
+\textbf{P.T.4} Proceso de desarrollo del \textit{backend} utilizando Node.JS y el \textit{framework} Express.
  
-\textbf{P.T.4} Proceso de configuración de una base de datos sobre el SGBD MongoDB.
- 
-\textbf{P.T.5} Proceso de despliegue continuo del sistema en entorno de contenedores Docker desplegado sobre máquinas virtuales en \textit{cloud}.
- 
+\textbf{P.T.5} Proceso de construcción y despliegue continuo del sistema en entorno de contenedores Docker desplegado sobre máquinas virtuales en \textit{cloud}.
+
 \pagebreak
 \subsection{Planes}
+
+%PAUTAS: -Darle un nombre -Asociar plan a un proceso -Marcar cómo cuando se aplica y cuantas veces -Quién lo aplica -Resultado esperado (para qué se hace)%
+
+\subsubsection{Planes asociados a los procesos de inicio}
+
+\textbf{PL.I.1 Plan de adquisición de un proveedor cloud:}
  
-\subsubsection{Planes de gestión de configuraciones}
-A continuación se detallan los planes establecidos para la gestión continua de las configuraciones del
-proyecto.
+\textbf{PL.I.2 Plan de selección de un SGBD:} 
+
+\textbf{PL.I.3 Plan de formación:}
+
+\subsubsection{Planes asociados procesos de ejecución y control}
  
-Para asegurar la correcta comprensión del código y la navegabilidad del mismo se establece una convención de nombrado de archivos, una estructura de directorios y guías de estilo a seguir a lo largo de todos los
-módulos del proyecto.
+\textbf{PL.EC.1 Plan de comunicación:}
+
+El plan de comunicación y concreción de los horarios de trabajo se va a realizar por todos los desarrolladores del proyecto.
+La herramienta que se usará será \textit{WhatsApp} y la frecuencia de cumplimiento de este plan será aproximadamente semanal.
+Destacar que para conseguir una comunicación fluida entre los miembros del equipo de trabajo, el intercambio de mensajes deberá ser algo
+más frecuente, se estima que cada dos días deberíamos establecer comunicación para conseguir una planificación óptima.
+El objetivo de este plan es garantizar el correcto avance del proyecto, así como la sincronización de tareas a cumplimentar.
+
+\textbf{PL.EC.2 Plan de realización de reuniones:} %Une los procesos 2,3,4
  
-\textbf{PL.G.1: Nombrado de archivos}
+\textbf{PL.EC.3 Plan de documentación:} 
  
-Todos los archivos del proyecto quedarán nombrados con el siguiente formato:
+\textbf{PL.EC.4 Plan de control de esfuerzo:}
  
+\textbf{PL.EC.5 Plan de entrega de resultados:} 
+
+\textbf{PL.EC.6 Plan de nombrado de archivos:}  %Referencia¿¿?¿
+
+Todos los archivos del proyecto quedarán nombrados con el siguiente formato: 
+
 $<A><B><C><D>$
  
 \begin{itemize}
@@ -220,14 +260,39 @@ $<A><B><C><D>$
    \item D = Extensión del archivo.
 \end{itemize}
  
-En estos campos solo se permiten cadenas de texto que cumplan la siguiente ER para evitar el uso de  caracteres especiales: [a-zA-z'-']+[0-9]*. Se intentará además el uso en la medida de lo posible de nombres anglosajones. Todos los nombres comenzarán por una letra mayúscula. (Campos A y B).
+En estos campos solo se permiten cadenas de texto compuestas por letras y números. Se intentará además el uso en la medida de lo posible de nombres anglosajones. Todos los nombres comenzarán por una letra mayúscula. (Campos A y B). (Ejemplo: FeedUsers.js)
+Se aplica cada vez que se crea un nuevo fichero dentro del proyecto a lo largo del proceso de desarrollo. Todos los desarrolladores son responsables de aplicar este plan. Se espera que este plan permita una correcta comprensión del código y navegabilidad dentro del código.
+
+\textbf{PL.EC.7 Plan de estructuración de directorios: }
+
+\textbf{PL.EC.8 Plan de uso de guías de estilo: } 
+
+\textbf{PL.EC.9 Plan de control de versionado y actualización del código: } 
+
+\textbf{PL.EC.10 Plan de aseguramiento de la calidad: }
+
+\subsubsection{Planes asociados procesos técnicos}
+
+\textbf{PL.T.1 Plan de desarrollo del cliente móvil: }
  
-\textbf{Ejemplos:}
+\textbf{PL.T.2 Plan de desarrollo del Front-End web: }
  
-Users.controller.js : Nombre de un archivo en subdirectorio 'controllers'.
+\textbf{PL.T.3 Plan de definición del modelo de datos: }
  
-FeedUsers.css :  Nombre de un archivo css para componente de \textit{feed} de usuarios.
+\textbf{PL.T.4 Plan de desarrollo del servidor de Back-End:}
  
+\textbf{PL.T.5 Plan de construcción y despliegue continuo del sistema: }
+ 
+\subsubsection{Planes de gestión de configuraciones}
+A continuación se detallan los planes establecidos para la gestión continua de las configuraciones del
+proyecto.
+ 
+%Para asegurar la correcta comprensión del código y la navegabilidad del mismo se establece una convención de nombrado de archivos, una estructura de directorios y guías de estilo a seguir a lo largo de todos los módulos del proyecto.%
+ 
+%falta una referencia?¿?%
+\textbf{PL.EC.1: Plan de nombrado de archivos:}
+ 
+
 \pagebreak
 \textbf{PL.G.2: Estructurado de directorios}
  
@@ -552,37 +617,70 @@ La entrega de resultados se realiza de manera continua de forma que el cliente p
 Para implementar las vistas del sistema se ha utilizado por una parte Java (Android SDK) para construir el cliente móvil para dispositivos Android y por otra JavaScript (React.JS) para desarrollar el \textit{frontend} web. En cuanto al \textit{backend}, se ha desarrollado utilizando Node.JS y el \textit{framework} Express. La base de datos utilizará el SGBD MongoDB. El despliegue del sistema se realizará en un entorno de contenedores Docker desplegado sobre máquinas virtuales en \textit{cloud}. Se seguirá una filosofía de entrega y despliegue continuo utilizando \textit{scripts} y GitHub Actions.
  
 \subsubsection*{Ejecución de los planes:}
+
+\textbf{PL.I.1:}
+Se ha escogido como proveedor \textit{cloud} Amazon AWS. Esta decisión ha permitido desde el principo disponer de una plataforma \textit{cloud} gratuita para el despliegue, no se han recibido cobros inesperados por parte del proveedor y se ha mantenido en todo momento la disponibilidad de las máquinas virtuales. En ningún momento a lo largo del proyecto se ha planteado cambiar esta decisión. Se concreta por tanto que ha el plan cumplido con su objetivo.
  
-\textbf{PL.G.1:}
+\textbf{PL.I.2:} 
+Para la implementación del modelo de datos, se ha escogido el SGBD MongoDB. Este SGBD administra bases de datos no relacionales, que se caracterizan por su flexibilidad. La decisión se considera correcta, el equipo de desarrollo de Back-End considera que ha sido fácil trabajar con este gestor gracias a su extensa documentación y la disponibilidad de librerías para su manipulación en Node.js. El gestor ha dado soporte para almacenar correctamente todos los datos del sistema y ha asegurado una correcta disponibilidad y consistencia de los mismos. Se concreta por tanto que el plan ha cumplido con su objetivo.
+
+\textbf{PL.I.3:}
+El plan de formación inicial de los desarrolladores ha sido uno de los más dificiles a llevar a cabo. Aunque todos los desarrolladores han cumplido con el plan y dedicado su tiempo personal a familizarse con las nuevas tecnologías, la mayor parte de la familiarización y el aprendizaje se ha desarrollado a medida que se implementaban los distintos módulos. Por tanto, como posible mejora para futuros proyectos, se propone asignar a los desarrolladores pequeñas tareas de desarrollo utilzando las tecnologías a aprender, para asegurar un grado de familiarización con las tecnologías previo al desarrollo del proyecto.
+
+\textbf{PL.EC.1:}
+El plan de comunicación se ha cumplido tal y como se había especificado y ha cumplido su objetivo permitiendo en todo momento una comunicación fluida y una correcta sincronización entre los integrantes del proyecto.
+
+\textbf{PL.EC.2:} 
+El plan de realización de reuniones de todos los integrantes del proyecto ha resultado muy beneficioso, todos los integrantes han acudido y participado en las reuniones permitiendo al director del proyecto conocer de primera mano el estado de desarrollo de los distintos módulos permitiendo por tanto tomar las decisiones de control pertinentes.
+Además, se ha llevado a cabo correctamente el registro de las decisiones tomadas. Javier Vela, el responsable de este proceso, ha cumplido con su cometido y registrado en todas las reuniones las decisiones tomadas. Tener este histórico de decisiones, también ha permitido a los desarrolladores acceder a estas en momentos puntuales en los que se necesitaba cierta información. Por útltimo, la monitorización de avance semanal, ha permitido mantener correctamente un control del avance del desarrollo, asignar tareas a los desarrolladores y marcar limites temporales y prioridades de las tareas, se concluye por tanto que ha sido efectivo y útil.
+
+\textbf{PL.EC.3}
+El plan de documentación del código no se ha seguido tal y como se había como se había planteado. El equipo de Back-End si que ha utilizado las wikis de github para documentar el modo de uso de la REST API implementada y para documentar el proceso de configuración de las máquinas virtuales para el despliegue. Sin embargo, los equipos de Front-End no han utilizado las wikis para llevar a cabo la documentación del código sino que han realizado este trabajo mediante comentarios en el propio código. Como mejora se propone cambiar el plan y definir un convenio de documentación del código utilizando comentarios de tal manera que el uso de las wikis sea opcional para los casos en los que tenga utilidad (como en el caso del Back-End). Se confirma por tanto que el plan no ha sido útil al 100\%.
+ 
+\textbf{PL.EC.4}
+El control de los esfuerzos realizados por los desarrolladores se ha desarrollado conforme se había establecido en los planes, la tabla de control ha resultado de gran ayuda para comprobar el avance del trabajo. También se ha utilizado para que los desarrolladores fuesen conscientes del tiempo empleado y para poder hacer una valoración final del tiempo empleado en el proyecto.
+ 
+\textbf{PL.EC.5}
+El plan de entrega de resultados continuo se ha seguido tal y como se había planteado siguiento la filosofía de despliegue continuo del sistema, estando disponible en todo momento del desarrollo una versión en producción de los distintos componentes del sistema.
+
+\textbf{PL.EC.6} 
 EL plan de nombrado de archivos ha probado ser útil para comprender la disposición del código y asegura la navegabilidad del mismo cumpliendo por tanto su objetivo. Ha sido respetado por todos los desarrolladores, resultando ser intuitivo a la hora de ser utilizado mientras se desarrolla. Como problema podría destacarse que en el entorno de Express ha sido menos intuitivo utilizar la convención de nombrado, ya que normalmente los archivos se nombran comenzando por minúscula.
- 
-\textbf{PL.G.2:}
+
+\textbf{PL.EC.7}
 El plan de estructurado de directorios cumplido su objetivo habiendo ayudado a los desarrolladores a mantener una correcta estructura de código en los distintos subproyectos y ayudando a su vez la navegabilidad y comprensión del código.
- 
-\textbf{PL.G.3:}
+
+\textbf{PL.EC.8}
 Los desarrolladores del proyecto se han valido de las guías de estilo recomendadas por el plan de uso de guía de estilo, acudiendo a ellas a la hora de implementar código.
- 
-\textbf{PL.G.4:}
-El plan de control de versionado y actualización del código ha resultado ser muy útil para mantener el código accesible para todos los desarrolladores. Se destaca que la herramienta GitHub ha permitido a los desarrolladores ver el código del resto de los integrantes del código, asegurar que el código no se pierda, acceder a versiones de código anteriores para comprobar configuraciones anteriores y mantener un régimen de despliegue y entrega continuos. La herramienta y el uso de esta ha sido adoptada por todos los integrantes del proyecto sin ningún problema, destacando todos ellos su facilidad y comodidad de uso.
- 
-\textbf{PL.CD.1:}
-El sistema se encuentra desplegado en su totalidad sobre dos máquina del servicio de \textit{Amazon Web Services}, y se puede acceder a las rutas de la REST API solo a través del puerto 443 (puerto HTTPS) redirigiendo las peticiones del puerto 80 al 443 para mantener la confidencialidad. Estas peticiones son reexpedidas usando el \textit{reverse proxy} Nginx, para asegurarse una conexión segura el \textit{proxy} obtiene el certificado digital mediante la entidad certificadora Let's Encrypt, que proporciona certificados de forma gratuita.
-Entre las principales desventajas que conlleva usar el servicio gratuito de \textit{Amazon Web Services} es que no ofrece una IP estática para la máquina, por ello se ha tenido que utilizar el servicio gratuito no-ip que proporciona dominios a Ip's de forma dinámica, lo que provee a las máquinas cliente y servidor, de dos nombres DNS por las que se les puede identificar. La máquina servidor(\textit{backend}) está bajo el nombre del dominio \textit{https://keypax-api.sytes.net} y la máquina cliente(\textit{frontend}) está bajo el nombre \textit{https://keypax.sytes.net}.
- 
-\pagebreak
- 
-\textbf{PL.CA.1:}
-En el ámbito de planes de aseguramiento de la calidad, el plan de uso de guías de documentación y de diseño gráfico ha resultado más difícil de aplicar que el resto de planes. En cuanto al uso de guía de documentación, los desarrolladores han consultado los estándares del mercado para basarse en ellos a la hora de completar la documentación. Sin embargo se ha escogido documentar el código sin seguir estrictamente dichos estándares y buscando un estilo comprensible por todos los integrantes del proyecto. Respecto a las guías de diseño gráfico, los desarrolladores de los componentes de \textit{frontend} se han asegurado de diseñar las vistas de usuario de forma que sean claras, simples y fáciles de usar por los usuarios futuros.
- 
-\textbf{PL.CA.2:}
+
+\textbf{PL.EC.9}
+El plan de control de versionado y actualización del código ha resultado ser muy útil para mantener el código accesible para todos los desarrolladores. Se destaca que la herramienta GitHub ha permitido a los desarrolladores ver el código del resto de los integrantes del código, asegurar que el código no se pierda, acceder a versiones de código anteriores para comprobar configuraciones anteriores y mantener un régimen de despliegue y entrega continuos. La herramienta y el uso de esta ha sido adoptada por todos los integrantes del proyecto sin ningún problema, destacando todos ellos su facilidad y comodidad de uso. 
+
+\textbf{PL.EC.10} %REVISAR TODO ESTE Punto...
+En el ámbito del plan de aseguramiento de la calidad, el plan de uso de guías de documentación y de diseño gráfico ha resultado más difícil de aplicar que el resto de planes. En cuanto al uso de guía de documentación, los desarrolladores han consultado las tendencias del mercado para basarse en ellos a la hora de completar la documentación. Sin embargo se ha escogido documentar el código sin seguir estrictamente estándares especificos buscando un estilo comprensible por todos los integrantes del proyecto. Respecto a las guías de diseño gráfico, los desarrolladores de los componentes de \textit{frontend} se han asegurado de diseñar las vistas de usuario de forma que sean claras, simples y fáciles de usar por los usuarios futuros.
+
 El plan de revisión de código por pares ha sido llevado a cabo por los desarrolladores tal y como se había estipulado. Ha resultado ser útil para mantener un control del avance y la calidad del código. Sin embargo, se prevé que su utilidad crezca en la segunda iteración del proyecto a medida que vayan creciendo los registros de las revisiones.
- 
-\textbf{PL.CA.3:}
+
 EL plan de revisión de requisitos ha sido llevado a cabo por los desarrolladores tal y como se había estipulado.
 Se ha comprobado su utilidad a la hora de mantener el control sobre el avance de los requisitos, asegurando que ningún requisito queda sin implementarse. Sin embargo, se prevé que su utilidad crezca en la segunda iteración del proyecto a medida que vayan creciendo los registros de las revisiones pudiendo comprobarse el avance real del proyecto.
- 
-\textbf{PL.CA.4:}
+
 El plan de test sobre el producto ha permitido asegurar la corrección de los distintos módulos a la vez que se desarrollaban permitiendo detectar bugs antes de integrarlos con el resto de componentes del sistema. En la segunda iteración se desarrollarán las pruebas generales previstas sobre el producto completo.
+
+\textbf{PL.T.1} 
+%PENDIENTE%
+ 
+\textbf{PL.T.2} %PENDIENTE%
+ 
+\textbf{PL.T.3} 
+El plan de definición del modelo de datos se ha cumplido tal y como se había definido y a tiempo asegurando desde el principio un modelo de datos adecuado para almacenar la información del sistema.
+ 
+\textbf{PL.T.4} %PENDIENTE%
+
+ 
+\textbf{PL.T.5} 
+El sistema se encuentra desplegado en su totalidad sobre dos máquina del servicio de \textit{Amazon Web Services}, y se puede acceder a las rutas de la REST API solo a través del puerto 443 (puerto HTTPS) redirigiendo las peticiones del puerto 80 al 443 para mantener la confidencialidad. Estas peticiones son reexpedidas usando el \textit{reverse proxy} Nginx, para asegurarse una conexión segura el \textit{proxy} obtiene el certificado digital mediante la entidad certificadora Let's Encrypt, que proporciona certificados de forma gratuita.
+Entre las principales desventajas que conlleva usar el servicio gratuito de \textit{Amazon Web Services} es que no ofrece una IP estática para la máquina, por ello se ha tenido que utilizar el servicio gratuito no-ip que proporciona dominios a Ip's de forma dinámica, lo que provee a las máquinas cliente y servidor, de dos nombres DNS por las que se les puede identificar. La máquina servidor(\textit{backend}) está bajo el nombre del dominio \textit{https://keypax-api.sytes.net} y la máquina cliente(\textit{frontend}) está bajo el nombre \textit{https://keypax.sytes.net}.
+
+
 
 
 \subsection{Cierre del proyecto}
