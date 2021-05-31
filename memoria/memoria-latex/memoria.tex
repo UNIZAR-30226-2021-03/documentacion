@@ -200,7 +200,7 @@ El equipo del proyecto está formado por los 6 integrantes del grupo.  Para divi
 
 \textbf{P.EC.13} Proceso de revisión de los requisitos.
 
-\textbf{P.EC.13} Proceso de ejecución de pruebas sobre el sistema.
+\textbf{P.EC.14} Proceso de ejecución de pruebas sobre el sistema.
 
 %//////////////////////////////////////////////////////TODOS////////////////////////////////////////////////////////
 \subsubsection{Procesos técnicos}
@@ -213,7 +213,9 @@ El equipo del proyecto está formado por los 6 integrantes del grupo.  Para divi
 
 \textbf{P.T.4} Proceso de desarrollo del \textit{backend} utilizando Node.JS y el \textit{framework} Express.
 
-\textbf{P.T.5} Proceso de construcción y despliegue continuo del sistema en entorno de contenedores Docker desplegado sobre máquinas virtuales en \textit{cloud}.
+\textbf{P.T.5} Proceso de configuración de máquinas virtuales en cloud.
+
+\textbf{P.T.6} Proceso de construcción y despliegue continuo del sistema en entorno de contenedores Docker desplegado sobre máquinas virtuales en \textit{cloud}.
 
 \pagebreak
 \subsection{Planes}
@@ -225,13 +227,15 @@ El equipo del proyecto está formado por los 6 integrantes del grupo.  Para divi
 \textbf{PL.I.1 Plan de adquisición de un proveedor cloud:}
 La elección del proveedor cloud será una puesta en común de los miembros del grupo, y su posterior decisión en base al impacto global de la empresa y una búsqueda de servicios ofrecidos de forma gratuita. 
 Esta decisión dependerá más de los equipos de backend y web, ya que serán los encargados de realizar el despliegue.
+El objetivo es tener tomada esta decisión en el inicio del proyecto y mantenerla durante todo el desarrollo.
  
 \textbf{PL.I.2 Plan de selección de un SGBD:} 
-La base de datos a utlizar se decidirá también por consenso de los desarrolladores pero dando más importancia al grado de familiarización del equipo de backend, ya que serán quienes tengan más contacto con la base de datos.
-Antes de decidir cuál será nuestro gestor, debatiremos si utilizar una base de datos relacional o no relacional, y una vez decidido contrataremos un SGBD.
+La base de datos a utlizar se decidirá también por consenso de los desarrolladores pero dando más importancia al grado de familiarización del equipo de backend, porque serán quienes tengan más contacto con la base de datos.
+Antes de decidir cuál será nuestro gestor, habrá que debatir si utilizar una base de datos relacional o no relacional, y una vez decidido, se contratará un SGBD.
+Igual que la decisión sobre el cloud a utilizar, el SGDB contratado será el único utilizado en el desarrollo del proyecto.
 
 \textbf{PL.I.3 Plan de formación:}
-En la división de tareas se ha valorado el grado de conocimiento de cada desarrollador con las teconologías que vamos a utilizar, aún así todos los miebros deberán autoformarse en su respectiva tarea, para poder empezar de form óptima a desarrollar el proyecto.
+En la división de tareas se ha valorado el grado de conocimiento de cada desarrollador con las teconologías que vamos a utilizar, aún así todos los miebros deberán autoformarse en su respectiva tarea, para poder empezar de forma óptima a desarrollar el proyecto.
 
 \subsubsection{Planes asociados a los procesos de ejecución y control}
 
@@ -287,35 +291,119 @@ Se aplica cada vez que se crea un nuevo fichero dentro del proyecto a lo largo d
 %PAUTAS: -Darle un nombre -Asociar plan a un proceso -Marcar cómo cuando se aplica y cuantas veces -Quién lo aplica -Resultado esperado (para qué se hace)%
 
 \textbf{PL.EC.7 Plan de estructuración de directorios: }
+Todos los módulos seguirán una estructura de directorios de agrupamiento por tipo de fichero. Es decir, los ficheros quedarán agrupados bajo un directorio padre que indique su uso dentro del módulo o funcionalidad.
+
+Ejemplo de estructura de directorios en \textit{backend}:
+
+\dirtree{%
+.1 src.
+.2 app.js.
+.2 config.
+.3 Db.config.js.
+.2 models.
+.3 Users.model.js.
+.3 Admins.model.js.
+}
+
 
 \textbf{PL.EC.8 Plan de uso de guías de estilo: }
 Este plan de utilización de las distintas guías de estilo se aplica a la vez que se va avanzando en el progreso de las distintas partes del proyecto, de forma que nos servirá de apoyo durante toda la realización del proyecto.
 Las guías de estilo se utilizarán tantas veces como el equipo vea necesario apoyarse en ellas, con lo que conseguiremos una correcta utilización en cada ámbito buscando las mejores soluciones en las guías.
+Los desarrolladores de código se apoyarán en las siguientes guías de estilo:
+
+\begin{itemize}
+   \setlength{\itemsep}{0em}
+   \item Estándares de código para desarrollo Android: \textit{AOSP Java Code Style for Contributors}.
+   \item Estándares de código para desarrollo en React: \textit{React design principles}.
+   \item Estándares de código para desarrollo en JavaScript: \textit{JavaScript Standard Style}.
+\end{itemize}
 
 \textbf{PL.EC.9 Plan de control de versionado y actualización del código: }
-El plan de control de versionado y actualización del código se lleva a cabo a lo largo del proyecto cuando este ha alcanzado un determinado progreso en cada una de sus partes. 
-La actualización se llevará a cabo por todos los miembros del grupo durante los tramos intermedios previstos entre las 3 versiones designadas. El resultado de este control de versionado y actualizaciones se realiza para comprobar el continuo trabajo durante la etapa de realización del proyecto
+Para el control del versionado y actualización del código se utilizarán distintos repositorios de GitHub para los componentes del sistema (los cuales serán modificados por todos los miembros del equipo durante el proyecto), es decir, un repositorio de \textit{frontend} web, de app móvil, de \textit{backend} y de documentación del proyecto. A continuación se enumeran los procedimientos a seguir para el uso de estos repositorios.
 
-\textbf{PL.EC.10 Plan de revisión del código por pares: }
-La revisión del código por pares es un plan por el cual nos asegurará la correcta implementación tanto del código como del progreso en general que se vaya generando de los distintos apartados del proyecto ......
+Dichos repositorios serán privados sólo accesibles por el equipo de desarrollo. 
+Se asociará a cada repositorio un conjunto de GitHub Actions para administrar la compilación y puesta en marcha del sistema. 
+Los \textit{commits} a estos repositorios irán acompañados de un nombre descriptivo de la tarea asociada. 
+Los \textit{commits} podrán hacerse en cualquier momento siempre que se haya probado el código previamente de manera local y ateniéndose al estado de las máquinas de despliegue. 
+Se seguirá una filosofía de entrega continua y despliegue continuo. 
+Para comprobar el progreso de las tareas, se seguirá el plan de aseguramiento de la calidad presentado en el punto \ref{sec:calidad}.
 
-\textbf{PL.EC.11 Plan de revisión de los requisitos: }
-Se realizará una revisión de requisitos conforme estos vayan siendo implementados por todo el equipo, esta revisión la llevará a cabo el equipo al completo y consistirá en confirmar si los requisitos consiguen completar los requisitos buscados.
-Este plan es esencial en el proyecto ya que lo que buscamos es la correcta implementación de cada uno de los requisitos designados.
 
-\textbf{PL.EC.12 Plan de ejecución de pruebas sobre el sistema: }
+\textbf{PL.EC.10 Plan de aseguramiento de la calidad:}
+A continuación se presentan un conjunto de actividades de control de calidad del código a llevar a cabo por parte del equipo de desarrollo durante todo el proyecto:
+
+\textbf{Revisión del código por pares: }
+
+Esta actividad tiene por objetivo realizar revisiones periódicas del código generado por miembros del equipo que no lo han desarrollado, pero que tienen las capacidades técnicas para realizar críticas constructivas sobre este. Se realizarán revisiones por pares abiertas, es decir, revisor y desarrollador se conocen y pueden comunicarse durante el proceso de revisión. Como apoyo a estas revisiones del código, los desarrolladores rellenarán una tabla de versionado del código, la cual permitirá al revisor comprobar los avances realizados en la tarea.
+
+Se rellenará una tabla de versionado (figura \ref{tablaVersionado}) por cada módulo importante de software (especificados en el punto anterior), la responsabilidad de rellenar dicha tabla recae sobre el desarrollador del módulo en cuestión. Cuando el desarrollador termine una versión del módulo importante o realice un avance crítico solicitará una revisión al gestor del proyecto y este le asignará un revisor adecuado para la tarea. Las conclusiones de una revisión se guardarán en una tabla de resumen (figura \ref{tablaConclusionesPares}) para que sirvan de referencia para futuras revisiones y para que el desarrollador pueda corregir lo necesario.
+
+\begin{figure}[H]
+   \centering
+       \includegraphics[height=1.3cm]{../images/tabla_versionado_code.png}
+   \caption{Tabla de versionado del código.}
+   \label{tablaVersionado}
+\end{figure}
+
+\begin{figure}[H]
+   \centering
+       \includegraphics[height=1.5cm]{../images/tabla_conclusiones_revision_pares.png}
+   \caption{Tabla de conclusiones de revisión por pares de código.}
+   \label{tablaConclusionesPares}
+\end{figure}
+
+\pagebreak
+\textbf{Revisión de los requisitos: }
+
+Para comprobar el correcto cumplimiento de los requisitos del sistema se utilizará una tabla de cumplimiento de requisitos (figura \ref{tablaRequisitos}). En este tipo de revisión tanto el desarrollador como el revisor rellenarán dicha tabla y discutirán los resultados. Dichos resultados serán recogidos en una tabla de resumen (figura \ref{tablaConclusionesRequisitos}) que servirá como para futuras revisiones. Los módulos de software a desarrollar anteriormente van asociados a ciertos requisitos del sistema. Antes de comenzar el desarrollo de un módulo se concretarán los requisitos finales a los que hace referencia y se generará la plantilla de la tabla de adecuación de requisitos. Como en el modelo de revisión anterior, cuando el desarrollador del módulo termine una versión importante o realice un avance crítico solicitará una revisión al gestor del proyecto este le asignará un revisor adecuado para la tarea.
+
+\begin{figure}[H]
+   \centering
+       \includegraphics[height=4cm]{../images/tabla_cumplimiento_requisitos.png}
+   \caption{Tabla de cumplimiento de requisitos.}
+   \label{tablaRequisitos}
+\end{figure}
+
+\begin{figure}[H]
+   \centering
+       \includegraphics[height=3cm]{../images/tabla_conclusiones_revision_requisitos.png}
+   \caption{Tabla de conclusiones de revisión de cumplimiento de requisitos.}
+   \label{tablaConclusionesRequisitos}
+\end{figure}
+
+Todas estas tablas generadas por el proceso de aseguramiento de la calidad quedarán almacenadas en un directorio remoto accesible por todos los miembros del equipo de desarrollo, agrupadas por el módulo al que hacen referencia de manera que sirvan como histórico de las revisiones realizadas y como mecanismo de monitorización del progreso de las tareas.
+
+\textbf{Test sobre el producto: }
+
+Para asegurar el funcionamiento correcto del código desarrollado se realizarán pruebas de desarrollo sobre los módulos, las cuales consistirán en pruebas unitarias y pruebas de integración con el resto de componentes del sistema. Además, una vez el sistema sea funcional, se realizarán pruebas globales sobre el sistema, las cuales consistirán en pruebas funcionales, de comunicación, de rendimiento y de sobrecarga. Por último, utilizando las herramientas de despliegue continuo mencionadas anteriormente, se implementarán tests básicos
+sobre el sistema previos al despliegue.
+
+%Proceso de revision por pares, revision de requisitos y  test sobre producto: ya están abajo hechos, hay que mofificarlos un poco%
 
 \subsubsection{Planes asociados a los procesos técnicos}
 
-\textbf{PL.T.1 Plan de desarrollo del cliente móvil: }
+\textbf{PL.T.1 Plan de definición del modelo de datos:}
+El plan de definición del modelo de datos se apoya en la decisión previamente tomada en el plan de selección de un SGBD. Los encargados de la ejecución de este plan son los desarrolladores de Back-End. Se debe asegurar que en todo momento el sistema dispone de una capa de datos capaz de almacenar todos los datos necesarios. También se deberá tener en cuenta la disponibilidad y persistencia de los mismos. El modelo de capa de datos deberá proporcionar una URI externa con la que acceder a la base de datos y realizar operaciones. Se aplicará una vez a comienzo del proyecto y las veces que sea necesario modificar el modelo de datos a lo largo del proyecto.
 
-\textbf{PL.T.2 Plan de desarrollo del Front-End web: }
+%Para el subsistema que concierne a la capa de datos, se despliega en un clúster de MongoDB situado en Bélgica siendo este proporcionado por el equipo de \textit{MongoDB Atlas}, donde se van a desarrollar una serie de diversos \textit{triggers} que lleven un control de la consistencia de datos tanto tras el uso operaciones además se llevará un control periódico para evitar la replicación y la detección de anomalías a través del uso de \textit{scripts}.%
 
-\textbf{PL.T.3 Plan de definición del modelo de datos: }
+\textbf{PL.T.2 Plan de desarrollo del producto: }
 
-\textbf{PL.T.4 Plan de desarrollo del servidor de Back-End:}
+El sistema se fundamenta en el desarrollo de tres subsistemas que trabajan aislados de los otros, siendo su comunicación entre los módulos expuesta a través de interfaces que los relacionan, de este modo tanto las pruebas, compilación y dependencias son independientes al resto de subsistemas. Los subsistemas son el \textit{backend}, el \textit{frontend web} y el \textit{frontend} móvil.
 
-\textbf{PL.T.5 Plan de construcción y despliegue continuo del sistema: }
+Los encargados de aplicar este plan son los distintos equipos de trabajo y lo aplicarán al menos N veces hasta haber completado las funcionales requeridas. El desarrollo de los distintos subsistemas se llevará a cabo completando distintas versiones del producto final que añadan funcionalidad. Los desarrolladores actualizarán mediante commmits al repositorio compartido todos los cambios que hagan al código.
+
+Los desarrolladores deberán asegurar que el \textit{frontend web} sea accesible desde los navegadores web Google Chrome (versión 89) y Firefox (versión 87), las interfaces del \textit{frontend web} y el \textit{backend} están expuestas en el puerto 443. El \textit{frontend móvil} usará la versión Android 6.1 (\textit{Marshmallow}). Las variables de usuarios y contraseñas serán almacenadas como variables de entorno para evitar ponerlas como texto plano en el código.
+
+
+%El sistema se fundamenta en el desarrollo de cuatro subsistemas que trabajan aislados de los otros, siendo su comunicación entre los módulos expuesta a través de interfaces que los relacionan, de este modo tanto las pruebas, compilación y dependencias son independientes al resto de subsistemas.Dos de los cuatro subsistemas, el \textit{frontend web} y el \textit{backend}, estarán empotrados en contenedores Docker y desplegados en la nube utilizando los servicios de Amazon Web Services, se utilizarán \textit{scripts} de GitHub Actions para automatizar la compilación y \textit{testing} y despliegue en AWS de los mismos, utilizando en el caso de entorno web librerías de \textit{testing} como Jest y Postman en el caso de la API REST. Dos de los cuatro subsistemas, el \textit{frontend web} y el \textit{backend}, estarán empotrados en contenedores Docker y desplegados en la nube utilizando los servicios de Amazon Web Services, se utilizarán \textit{scripts} de GitHub Actions para automatizar la compilación y \textit{testing} y despliegue en AWS de los mismos, utilizando en el caso de entorno web librerías de \textit{testing} como Jest y Postman en el caso de la API REST.%
+
+
+\textbf{PL.T.3 Plan de construcción y despliegue continuo del sistema: }
+La configuración del entorno de despliegue se realizará una sola vez al comienzo del desarrollo del sistema. Los encargados serán los desarrolladores de back-end. En primer lugar, se creará una cuenta en el servicio NoIP y se crearán los nombres de dominio necesarios para los servicios web (backend y frontend). En segundo lugar, configurarán las máquinas virtuales necesarias en la nube utilizando los servicios del proveedor cloud seleccionado para ser utilizadas como plataforma de despliegue de estos subsistemas , es decir, crearán los usuarios pertinentes, configurarán el acceso a las mismas y se asegurarán que disponen del software necesario para el sistema. Configurarán además un cliente de NoIP para asegurar que las IPs de las máquinas están siempre asociadas al nombre de dominio pertinente. Por último, configrurarán un entorno de Docker que mediante Nginx permita acceso https a las aplicaciones. 
+
+Los distintos subsistemas serán compilados y desplegados de forma independiente por cada equipo de desarrolladores.
+El \textit{frontend web} y el \textit{backend} estarán empotrados en contenedores Docker y desplegados sobre las máquinas virtuales previamente configuradas. Se utilizarán \textit{scripts} de GitHub Actions para automatizar la compilación y \textit{testing} y despliegue de los mismos. Por tanto, la compilación y despliegue se realiza cada vez que se hace un commit al repositorio correspondiente. Se pretende asegurar que en todo momento se dispone una versión en producción desplegada aunque no tenga toda la funcionalidad implementada. Los encargados de aplicar este plan son los distintos equipos de trabajo y lo aplicarán al menos M veces, tantas como commits se hagan.
 
 \subsubsection{Planes de gestión de configuraciones}
 A continuación se detallan los planes establecidos para la gestión continua de las configuraciones del
