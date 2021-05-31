@@ -161,13 +161,13 @@ El equipo del proyecto está formado por los 6 integrantes del grupo.  Para divi
 \subsection{Procesos de inicio}
 
 \subsubsection{Proceso de identificación del servidor \textit{cloud} a utilizar para el despliegue} \label{P.I.1}
-Consiste en un estudio, revisión y discusión de los distintos proveedores \textit{cloud} disponibles en el mercado para elegir el más adecuado para el sistema. Dicha elección se basará en los conocimientos de los miembros del grupo, en el impacto global de la empresa y en base a la cantidad de servicios ofrecidos de forma gratuita.
+Consiste en un estudio, revisión y discusión de los distintos proveedores \textit{cloud} disponibles en el mercado para elegir el más adecuado para el sistema. Dicha elección se basará en los conocimientos de los miembros del grupo, en el impacto global de la empresa y la cantidad de servicios ofrecidos de forma gratuita.
 
 \subsubsection{Proceso de identificación de la base de datos a utilizar para dar soporte al modelo de datos} \label{P.I.2}
 Consiste en la selección de una un base datos para dar soporte a las necesidades del modelo de datos que se quiera implementar. En primer lugar, se diseñará un esbozo del modelo de datos acorde a la información que se requiera almacenar, para poder guiar sus decisiones. A continuación, se debatirá la utilización de una base de datos relacional o no relacional para dar soporte al modelo. Por último, una vez completados los pasos anteriores, se escogera un SGBD que soporte el modelo diseñado, que permita un acceso remoto a los datos y que asegure la disponibilidad y consistencia de los mismos.
 
 \subsubsection{Proceso de autoformación inicial de cada desarrollador del equipo} \label{P.I.3}
-En la división de tareas precia se valorará el grado de conocimiento de cada desarrollador con las teconologías que se van a utilizar, sin embargo, los desarrolladores dedicarán tiempo de manera individual en autoformación con tutoriales y documentación sobre las tecnologías a usar en el desarrollo del sistema. Además, todos los integrantes del grupo se comprometen a formar a sus compañeros en las áreas que conozcan a medida que surjan dudas durante el desarrollo del sistema.
+En la división de tareas precia se valorará el grado de conocimiento de cada desarrollador con las teconologías que se van a utilizar, sin embargo, los desarrolladores dedicarán tiempo de manera individual en autoformación con tutoriales y documentación sobre las tecnologías a usar en el desarrollo del sistema.
 
 \subsection{Procesos de ejecución y control}
 
@@ -175,10 +175,10 @@ En la división de tareas precia se valorará el grado de conocimiento de cada d
 Se usará Whatsapp para comunicarse entre los integrantes del proyecto. A través de ella, se concretan los horarios de trabajo, reuniones y mensajes importantes. También se utilizará Google Meet como herramienta de videollamada para las reuniones a distancia. 
 
 \subsubsection{Proceso de puesta en común de trabajo realizado} \label{P.EC.2}
-Consiste en la puesta en común de los avances de cada equipo de desarrollo. Permite al director del proyecto conocer el estado de desarrollo del proyecto.
+Consiste en la puesta en común de los avances de cada equipo de desarrollo. Permite al director del proyecto conocer el estado de desarrollo del sistema.
 
 \subsubsection{Proceso de registro de las decisiones tomadas en las reuniones} \label{P.EC.3}
-Consiste en la formalización de las decisiones tomadas por el equipo de desarrollo, tales como la asignación de tareas, la determinación de la prioridad de las mismas o la definición de límites temporales. Dichas decisiones se almacenarán en actar en un repositorio de \textit{Github}.
+Consiste en la formalización de las decisiones tomadas por el equipo de desarrollo y el director del proyecto, tales como la asignación de tareas, la determinación de la prioridad de las mismas o la definición de límites temporales. Dichas decisiones se almacenarán en actas en un repositorio de \textit{Github}.
 
 \subsubsection{Proceso de monitorización del avance del proyecto} \label{P.EC.4}
 Consiste en el control del avance del proyecto en función del trabajo realizado por los desarrolladores. Cada uno explicará lo avanzado y puede realizar demostración del \textit{software} si lo ve necesario.
@@ -190,7 +190,7 @@ El proceso de documentación del código se realizará en las \textit{Wikis} de 
 Consiste en la documentación de los esfuerzos realizados por los desarrolladores mediante una tabla de control. Dicha tabla se almacenará en un repositorio común y contendrá las horas que dedica cada desarrollador a una tarea específica.
 
 \subsubsection{Proceso de entrega de resultados} \label{P.EC.7}
-Se realiza mediante reuniones con el cliente y generando y entregando documentación asociada a la gestión y avance del proyecto.
+Seguirá una filosofía de entrega y despliegue continuos, es decir, en todo momento se dispone una versión en producción del sistema y se realizan reuniones periódicas con el cliente según establezca este. También se entregará la documentación asociada a la gestión y avance del proyecto.
 
 \subsubsection{Proceso de nombrado de archivos} \label{P.EC.8}
 
@@ -206,7 +206,7 @@ $<A><B><C><D>$
    \item D = Extensión del archivo.
 \end{itemize}
 
-En estos campos solo se permiten cadenas de texto compuestas por letras y números. Se intentará además el uso en la medida de lo posible de nombres anglosajones. Todos los nombres comenzarán por una letra mayúscula. (Campos A y B). (Ejemplo: FeedUsers.js). Se aplica cada vez que se crea un nuevo fichero dentro del proyecto a lo largo del proceso de desarrollo.
+En estos campos solo se permiten cadenas de texto compuestas por letras y números. Se intentará además el uso en la medida de lo posible de nombres anglosajones. Todos los nombres comenzarán por una letra mayúscula. (Campos A y B). (Ejemplo: FeedUsers.js). Se aplica a todos los ficheros generados en el proceso de implementeción del sistema.
 
 \subsubsection{Proceso de estructurado de directorios} \label{P.EC.9}
 
@@ -243,7 +243,6 @@ Dichos repositorios serán privados sólo accesibles por el equipo de desarrollo
 Se asociará a cada repositorio un conjunto de GitHub Actions para administrar la compilación y puesta en marcha del sistema. 
 Los \textit{commits} a estos repositorios irán acompañados de un nombre descriptivo de la tarea asociada. 
 Los \textit{commits} podrán hacerse en cualquier momento siempre que se haya probado el código previamente de manera local y ateniéndose al estado de las máquinas de despliegue. 
-Se seguirá una filosofía de entrega continua y despliegue continuo.
 
 \subsubsection{Proceso de revisión del código por pares} \label{P.EC.12}
 
@@ -298,7 +297,7 @@ Consiste en el desarrollo de una aplicación móvil para dispositivos android im
 Consiste en el desarrollo de una interfaz de usuario web implementado en JavaScript (React.JS) que permita a los usarios acceder al sistema.
 
 \subsubsection{Proceso de configuración de una base de datos sobre el SGBD escogido} \label{P.T.3}
-Consiste en configurar el SGBD anteriormente seleccionado asegurando que en todo momento el sistema dispone de una capa de datos capaz de almacenar todos los datos necesarios. También se deberá tener en cuenta la disponibilidad y persistencia de los mismos. El SGBD deberá proporcionar una URI externa con la que acceder a la base de datos y realizar operaciones.
+Consiste en configurar el SGBD anteriormente seleccionado asegurando que en todo momento el sistema dispone de una capa de datos capaz de almacenar todos los datos necesarios definidos en el modelo de datos completo. También se deberá tener en cuenta la disponibilidad y persistencia de los mismos. El SGBD deberá proporcionar una URI externa con la que acceder a la base de datos y realizar operaciones.
 
 \subsubsection{Proceso de desarrollo del \textit{backend}} \label{P.T.4}
 Consiste en el desarrollo de una REST API utilizando Node.JS y el \textit{framework} Express.
@@ -319,7 +318,7 @@ El \textit{frontend} web y el \textit{backend} estarán empotrados en contenedor
 
 \subsubsection{Plan de adquisición de un proveedor cloud:} \label{PL.I.1}
 
-El proceso \ref{P.I.1} se realizará mediante una decisión conjunta por parte de todos los miembros del equipo. Esta decisión dependerá más de los equipos de \textit{backend} y web, ya que serán los encargados de realizar la configuración inicial y el despliegue en el cloud. El objetivo es tener tomada esta decisión en el inicio del proyecto y mantenerla durante todo el desarrollo.
+El proceso \ref{P.I.1} se realizará mediante una decisión conjunta por parte de todos los miembros del equipo. Esta decisión dependerá más del equipo de \textit{backend}, ya que serán los encargados de realizar la configuración inicial y el despliegue en el cloud. El objetivo es tener tomada esta decisión en el inicio del proyecto y mantenerla durante todo el desarrollo.
  
 \subsubsection{Plan de selección de un SGBD:}  \label{PL.I.2}
 
@@ -327,53 +326,50 @@ La aplicación del proceso \ref{P.I.2} se llevará a cabo por el equipo de \text
 
 \subsubsection{Plan de formación:} \label{PL.I.3}
 
-El proceso \ref{P.I.3} se llevará a cabo por todos los desarrolladores tantas veces como sea necesario, con el objetivo de asegurar que los desarrolladores tengan una base sólida de conocimientos antes de comenzar el desarrollo.
+El proceso \ref{P.I.3} se llevará a cabo por todos los desarrolladores tantas veces como sea necesario, con el objetivo de asegurar que los desarrolladores tengan una base sólida de conocimientos antes de comenzar el desarrollo. Además, todos los integrantes del grupo se deberán comprometer a formar a sus compañeros en las áreas que conozcan a medida que surjan dudas durante el desarrollo del sistema.
 
 \subsection{Planes asociados a los procesos de ejecución y control}
 
 \subsubsection{Plan de comunicación:} \label{PL.EC.1}
 
-El proceso \ref{P.EC.1} se va a realizar por todos los desarrolladores del proyecto. Destacar que para conseguir una comunicación fluida entre los miembros del equipo de trabajo, el intercambio de mensajes deberá ser algo
-más frecuente. Se estima que cada dos días deberíamos establecer comunicación para conseguir una planificación óptima.
-El objetivo de este plan es garantizar el correcto avance del proyecto, así como la sincronización de tareas a cumplimentar.
+El proceso \ref{P.EC.1} se va a realizar por todos los desarrolladores del proyecto. Destacar que para conseguir una comunicación fluida entre los miembros del equipo de trabajo, el intercambio de mensajes deberá ser frecuente, diario si así fuese conveniente.
+El objetivo de este plan es una comunicación fluida y una correcta sincronización entre los integrantes del proyecto..
 
 \subsubsection{Plan de realización de reuniones:} \label{PL.EC.2} %Une los procesos 2,3,4 
 
-Las reuniones especificadas en los procesos \ref{P.EC.2}, \ref{P.EC.3} y \ref{P.EC.4} se realizaran semanalmente y requeriran la presencia de todos los integrantes del grupo. El objetivo de este plan es garantizar el correcto avance del proyecto, así como la sincronización de tareas a cumplimentar.
+Los procesos \ref{P.EC.2}, \ref{P.EC.3} y \ref{P.EC.4} se aplicarán en reuniones semanales que requeriran la presencia de todos los integrantes del grupo. El objetivo de este plan es garantizar el correcto avance del proyecto, así como la sincronización de tareas a cumplimentar.
 
 \subsubsection{Plan de documentación:} \label{PL.EC.3}
 
-La documentación del proceso \ref{P.EC.5} se realizará al acabar un módulo lo antes posible por todos los desarrolladores involucrados en él. El objetivo es mantener una documentación completa de cada módulo del sistema para el apoyo al resto
-de equipos de desarrollo y permitir una sincronización mejor en el trabajo.
+La aplicación del proceso \ref{P.EC.5} se realizará a medida que se implementa el código y será responsabilidad de todos los desarrolladores involucrados en este. El objetivo es mantener una documentación completa de cada módulo del sistema para el apoyo al resto de equipos de desarrollo y permitir una mejor sincronización en el trabajo.
 
 \subsubsection{Plan de control de esfuerzos:} \label{PL.EC.4}
 
-La cumplimentación de la tabla del proceso \ref{P.EC.6} se hará conforme los desarrolladores vayan trabajando en el proyecto.
+El desarrollo y la aplicación del proceso \ref{P.EC.6} se hará conforme los desarrolladores vayan trabajando en el proyecto. Todos los desarrolladores deben cumplir con este plan. Este plan tiene por objetivo comprobar el avance del trabajo y ayudar a los desarrolladores a ser conscientes del tiempo empleado.
 
 \subsubsection{Plan de entrega de resultados:} \label{PL.EC.5}
 
-La entrega de los resultados fruto del trabajo de los desarrolladores del proyecto se realizará de forma continua. De este modo,conforme se vaya avanzando tanto en el proceso de documentación como en el de desarrollo de código, se irán entregando los resultados.
-Se ha acordado que el trabajo realizado vaya siendo entregado conforme se vaya cumplimentando para garantizar una mayor visibilidad a nuestro cliente del progreso del mismo.
+La entrega de los resultados fruto del trabajo de los desarrolladores del proyecto se realizará de forma continua según lo especificado en el proceso \ref{P.EC.7}. De este modo, conforme se vaya avanzando tanto en el proceso de documentación como en el de desarrollo de código, se irán entregando los resultados.
+El objetivo de este plan es garantizar la sensación de transparencia percibida por el cliente a medida que el sistema progresa.
 
 \subsubsection{Plan de nombrado de archivos:} \label{PL.EC.6}
 
-Se asegurá que todos los archivos sigan las direcciones del proceso \ref{P.EC.8} durante todo el desarrollo del proyecto por parte de todos los desarrolladores. Se espera que este plan permita una correcta comprensión del código y navegabilidad dentro del código.
+Se asegurá que todos los archivos sigan las direcciones del proceso \ref{P.EC.8} durante todo el desarrollo del proyecto por parte de todos los desarrolladores. Se aplica cada vez que se crea un nuevo fichero dentro del proyecto a lo largo del proceso de desarrollo y es responsabilidad de todos los desarrolladores cumplirlo. Se espera que este plan permita una correcta comprensión del código y navegabilidad dentro del mismo.
 
 \subsubsection{Plan de estructuración de directorios: } \label{PL.EC.7}
 
-El proceso \ref{P.EC.9} establecerá la organización al inicio del proyecto y conforme sea necesario ampliarlo se mantendrá el estilo.
+El proceso \ref{P.EC.9} será aplicado por todos los desarrolladores del sistema a medida que vayan desarrollando el código de sus tareas asignadas. El objetivo de este plan es mantener una correcta estructura de código en los distintos subsistemas y ayudando a su vez la navegabilidad y comprensión del código.
 
 \subsubsection{Plan de uso de guías de estilo: } \label{PL.EC.8}
-El proceso \ref{P.EC.10} de utilización de las distintas guías de estilo se aplica a la vez que se va avanzando en el progreso de las distintas partes del proyecto, de forma que nos servirá de apoyo durante toda la realización del proyecto.
-Las guías de estilo se utilizarán tantas veces como el equipo vea necesario apoyarse en ellas, con lo que conseguiremos una correcta utilización en cada ámbito buscando las mejores soluciones en las guías.
+El proceso \ref{P.EC.10} de utilización de las distintas guías de estilo se aplicará por todos los desarrolladores a la vez que se avanza en la implementación de las distintas partes del proyecto. Las guías de estilo se utilizarán tantas veces como el equipo crea conveniente en función de las necesidades puntuales para asegurar que se siguen las prácticas comunes de la industria.
 
 \subsubsection{Plan de control de versionado y actualización del código: } \label{PL.EC.9}
 
-Todos los desarrolladores son responsables de aplicar el proceso \ref{P.E.11} durante todo el proyecto.
+Todos los desarrolladores son responsables de aplicar el proceso \ref{P.EC.11} durante todo el proyecto. El objetivo de este plan es asegurar la integridad del código evitando extravíos y permitir el acceso a versiones de código anteriores.
 
 \subsubsection{Plan de aseguramiento de la calidad:} \label{PL.EC.10}
 
-Los procesos \ref{P.EC.12}, \ref{P.EC.13} y \ref{P.EC.14} presentan el conjunto de actividades de control de calidad del código a llevar a cabo por parte del equipo de desarrollo durante todo el proyecto.
+Los procesos \ref{P.EC.12}, \ref{P.EC.13} y \ref{P.EC.14} presentan el conjunto de actividades de control de calidad del código a llevar a cabo por parte del equipo de desarrollo durante todo el proyecto. Estas actividades se aplicarán cuando los desarrolladores acabén la implementación o realizen cambios importantes de las distintos módulos. El encargado de asegurar el correcto cumplimiento de este plan es el responsable de calidad, en este caso, Andoni Salcedo. Este plan tiene por objetivo asegurar que el producto final sea robusto, fiable y que cumpla con los requisitos firmados con el cliente.
 
 \subsection{Planes asociados a los procesos técnicos}
 
@@ -384,7 +380,7 @@ Los encargados de la ejecución del proceso \ref{P.T.3} son los desarrolladores 
 
 El sistema se fundamenta en el desarrollo de tres subsistemas que trabajan aislados de los otros, siendo su comunicación entre los módulos expuesta a través de interfaces que los relacionan, de este modo tanto las pruebas, compilación y dependencias son independientes al resto de subsistemas. Los subsistemas son el \textit{backend}, el \textit{frontend web} y el \textit{frontend} móvil. 
 
-Los encargados de aplicar los procesos \ref{P.T.1}, \ref{P.T.2} y \ref{P.T.4}  son los distintos equipos de trabajo y lo aplicarán todas las veces necesarias hasta haber completado las funcionales requeridas. El desarrollo de los distintos subsistemas se llevará a cabo completando distintas versiones del producto final que añadan funcionalidad. Los desarrolladores actualizarán mediante commmits al repositorio compartido todos los cambios que hagan al código.
+Los encargados de aplicar los procesos \ref{P.T.1}, \ref{P.T.2} y \ref{P.T.4} son los distintos equipos de trabajo y lo aplicarán todas las veces necesarias hasta haber completado las funcionales requeridas. El desarrollo de los distintos subsistemas se llevará a cabo completando distintas versiones del producto final que añadan funcionalidad. Los desarrolladores actualizarán mediante commmits al repositorio compartido todos los cambios que hagan al código.
 
 Los desarrolladores deberán asegurar que el \textit{frontend web} sea accesible desde los navegadores web Google Chrome (versión 89) y Firefox (versión 87), las interfaces del \textit{frontend web} y el \textit{backend} están expuestas en el puerto 443. El \textit{frontend móvil} usará la versión Android 6.1 (\textit{Marshmallow}). Las variables de usuarios y contraseñas serán almacenadas como variables de entorno para evitar ponerlas como texto plano en el código.
 
@@ -604,70 +600,63 @@ Para implementar las vistas del sistema se ha utilizado por una parte Java (Andr
 
 \subsubsection*{Ejecución de los planes:}
 
-\textbf{PL.I.1:}
+\textbf{Plan \ref{PL.I.1}:}
 Se ha escogido como proveedor \textit{cloud} Amazon AWS. Esta decisión ha permitido desde el principo disponer de una plataforma \textit{cloud} gratuita para el despliegue, no se han recibido cobros inesperados por parte del proveedor y se ha mantenido en todo momento la disponibilidad de las máquinas virtuales. En ningún momento a lo largo del proyecto se ha planteado cambiar esta decisión. Se concreta por tanto que ha el plan cumplido con su objetivo.
 
-\textbf{PL.I.2:}
+\textbf{Plan \ref{PL.I.2}:}
 Para la implementación del modelo de datos, se ha escogido el SGBD MongoDB. Este SGBD administra bases de datos no relacionales, que se caracterizan por su flexibilidad. La decisión se considera correcta, el equipo de desarrollo de Back-End considera que ha sido fácil trabajar con este gestor gracias a su extensa documentación y la disponibilidad de librerías para su manipulación en Node.js. El gestor ha dado soporte para almacenar correctamente todos los datos del sistema y ha asegurado una correcta disponibilidad y consistencia de los mismos. Se concreta por tanto que el plan ha cumplido con su objetivo.
 
-\textbf{PL.I.3:}
+\textbf{Plan \ref{PL.I.3}:}
 El plan de formación inicial de los desarrolladores ha sido uno de los más dificiles a llevar a cabo. Aunque todos los desarrolladores han cumplido con el plan y dedicado su tiempo personal a familizarse con las nuevas tecnologías, la mayor parte de la familiarización y el aprendizaje se ha desarrollado a medida que se implementaban los distintos módulos. Por tanto, como posible mejora para futuros proyectos, se propone asignar a los desarrolladores pequeñas tareas de desarrollo utilzando las tecnologías a aprender, para asegurar un grado de familiarización con las tecnologías previo al desarrollo del proyecto.
 
-\textbf{PL.EC.1:}
+\textbf{Plan \ref{PL.EC.1}:}
 El plan de comunicación se ha cumplido tal y como se había especificado y ha cumplido su objetivo permitiendo en todo momento una comunicación fluida y una correcta sincronización entre los integrantes del proyecto.
 
-\textbf{PL.EC.2:}
+\textbf{Plan \ref{PL.EC.2}:}
 El plan de realización de reuniones de todos los integrantes del proyecto ha resultado muy beneficioso, todos los integrantes han acudido y participado en las reuniones permitiendo al director del proyecto conocer de primera mano el estado de desarrollo de los distintos módulos permitiendo por tanto tomar las decisiones de control pertinentes.
-Además, se ha llevado a cabo correctamente el registro de las decisiones tomadas. Javier Vela, el responsable de este proceso, ha cumplido con su cometido y registrado en todas las reuniones las decisiones tomadas. Tener este histórico de decisiones, también ha permitido a los desarrolladores acceder a estas en momentos puntuales en los que se necesitaba cierta información. Por útltimo, la monitorización de avance semanal, ha permitido mantener correctamente un control del avance del desarrollo, asignar tareas a los desarrolladores y marcar limites temporales y prioridades de las tareas, se concluye por tanto que ha sido efectivo y útil.
+Además, se ha llevado a cabo correctamente el registro de las decisiones tomadas. Javier Vela, el responsable de este proceso, ha cumplido con su cometido y registrado en todas las reuniones las decisiones tomadas. Tener este histórico de decisiones, también ha permitido a los desarrolladores acceder a estas en momentos puntuales en los que se necesitaba cierta información. Por útltimo, la monitorización de avance semanal, ha permitido mantener correctamente un control del avance del desarrollo, asignar tareas a los desarrolladores y marcar limites temporales y prioridades de las tareas. Se concluye por tanto que ha sido efectivo y útil.
 
-\textbf{PL.EC.3}
-El plan de documentación del código no se ha seguido tal y como se había como se había planteado. El equipo de Back-End si que ha utilizado las wikis de github para documentar el modo de uso de la REST API implementada y para documentar el proceso de configuración de las máquinas virtuales para el despliegue. Sin embargo, los equipos de Front-End no han utilizado las wikis para llevar a cabo la documentación del código sino que han realizado este trabajo mediante comentarios en el propio código. Como mejora se propone cambiar el plan y definir un convenio de documentación del código utilizando comentarios de tal manera que el uso de las wikis sea opcional para los casos en los que tenga utilidad (como en el caso del Back-End). Se confirma por tanto que el plan no ha sido útil al 100\%.
+\textbf{Plan \ref{PL.EC.3}:}
+El plan de documentación del código no se ha seguido tal y como se había como se había planteado. El equipo de \textit{backend} si que ha utilizado las wikis de Github para documentar el modo de uso de la REST API implementada y para documentar el proceso de configuración de las máquinas virtuales para el despliegue. Sin embargo, los equipos de \textit{frontend} no han utilizado las wikis para llevar a cabo la documentación del código sino que han realizado este trabajo mediante comentarios en el propio código. Como mejora se propone cambiar el plan y definir un convenio de documentación del código utilizando comentarios de tal manera que el uso de las wikis sea opcional para los casos en los que tenga utilidad (como en el caso del \textit{backend}). Se confirma por tanto que el plan no ha sido útil al 100\%.
 
-\textbf{PL.EC.4}
+\textbf{Plan \ref{PL.EC.4}:}
 El control de los esfuerzos realizados por los desarrolladores se ha desarrollado conforme se había establecido en los planes, la tabla de control ha resultado de gran ayuda para comprobar el avance del trabajo. También se ha utilizado para que los desarrolladores fuesen conscientes del tiempo empleado y para poder hacer una valoración final del tiempo empleado en el proyecto.
 
-\textbf{PL.EC.5}
-El plan de entrega de resultados continuo se ha seguido tal y como se había planteado siguiento la filosofía de despliegue continuo del sistema, estando disponible en todo momento del desarrollo una versión en producción de los distintos componentes del sistema.
+\textbf{Plan \ref{PL.EC.5}:}
+El plan de entrega de resultados continuo se ha seguido tal y como se había planteado siguiendo la filosofía de despliegue continuo del sistema, estando disponible en todo momento del desarrollo una versión en producción para el cliente de los distintos componentes del sistema.
 
-\textbf{PL.EC.6}
+\textbf{Plan \ref{PL.EC.6}:}
 EL plan de nombrado de archivos ha probado ser útil para comprender la disposición del código y asegura la navegabilidad del mismo cumpliendo por tanto su objetivo. Ha sido respetado por todos los desarrolladores, resultando ser intuitivo a la hora de ser utilizado mientras se desarrolla. Como problema podría destacarse que en el entorno de Express ha sido menos intuitivo utilizar la convención de nombrado, ya que normalmente los archivos se nombran comenzando por minúscula.
 
-\textbf{PL.EC.7}
-El plan de estructurado de directorios cumplido su objetivo habiendo ayudado a los desarrolladores a mantener una correcta estructura de código en los distintos subproyectos y ayudando a su vez la navegabilidad y comprensión del código.
+\textbf{Plan \ref{PL.EC.7}:}
+El plan de estructurado de directorios cumplido su objetivo habiendo ayudado a los desarrolladores a mantener una correcta estructura de código en los distintos subsistemas y ayudando a su vez la navegabilidad y comprensión del código.
 
-\textbf{PL.EC.8}
+\textbf{Plan \ref{PL.EC.8}:}
 Los desarrolladores del proyecto se han valido de las guías de estilo recomendadas por el plan de uso de guía de estilo, acudiendo a ellas a la hora de implementar código.
 
-\textbf{PL.EC.9}
+\textbf{Plan \ref{PL.EC.9}:}
 El plan de control de versionado y actualización del código ha resultado ser muy útil para mantener el código accesible para todos los desarrolladores. Se destaca que la herramienta GitHub ha permitido a los desarrolladores ver el código del resto de los integrantes del código, asegurar que el código no se pierda, acceder a versiones de código anteriores para comprobar configuraciones anteriores y mantener un régimen de despliegue y entrega continuos. La herramienta y el uso de esta ha sido adoptada por todos los integrantes del proyecto sin ningún problema, destacando todos ellos su facilidad y comodidad de uso.
 
-\textbf{PL.EC.10} %REVISAR TODO ESTE Punto...
-En el ámbito del plan de aseguramiento de la calidad, el plan de uso de guías de documentación y de diseño gráfico ha resultado más difícil de aplicar que el resto de planes. En cuanto al uso de guía de documentación, los desarrolladores han consultado las tendencias del mercado para basarse en ellos a la hora de completar la documentación. Sin embargo se ha escogido documentar el código sin seguir estrictamente estándares especificos buscando un estilo comprensible por todos los integrantes del proyecto. Respecto a las guías de diseño gráfico, los desarrolladores de los componentes de \textit{frontend} se han asegurado de diseñar las vistas de usuario de forma que sean claras, simples y fáciles de usar por los usuarios futuros.
+\textbf{Plan \ref{PL.EC.10}:} 
+En el plan de aseguramiento de la calidad, el proceso de revisión de código por pares ha sido llevado a cabo por los desarrolladores tal y como se había estipulado. Ha resultado ser útil para mantener un control del avance y la calidad del código.
 
-El plan de revisión de código por pares ha sido llevado a cabo por los desarrolladores tal y como se había estipulado. Ha resultado ser útil para mantener un control del avance y la calidad del código. Sin embargo, se prevé que su utilidad crezca en la segunda iteración del proyecto a medida que vayan creciendo los registros de las revisiones.
+La revisión de requisitos ha sido llevado a cabo por los desarrolladores tal y como se había estipulado.
+Se ha comprobado su utilidad a la hora de mantener el control sobre el avance de los requisitos, asegurando que ningún requisito queda sin implementarse.
+La utilidad de estos dos procesos anteriores hubiese sido mayor si el proyecto hubiese sido más extenso y el registros de las revisiones hubiese sido mayor.
 
-EL plan de revisión de requisitos ha sido llevado a cabo por los desarrolladores tal y como se había estipulado.
-Se ha comprobado su utilidad a la hora de mantener el control sobre el avance de los requisitos, asegurando que ningún requisito queda sin implementarse. Sin embargo, se prevé que su utilidad crezca en la segunda iteración del proyecto a medida que vayan creciendo los registros de las revisiones pudiendo comprobarse el avance real del proyecto.
+Finalmente, los tests sobre el producto ha permitido asegurar la corrección de los distintos módulos a la vez que se desarrollaban permitiendo detectar bugs antes de integrarlos con el resto de componentes del sistema. Las pruebas generales han permitido además asegurar un correcto funcionamiento del sistema en su totalidad.
 
-El plan de test sobre el producto ha permitido asegurar la corrección de los distintos módulos a la vez que se desarrollaban permitiendo detectar bugs antes de integrarlos con el resto de componentes del sistema. En la segunda iteración se desarrollarán las pruebas generales previstas sobre el producto completo.
+\textbf{Plan \ref{PL.T.1}:} 
+El plan de definición del modelo de datos se ha llevado a cabo por los desarrolladores del equipo de \textit{backend} tal y como se había estipulado, una vez al principio del proyecto y una vez en la segunda iteración del mismo debido a una modificación necesaria en el modelo para introducir la funcionalidad de ficheros cifrados.
 
-\textbf{PL.T.1}
-%PENDIENTE%
+\textbf{Plan \ref{PL.T.2}:} 
+El plan de desarrollo del producto se ha seguido conforme se había planificado, desarrollandose los distintos subsistemas en paralelo sin ocurrir en ningún momento entorpecimiento entre los equipos de desarrollo.
 
-\textbf{PL.T.2} %PENDIENTE%
-
-\textbf{PL.T.3}
-El plan de definición del modelo de datos se ha cumplido tal y como se había definido y a tiempo asegurando desde el principio un modelo de datos adecuado para almacenar la información del sistema.
-
-\textbf{PL.T.4} %PENDIENTE%
-
-
-\textbf{PL.T.5}
-El sistema se encuentra desplegado en su totalidad sobre dos máquina del servicio de \textit{Amazon Web Services}, y se puede acceder a las rutas de la REST API solo a través del puerto 443 (puerto HTTPS) redirigiendo las peticiones del puerto 80 al 443 para mantener la confidencialidad. Estas peticiones son reexpedidas usando el \textit{reverse proxy} Nginx, para asegurarse una conexión segura el \textit{proxy} obtiene el certificado digital mediante la entidad certificadora Let's Encrypt, que proporciona certificados de forma gratuita.
-Entre las principales desventajas que conlleva usar el servicio gratuito de \textit{Amazon Web Services} es que no ofrece una IP estática para la máquina, por ello se ha tenido que utilizar el servicio gratuito no-ip que proporciona dominios a Ip's de forma dinámica, lo que provee a las máquinas cliente y servidor, de dos nombres DNS por las que se les puede identificar. La máquina servidor(\textit{backend}) está bajo el nombre del dominio \textit{https://keypax-api.sytes.net} y la máquina cliente(\textit{frontend}) está bajo el nombre \textit{https://keypax.sytes.net}.
-
-
-
+\textbf{Plan \ref{PL.T.3}:} 
+El plan de construcción y despliegue continuo del sistema se ha seguido tal y como se había diseñado.
+Tanto el \textit{backend} como el \textit{frontend} web se encuentran desplegados sobre dos máquina virtuales sobre el \textit{cloud} de Amazon Web Services. Gracias al servicio de NoIP, estos dos componentes de pueden acceder a través de los nombres de dominio \textit{https://keypax-api.sytes.net} y \textit{https://keypax.sytes.net} respectivamente.
+La versión final del \textit{frontend} móvil se encuentra compilada en un fichero .apk utilizable por dispositivos android.
+Se concluye por tanto que ha cumplido su objetivo permitiendo la compilación y el despliegue de los susbsistemas de manera cómoda para los desarrolladores y dando a su vez soporte a la filosofía de despliegue continuo.
 
 \subsection{Cierre del proyecto}
 
