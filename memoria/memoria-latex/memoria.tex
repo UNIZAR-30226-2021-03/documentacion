@@ -161,18 +161,18 @@ El equipo del proyecto está formado por los 6 integrantes del grupo.  Para divi
 \subsection{Procesos de inicio}
 
 \subsubsection{Proceso de identificación del servidor \textit{cloud} a utilizar para el despliegue} \label{P.I.1}
-Consiste en un estudio, revisión y discusión de los distintos proveedores \textit{cloud} disponibles en el mercado para elegir el más adecuado para el sistema. Dicha elección se basará en los conocimientos de los miembros del grupo, en el impacto global de la empresa y la cantidad de servicios ofrecidos de forma gratuita.
+Consiste en un estudio, revisión y discusión de los distintos proveedores \textit{cloud} disponibles en el mercado para elegir el más adecuado para el sistema. Dicha elección se basará en los conocimientos de los miembros del grupo, el impacto global de la empresa y la cantidad de servicios ofrecidos de forma gratuita.
 
 \subsubsection{Proceso de identificación de la base de datos a utilizar para dar soporte al modelo de datos} \label{P.I.2}
-Consiste en la selección de una base datos para dar soporte a las necesidades del modelo de datos que se quiera implementar. En primer lugar, se diseñará un esbozo del modelo de datos acorde a la información que se requiera almacenar, para poder guiar sus decisiones. A continuación, se debatirá la utilización de una base de datos relacional o no relacional para dar soporte al modelo. Por último, una vez completados los pasos anteriores, se escogerá un SGBD que soporte el modelo diseñado, que permita un acceso remoto a los datos y que asegure la disponibilidad y consistencia de los mismos.
+Consiste en la selección de una base datos para dar soporte a las necesidades del modelo de datos que se quiera implementar. En primer lugar, se diseñará un esbozo del modelo de datos acorde a la información que se requiera almacenar, para poder guiar la decisión. A continuación, se debatirá la utilización de una base de datos relacional o no relacional para dar soporte al modelo. Por último, una vez completados los pasos anteriores, se escogerá un SGBD que soporte el modelo diseñado, que permita un acceso remoto a los datos y que asegure la disponibilidad y consistencia de los mismos.
 
 \subsubsection{Proceso de autoformación inicial de cada desarrollador del equipo} \label{P.I.3}
-En la división de tareas previa se valorará el grado de conocimiento de cada desarrollador con las tecnologías que se van a utilizar, sin embargo, los desarrolladores dedicarán tiempo de manera individual en autoformación con tutoriales y documentación sobre las tecnologías a usar en el desarrollo del sistema.
+En la división de tareas previa se valorará el grado de conocimiento de cada desarrollador de las tecnologías que se van a utilizar, sin embargo, los desarrolladores dedicarán tiempo de manera individual en autoformación con tutoriales y documentación sobre las tecnologías a usar en el desarrollo del sistema.
 
 \subsection{Procesos de ejecución y control}
 
 \subsubsection{Proceso de comunicación y concreción de los horarios de trabajo} \label{P.EC.1}
-Se usará Whatsapp para comunicarse entre los integrantes del proyecto. A través de ella, se concretan los horarios de trabajo, reuniones y mensajes importantes. También se utilizará Google Meet como herramienta de videollamada para las reuniones a distancia. 
+Se usará Whatsapp para comunicarse entre los integrantes del proyecto. A través de ella, se concretan los horarios de trabajo, se acuerdan reuniones y se trasmiten mensajes importantes. También se utilizará Google Meet como herramienta de videollamada para las reuniones a distancia. 
 
 \subsubsection{Proceso de puesta en común de trabajo realizado} \label{P.EC.2}
 Consiste en la puesta en común de los avances de cada equipo de desarrollo. Permite al director del proyecto conocer el estado de desarrollo del sistema.
@@ -181,7 +181,7 @@ Consiste en la puesta en común de los avances de cada equipo de desarrollo. Per
 Consiste en la formalización de las decisiones tomadas por el equipo de desarrollo y el director del proyecto, tales como la asignación de tareas, la determinación de la prioridad de las mismas o la definición de límites temporales. Dichas decisiones se almacenarán en actas en un repositorio de \textit{Github}.
 
 \subsubsection{Proceso de monitorización del avance del proyecto} \label{P.EC.4}
-Consiste en el control del avance del proyecto en función del trabajo realizado por los desarrolladores. Cada uno explicará lo avanzado y puede realizar demostración del \textit{software} si lo ve necesario.
+Consiste en el control del avance del proyecto en función del trabajo realizado por los desarrolladores. Implica que cada desarrollador informará del trabajo avanzado y lo demostrará si fuese requerido.
 
 \subsubsection{Proceso de documentación del código} \label{P.EC.5}
 El proceso de documentación del código se realizará en las \textit{Wikis} de \textit{GitHub}. Cada módulo se documenta de la manera más clara posible.
@@ -190,7 +190,7 @@ El proceso de documentación del código se realizará en las \textit{Wikis} de 
 Consiste en la documentación de los esfuerzos realizados por los desarrolladores mediante una tabla de control. Dicha tabla se almacenará en un repositorio común y contendrá las horas que dedica cada desarrollador a una tarea específica.
 
 \subsubsection{Proceso de entrega de resultados} \label{P.EC.7}
-Seguirá una filosofía de entrega y despliegue continuos, es decir, en todo momento se dispone una versión en producción del sistema y se realizan reuniones periódicas con el cliente según establezca este. También se entregará la documentación asociada a la gestión y avance del proyecto.
+Seguirá una filosofía de entrega y despliegue continuos, es decir, en todo momento se dispone una versión en producción del sistema y se realizan reuniones periódicas con el cliente, según establezca éste, para informar del estado del sistema. También se entregará la documentación asociada a la gestión y avance del proyecto.
 
 \subsubsection{Proceso de nombrado de archivos} \label{P.EC.8}
 
@@ -240,7 +240,7 @@ Los desarrolladores de código se apoyarán en las siguientes guías de estilo:
 Para el control del versionado y actualización del código se utilizarán distintos repositorios de GitHub para los componentes del sistema, es decir, un repositorio de \textit{frontend} web, de \textit{frontend} móvil, de \textit{backend} y de documentación del proyecto. A continuación se enumeran los procedimientos a seguir para el uso de estos repositorios.
 
 Dichos repositorios serán privados sólo accesibles por el equipo de desarrollo. 
-Se asociará a cada repositorio un conjunto de GitHub Actions para administrar la compilación y puesta en marcha del sistema. 
+Se asociará a los repositorios del \textit{backend} y \textit{frontend} web un conjunto de GitHub Actions para administrar la compilación y despliegue del sistema
 Los \textit{commits} a estos repositorios irán acompañados de un nombre descriptivo de la tarea asociada. 
 Los \textit{commits} podrán hacerse en cualquier momento siempre que se haya probado el código previamente de manera local y ateniéndose al estado de las máquinas de despliegue. 
 
@@ -248,7 +248,7 @@ Los \textit{commits} podrán hacerse en cualquier momento siempre que se haya pr
 
 Consiste en realizar revisiones periódicas del código generado por miembros del equipo que no lo han desarrollado, pero que tienen las capacidades técnicas para realizar críticas constructivas sobre este. Se realizarán revisiones por pares abiertas, es decir, revisor y desarrollador se conocen y pueden comunicarse durante el proceso de revisión. Como apoyo a estas revisiones del código, los desarrolladores rellenará una tabla de versionado del código, la cual permitirá al revisor comprobar los avances realizados en la tarea.
 
-Se rellenará una tabla de versionado (figura \ref{tablaVersionado}) por cada módulo importante de software (especificados en el punto anterior), la responsabilidad de rellenar dicha tabla recae sobre el desarrollador del módulo en cuestión. Cuando el desarrollador termine una versión del módulo importante o realice un avance crítico solicitará una revisión al gestor del proyecto y este le asignará un revisor adecuado para la tarea. Las conclusiones de una revisión se guardarán en una tabla de resumen (figura \ref{tablaConclusionesPares}) para que sirvan de referencia para futuras revisiones y para que el desarrollador pueda corregir lo necesario.
+Se rellenará una tabla de versionado (figura \ref{tablaVersionado}) por cada módulo importante de software. Las conclusiones de una revisión se guardarán en una tabla de resumen (figura \ref{tablaConclusionesPares}) para que sirvan de referencia para futuras revisiones y para que el desarrollador pueda corregir lo necesario.
 
 \begin{figure}[H]
    \centering
@@ -266,7 +266,7 @@ Se rellenará una tabla de versionado (figura \ref{tablaVersionado}) por cada m�
 
 \subsubsection{Proceso de revisión de los requisitos} \label{P.EC.13}
 
-Consiste en la comprobación del cumplimiento de los requisitos del sistema utilizando una tabla de cumplimiento de requisitos (figura \ref{tablaRequisitos}). En este tipo de revisión tanto el desarrollador como el revisor rellenarán dicha tabla y discutirán los resultados. Dichos resultados serán recogidos en una tabla de resumen (figura \ref{tablaConclusionesRequisitos}) que servirá como para futuras revisiones. Los módulos de \textit{software} a desarrollar anteriormente van asociados a ciertos requisitos del sistema. Antes de comenzar el desarrollo de un módulo se concretarán los requisitos finales a los que hace referencia y se generará la plantilla de la tabla de adecuación de requisitos. Como en el modelo de revisión anterior, cuando el desarrollador del módulo termine una versión importante o realice un avance crítico solicitará una revisión al gestor del proyecto este le asignará un revisor adecuado para la tarea.
+Consiste en la comprobación del cumplimiento de los requisitos del sistema utilizando una tabla de cumplimiento de requisitos (figura \ref{tablaRequisitos}). En este tipo de revisión tanto el desarrollador como el revisor rellenarán dicha tabla y discutirán los resultados. Dichos resultados serán recogidos en una tabla de resumen (figura \ref{tablaConclusionesRequisitos}) que servirá como para futuras revisiones. Los módulos de \textit{software} a desarrollar anteriormente van asociados a ciertos requisitos del sistema. Antes de comenzar el desarrollo de un módulo se concretarán los requisitos finales a los que hace referencia y se generará la plantilla de la tabla de adecuación de requisitos.
 
 \begin{figure}[H]
    \centering
@@ -282,19 +282,19 @@ Consiste en la comprobación del cumplimiento de los requisitos del sistema util
    \label{tablaConclusionesRequisitos}
 \end{figure}
 
-Todas estas tablas generadas por el proceso de aseguramiento de la calidad quedarán almacenadas en un directorio remoto accesible por todos los miembros del equipo de desarrollo, agrupadas por el módulo al que hacen referencia de manera que sirvan como histórico de las revisiones realizadas y como mecanismo de monitorización del progreso de las tareas.
+Todas las tablas generadas por el este proceso y el anterior, quedarán almacenadas en un directorio remoto accesible por todos los miembros del equipo de desarrollo, agrupadas por el módulo al que hacen referencia de manera que sirvan como histórico de las revisiones realizadas y como mecanismo de monitorización del progreso de las tareas.
 
 \subsubsection{Proceso de ejecución de pruebas sobre el sistema} \label{P.EC.14}
 
-Consiste en el aseguramiento del correcto funcionamiento del código desarrollado. Se realizarán pruebas de desarrollo sobre los módulos, las cuales consistirán en pruebas unitarias y pruebas de integración con el resto de componentes del sistema. Además, una vez el sistema sea funcional, se realizarán pruebas globales sobre el sistema, las cuales consistirán en pruebas funcionales, de comunicación y de rendimiento. Por último, utilizando las herramientas de despliegue continuo mencionadas anteriormente, se implementarán tests básicos sobre el sistema previos al despliegue.
+Consiste en el aseguramiento del correcto funcionamiento del código desarrollado mediante la ejecución de tests sobre el producto. Se realizarán pruebas de desarrollo sobre los módulos, las cuales consistirán en pruebas unitarias y pruebas de integración con el resto de componentes del sistema. Además, una vez el sistema sea funcional, se realizarán pruebas globales sobre el sistema, las cuales consistirán en pruebas funcionales, de comunicación y de rendimiento. Por último, utilizando las herramientas de despliegue continuo mencionadas anteriormente, se implementarán tests básicos sobre el sistema previos al despliegue.
 
 \subsection{Procesos técnicos}
 
 \subsubsection{Proceso de desarrollo del cliente móvil} \label{P.T.1}
-Consiste en el desarrollo de una aplicación móvil para dispositivos android implementado en Java (Android SDK).
+Consiste en el desarrollo de una aplicación móvil para dispositivos android implementada en Java (Android SDK).
 
 \subsubsection{Proceso de desarrollo del \textit{frontend} web } \label{P.T.2}
-Consiste en el desarrollo de una interfaz de usuario web implementado en JavaScript (React.JS) que permita a los usuarios acceder al sistema.
+Consiste en el desarrollo de una interfaz de usuario web implementada en JavaScript (React.JS) que permita a los usuarios acceder al sistema.
 
 \subsubsection{Proceso de configuración de una base de datos sobre el SGBD escogido} \label{P.T.3}
 Consiste en configurar el SGBD anteriormente seleccionado asegurando que en todo momento el sistema dispone de una capa de datos capaz de almacenar todos los datos necesarios definidos en el modelo de datos completo. También se deberá tener en cuenta la disponibilidad y persistencia de los mismos. El SGBD deberá proporcionar una URI externa con la que acceder a la base de datos y realizar operaciones.
@@ -304,11 +304,11 @@ Consiste en el desarrollo de una REST API utilizando Node.JS y el \textit{framew
 
 \subsubsection{Proceso de configuración de máquinas virtuales en \textit{cloud}} \label{P.T.5}
 
-En primer lugar, se creará una cuenta en el servicio NoIP y se crearán los nombres de dominio necesarios para los servicios web (\textit{backend} y \textit{frontend}). En segundo lugar, se configurarán las máquinas virtuales necesarias en la nube utilizando los servicios del proveedor cloud seleccionado para ser utilizadas como plataforma de despliegue de estos subsistemas, es decir, crearán los usuarios pertinentes, se configurará el acceso a las mismas y se asegurará que estas disponen del software necesario para el sistema. Se configurarán además un cliente NoIP para asegurar que las IPs de las máquinas están asociadas en todo momento a los nombres de dominio pertinentes. Por último, se configurará un entorno de Docker que mediante Nginx y Certbot permita acceso https a las aplicaciones. 
+En primer lugar, se creará una cuenta en el servicio NoIP y se crearán los nombres de dominio necesarios para los servicios web (\textit{backend} y \textit{frontend}). En segundo lugar, se configurarán las máquinas virtuales necesarias en la nube utilizando los servicios del proveedor cloud seleccionado para ser utilizadas como plataforma de despliegue de estos subsistemas, es decir, se crearán los usuarios pertinentes, se configurará el acceso a las máquinas y se asegurará que éstas disponen del software necesario para el alojamiento del sistema. Se configurará además un cliente NoIP para asegurar que las IPs de las máquinas están asociadas en todo momento a los nombres de dominio pertinentes. Por último, se configurará un entorno de Docker que mediante Nginx y Certbot permita acceso https a las aplicaciones. 
 
 \subsubsection{Proceso de construcción y despliegue continuo del sistema} \label{P.T.6}
 Los distintos subsistemas serán compilados y desplegados de forma independiente por cada equipo de desarrolladores.
-El \textit{frontend} web y el \textit{backend} estarán empotrados en contenedores Docker y desplegados sobre las máquinas virtuales previamente configuradas. Se utilizarán \textit{scripts} de GitHub Actions para automatizar la compilación y \textit{testing} y despliegue de los mismos. El \textit{frontend} móvil se compilará utilizando el Android SDK y se desplegará sobre un dispositivo físico (proporcionado por uno de los desarrolladores) y diferentes dispositivos virtuales.
+El \textit{frontend} web y el \textit{backend} estarán empotrados en contenedores Docker y desplegados sobre las máquinas virtuales previamente configuradas. Se utilizarán \textit{scripts} de GitHub Actions para automatizar la compilación, \textit{testing} y despliegue de los mismos. El \textit{frontend} móvil se compilará utilizando el Android SDK y se desplegará sobre un dispositivo físico (proporcionado por uno de los desarrolladores) y diferentes dispositivos virtuales.
 
 \pagebreak
 
@@ -332,8 +332,7 @@ El proceso \ref{P.I.3} se llevará a cabo por todos los desarrolladores tantas v
 
 \subsubsection{Plan de comunicación:} \label{PL.EC.1}
 
-El proceso \ref{P.EC.1} se va a realizar por todos los desarrolladores del proyecto. Destacar que para conseguir una comunicación fluida entre los miembros del equipo de trabajo, el intercambio de mensajes deberá ser frecuente, diario si así fuese conveniente.
-El objetivo de este plan es una comunicación fluida y una correcta sincronización entre los integrantes del proyecto..
+En el proceso \ref{P.EC.1} participarán todos los desarrolladores del proyecto. Destacar que para conseguir una comunicación fluida entre los miembros del equipo de trabajo, el intercambio de mensajes deberá ser frecuente, diario si así fuese conveniente. El objetivo de este plan es una comunicación fluida y una correcta sincronización entre los integrantes del proyecto..
 
 \subsubsection{Plan de realización de reuniones:} \label{PL.EC.2} %Une los procesos 2,3,4 
 
@@ -354,7 +353,7 @@ El objetivo de este plan es garantizar la sensación de transparencia percibida 
 
 \subsubsection{Plan de nombrado de archivos:} \label{PL.EC.6}
 
-Se asegurará que todos los archivos sigan las direcciones del proceso \ref{P.EC.8} durante todo el desarrollo del proyecto por parte de todos los desarrolladores. Se aplica cada vez que se crea un nuevo fichero dentro del proyecto a lo largo del proceso de desarrollo y es responsabilidad de todos los desarrolladores cumplirlo. Se espera que este plan permite una correcta comprensión del código y navegabilidad dentro del mismo.
+Todos los desarrolladores se asegurarán que todos los archivos que creen sigan las directrices del proceso \ref{P.EC.8} durante todo el desarrollo del proyecto. Se aplica cada vez que se crea un nuevo fichero dentro del proyecto a lo largo del proceso de desarrollo y es responsabilidad de todos los desarrolladores cumplirlo. Se espera que este plan permita una correcta comprensión del código y navegabilidad dentro del mismo.
 
 \subsubsection{Plan de estructuración de directorios: } \label{PL.EC.7}
 
@@ -369,7 +368,8 @@ Todos los desarrolladores son responsables de aplicar el proceso \ref{P.EC.11} d
 
 \subsubsection{Plan de aseguramiento de la calidad:} \label{PL.EC.10}
 
-Los procesos \ref{P.EC.12}, \ref{P.EC.13} y \ref{P.EC.14} presentan el conjunto de actividades de control de calidad del código a llevar a cabo por parte del equipo de desarrollo durante todo el proyecto. Estas actividades se aplicarán cuando los desarrolladores acaben la implementación o realizen cambios importantes de los distintos módulos. El encargado de asegurar el correcto cumplimiento de este plan es el responsable de calidad, en este caso, Andoni Salcedo. Este plan tiene por objetivo asegurar que el producto final sea robusto, fiable y que cumpla con los requisitos firmados con el cliente.
+Los procesos \ref{P.EC.12}, \ref{P.EC.13} y \ref{P.EC.14} presentan el conjunto de actividades de control de calidad del código a llevar a cabo por parte del equipo de desarrollo durante todo el proyecto. Estas actividades se aplicarán cuando los desarrolladores acaben la implementación o realizen cambios importantes de los distintos módulos. Cuando el desarrollador termine una versión de un módulo o realice un avance crítico solicitará una revisión al responsable de calidad y este le asignará un revisor adecuado para la tarea.
+El encargado de asegurar el correcto cumplimiento de este plan es el responsable de calidad, en este caso, Andoni Salcedo. Este plan tiene por objetivo asegurar que el producto final sea robusto, fiable y que cumpla con los requisitos firmados con el cliente.
 
 \subsection{Planes asociados a los procesos técnicos}
 
@@ -509,7 +509,7 @@ El \textit{frontend} es el componente de la aplicación con el cual el usuario i
 
 El conector que relaciona este componente con el componente del \textit{backend} es el protocolo HTTPS a una réplica del servidor.
 
-La interacción entre los componentes del \textit{backend} es más compleja.El puerto que atiende peticiones utiliza Express, y se comunica con los otros componentes usando el motor V8 como conector, que compila en tiempo de ejecución todos los módulos de JavaScript de la parte del servidor. El sistema a su vez tiene un servidor mail que se comunica mediante el protocolo SMTP y que usa la librería Nodemailer para conectar con Gmail. Por último mantendrá una conexión, también usando el protocolo HTTPS, con la base de datos que se encontrará replicada en varios clústeres y alojada en \textit{MongoDB Atlas}, se usa Mongoose para gestionar la conexión con la base de datos.
+La interacción entre los componentes del \textit{backend} es más compleja. El puerto que atiende peticiones utiliza Express, y se comunica con los otros componentes usando el motor V8 como conector, que compila en tiempo de ejecución todos los módulos de JavaScript de la parte del servidor. El sistema a su vez tiene un servidor mail que se comunica mediante el protocolo SMTP y que usa la librería Nodemailer para conectar con Gmail. Por último mantendrá una conexión, también usando el protocolo HTTPS, con la base de datos que se encontrará replicada en varios clústeres y alojada en \textit{MongoDB Atlas}, se usa Mongoose para gestionar la conexión con la base de datos.
 % Explicar Interfaces de componentes
 
 % Protocolos de comunicación entre componentes
